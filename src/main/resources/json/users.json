@@ -6,9 +6,29 @@
       "email": "admin@fm.com",
       "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
       "saldo": -1.0,
-      "equipo": null,
-      "alineacion": null
+      "equipo": "T01",
+      "alineacion": {
+        "formacion": "4-4-2",
+        "portero": "P0001",
+        "defensas": [
+          "P0003",
+          "P0004",
+          "P0005",
+          "P0006"
+        ],
+        "medios": [
+          "P0013",
+          "P0014",
+          "P0015",
+          "P0016"
+        ],
+        "delanteros": [
+          "P0010",
+          "P0009"
+        ]
+      }
     },
+
     {
       "id": "U0001",
       "tipo": "ESTANDAR",
@@ -33,60 +53,6 @@
         "delanteros": [
           "P0417",
           "P0241"
-        ]
-      }
-    },
-    {
-      "id": "U0002",
-      "tipo": "ESTANDAR",
-      "email": "ana_dev@fm.com",
-      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
-      "saldo": 60.0,
-      "alineacion": {
-        "formacion": "4-4-2",
-        "portero": "P0399",
-        "defensas": [
-          "P0400",
-          "P0295",
-          "P0273",
-          "P0428"
-        ],
-        "medios": [
-          "P0388",
-          "P0188",
-          "P0127",
-          "P0366"
-        ],
-        "delanteros": [
-          "P0022",
-          "P0174"
-        ]
-      }
-    },
-    {
-      "id": "U0003",
-      "tipo": "ESTANDAR",
-      "email": "sergio@fm.com",
-      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
-      "saldo": 45.0,
-      "alineacion": {
-        "formacion": "4-4-2",
-        "portero": "P0135",
-        "defensas": [
-          "P0075",
-          "P0052",
-          "P0271",
-          "P0137"
-        ],
-        "medios": [
-          "P0127",
-          "P0060",
-          "P0079",
-          "P0277"
-        ],
-        "delanteros": [
-          "P0414",
-          "P0021"
         ]
       }
     }
