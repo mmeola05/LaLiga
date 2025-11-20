@@ -1,0 +1,94 @@
+{
+  "usuarios": [
+    {
+      "id": "U0000",
+      "tipo": "admin",
+      "email": "admin@fm.com",
+      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
+      "saldo": -1.0,
+      "equipo": null,
+      "alineacion": null
+    },
+    {
+      "id": "U0001",
+      "tipo": "ESTANDAR",
+      "email": "luis99@fm.com",
+      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
+      "saldo": 50.0,
+      "alineacion": {
+        "formacion": "4-4-2",
+        "portero": "P0001",
+        "defensas": [
+          "P0162",
+          "P0202",
+          "P0051",
+          "P0273"
+        ],
+        "medios": [
+          "P0083",
+          "P0011",
+          "P0038",
+          "P0319"
+        ],
+        "delanteros": [
+          "P0417",
+          "P0241"
+        ]
+      }
+    },
+    {
+      "id": "U0002",
+      "tipo": "ESTANDAR",
+      "email": "ana_dev@fm.com",
+      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
+      "saldo": 60.0,
+      "alineacion": {
+        "formacion": "4-4-2",
+        "portero": "P0399",
+        "defensas": [
+          "P0400",
+          "P0295",
+          "P0273",
+          "P0428"
+        ],
+        "medios": [
+          "P0388",
+          "P0188",
+          "P0127",
+          "P0366"
+        ],
+        "delanteros": [
+          "P0022",
+          "P0174"
+        ]
+      }
+    },
+    {
+      "id": "U0003",
+      "tipo": "ESTANDAR",
+      "email": "sergio@fm.com",
+      "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
+      "saldo": 45.0,
+      "alineacion": {
+        "formacion": "4-4-2",
+        "portero": "P0135",
+        "defensas": [
+          "P0075",
+          "P0052",
+          "P0271",
+          "P0137"
+        ],
+        "medios": [
+          "P0127",
+          "P0060",
+          "P0079",
+          "P0277"
+        ],
+        "delanteros": [
+          "P0414",
+          "P0021"
+        ]
+      }
+    }
+  ]
+}

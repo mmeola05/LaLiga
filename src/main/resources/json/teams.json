@@ -1,0 +1,86 @@
+{
+  "temporada": "2025/26",
+  "liga": "LALIGA EA SPORTS",
+  "equipos": [
+    {
+      "id": "T01",
+      "nombre": "Athletic Club"
+    },
+    {
+      "id": "T02",
+      "nombre": "Atlético de Madrid"
+    },
+    {
+      "id": "T03",
+      "nombre": "CA Osasuna"
+    },
+    {
+      "id": "T04",
+      "nombre": "Celta"
+    },
+    {
+      "id": "T05",
+      "nombre": "Deportivo Alavés"
+    },
+    {
+      "id": "T06",
+      "nombre": "Elche CF"
+    },
+    {
+      "id": "T07",
+      "nombre": "FC Barcelona"
+    },
+    {
+      "id": "T08",
+      "nombre": "Getafe CF"
+    },
+    {
+      "id": "T09",
+      "nombre": "Girona FC"
+    },
+    {
+      "id": "T10",
+      "nombre": "Levante UD"
+    },
+    {
+      "id": "T11",
+      "nombre": "Rayo Vallecano"
+    },
+    {
+      "id": "T12",
+      "nombre": "RCD Espanyol de Barcelona"
+    },
+    {
+      "id": "T13",
+      "nombre": "RCD Mallorca"
+    },
+    {
+      "id": "T14",
+      "nombre": "Real Betis"
+    },
+    {
+      "id": "T15",
+      "nombre": "Real Madrid"
+    },
+    {
+      "id": "T16",
+      "nombre": "Real Oviedo"
+    },
+    {
+      "id": "T17",
+      "nombre": "Real Sociedad"
+    },
+    {
+      "id": "T18",
+      "nombre": "Sevilla FC"
+    },
+    {
+      "id": "T19",
+      "nombre": "Valencia CF"
+    },
+    {
+      "id": "T20",
+      "nombre": "Villarreal CF"
+    }
+  ]
+}

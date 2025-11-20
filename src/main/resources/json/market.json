@@ -1,0 +1,154 @@
+{
+  "mercado": [
+    {
+      "jugadorId": "P0028",
+      "precioSalida": 2.23,
+      "vendedor": "U0000",
+      "id": "M0001"
+    },
+    {
+      "jugadorId": "P0136",
+      "precioSalida": 8.5,
+      "vendedor": "U0000",
+      "id": "M0002"
+    },
+    {
+      "jugadorId": "P0085",
+      "precioSalida": 14.37,
+      "vendedor": "U0000",
+      "id": "M0003"
+    },
+    {
+      "jugadorId": "P0098",
+      "precioSalida": 18.61,
+      "vendedor": "U0000",
+      "id": "M0004"
+    },
+    {
+      "jugadorId": "P0293",
+      "precioSalida": 4.79,
+      "vendedor": "U0000",
+      "id": "M0005"
+    },
+    {
+      "jugadorId": "P0202",
+      "precioSalida": 8.83,
+      "vendedor": "U0000",
+      "id": "M0006"
+    },
+    {
+      "jugadorId": "P0081",
+      "precioSalida": 26.75,
+      "vendedor": "U0000",
+      "id": "M0007"
+    },
+    {
+      "jugadorId": "P0145",
+      "precioSalida": 24.88,
+      "vendedor": "U0000",
+      "id": "M0008"
+    },
+    {
+      "jugadorId": "P0357",
+      "precioSalida": 15.93,
+      "vendedor": "U0000",
+      "id": "M0009"
+    },
+    {
+      "jugadorId": "P0339",
+      "precioSalida": 9.28,
+      "vendedor": "U0000",
+      "id": "M0010"
+    },
+    {
+      "jugadorId": "P0370",
+      "precioSalida": 25.12,
+      "vendedor": "U0000",
+      "id": "M0011"
+    },
+    {
+      "jugadorId": "P0223",
+      "precioSalida": 12.13,
+      "vendedor": "U0000",
+      "id": "M0012"
+    },
+    {
+      "jugadorId": "P0284",
+      "precioSalida": 5.94,
+      "vendedor": "U0000",
+      "id": "M0013"
+    },
+    {
+      "jugadorId": "P0374",
+      "precioSalida": 5.53,
+      "vendedor": "U0000",
+      "id": "M0014"
+    },
+    {
+      "jugadorId": "P0050",
+      "precioSalida": 25.01,
+      "vendedor": "U0000",
+      "id": "M0015"
+    },
+    {
+      "jugadorId": "P0026",
+      "precioSalida": 6.26,
+      "vendedor": "U0000",
+      "id": "M0016"
+    },
+    {
+      "jugadorId": "P0170",
+      "precioSalida": 14.6,
+      "vendedor": "U0000",
+      "id": "M0017"
+    },
+    {
+      "jugadorId": "P0122",
+      "precioSalida": 8.69,
+      "vendedor": "U0000",
+      "id": "M0018"
+    },
+    {
+      "jugadorId": "P0052",
+      "precioSalida": 27.2,
+      "vendedor": "U0000",
+      "id": "M0019"
+    },
+    {
+      "jugadorId": "P0210",
+      "precioSalida": 9.64,
+      "vendedor": "U0000",
+      "id": "M0020"
+    },
+    {
+      "jugadorId": "P0153",
+      "precioSalida": 0.6,
+      "vendedor": "U0000",
+      "id": "M0021"
+    },
+    {
+      "jugadorId": "P0277",
+      "precioSalida": 10.86,
+      "vendedor": "U0000",
+      "id": "M0022"
+    },
+    {
+      "jugadorId": "P0311",
+      "precioSalida": 13.0,
+      "vendedor": "U0000",
+      "id": "M0023"
+    },
+    {
+      "jugadorId": "P0335",
+      "precioSalida": 13.81,
+      "vendedor": "U0000",
+      "id": "M0024"
+    },
+    {
+      "jugadorId": "P0106",
+      "precioSalida": 4.92,
+      "vendedor": "U0000",
+      "id": "M0025"
+    }
+  ]
+}
