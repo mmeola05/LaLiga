@@ -35,6 +35,7 @@
       "email": "luis99@fm.com",
       "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
       "saldo": 50.0,
+      "equipo": "T14",
       "alineacion": {
         "formacion": "4-4-2",
         "portero": "P0001",
