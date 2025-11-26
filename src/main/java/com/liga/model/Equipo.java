@@ -2,7 +2,7 @@ package com.liga.model;
 
 import java.util.Objects;
 
-public class Equipo {
+public class  Equipo {
 
     private String id;
     private String nombre;
