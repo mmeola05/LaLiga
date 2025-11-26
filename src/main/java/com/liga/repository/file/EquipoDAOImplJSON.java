@@ -2,11 +2,8 @@ package com.liga.repository.file;
 
 import com.google.gson.Gson;
 import com.liga.model.Equipo;
-import com.liga.model.Jugador;
 import com.liga.repository.dao.EquipoDAO;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
