@@ -18,12 +18,13 @@ public class Jugador {
 
     private int condition;
 
-    public Jugador() {}
+    public Jugador() {
+    }
 
-    public Jugador(String id, String nombre, Posicion posicion, String equipoId,
-                   double precio, int ataque, int defensa, int pase, int porteria, int condition) {
+    public Jugador(String id, String nombre, Posicion posicion, String equipoId, double precio, int ataque, int defensa, int pase, int porteria, int condition) {
         this.id = id;
         this.nombre = nombre;
+
         this.posicion = posicion;
         this.equipoId = equipoId;
         this.precio = precio;
