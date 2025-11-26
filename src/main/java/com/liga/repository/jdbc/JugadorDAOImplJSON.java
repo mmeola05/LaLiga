@@ -22,20 +22,19 @@ public class JugadorDAOImplJSON implements JugadorDAO {
       List<Jugador> jugadores;
    }
 
-   private Root loadData() throws IOException {
+   private Root loadData() {
       try (Reader reader = new FileReader(FILE_PATH)) {
          return gson.fromJson(reader, Root.class);
       } catch (IOException e) {
-         e.printStackTrace();
-         return new Root();
+         throw new RuntimeException(e);
       }
    }
 
-   private void saveData(Root root) throws IOException {
+   private void saveData(Root root) {
       try (Writer writer = new FileWriter(FILE_PATH)) {
          gson.toJson(root, writer);
       } catch (IOException e) {
-         e.printStackTrace();
+         throw new RuntimeException(e);
       }
    }
 
@@ -44,9 +43,8 @@ public class JugadorDAOImplJSON implements JugadorDAO {
       try {
          Root root = loadData();
          return root.jugadores != null ? root.jugadores : new ArrayList<>();
-      } catch (IOException e) {
-         e.printStackTrace();
-         return new ArrayList<>();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -74,8 +72,8 @@ public class JugadorDAOImplJSON implements JugadorDAO {
          root.jugadores.removeIf(j -> j.getId().equals(jugador.getId()));
          root.jugadores.add(jugador);
          saveData(root);
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -91,8 +89,8 @@ public class JugadorDAOImplJSON implements JugadorDAO {
             root.jugadores.add(jugador);
          }
          saveData(root);
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -106,8 +104,8 @@ public class JugadorDAOImplJSON implements JugadorDAO {
                saveData(root);
             }
          }
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 }

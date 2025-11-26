@@ -24,20 +24,19 @@ public class EquipoDAOImplJSON implements EquipoDAO {
       List<Equipo> equipos;
    }
 
-   private Root loadData() throws IOException {
+   private Root loadData() {
       try (Reader reader = new FileReader(FILE_PATH)) {
          return gson.fromJson(reader, Root.class);
       } catch (IOException e) {
-         e.printStackTrace();
-         return new Root();
+         throw new RuntimeException(e);
       }
    }
 
-   private void saveData(Root root) throws IOException {
+   private void saveData(Root root) {
       try (Writer writer = new FileWriter(FILE_PATH)) {
          gson.toJson(root, writer);
       } catch (IOException e) {
-         e.printStackTrace();
+         throw new RuntimeException(e);
       }
    }
 
@@ -46,9 +45,8 @@ public class EquipoDAOImplJSON implements EquipoDAO {
       try {
          Root root = loadData();
          return root.equipos != null ? root.equipos : new ArrayList<>();
-      } catch (IOException e) {
-         e.printStackTrace();
-         return new ArrayList<>();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -70,8 +68,8 @@ public class EquipoDAOImplJSON implements EquipoDAO {
          root.equipos.add(equipo);
 
          saveData(root);
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -88,8 +86,8 @@ public class EquipoDAOImplJSON implements EquipoDAO {
             root.equipos.add(equipo);
          }
          saveData(root);
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 
@@ -103,8 +101,8 @@ public class EquipoDAOImplJSON implements EquipoDAO {
                saveData(root);
             }
          }
-      } catch (IOException e) {
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw new RuntimeException(e);
       }
    }
 }
