@@ -14,4 +14,6 @@ public class MenuPrincipal {
         System.out.println("5. Jornadas");
         System.out.println("0. Salir");
     }
+
+    //TODO: hacer todos los metodos de cada opcion en funciones distintas
 }
