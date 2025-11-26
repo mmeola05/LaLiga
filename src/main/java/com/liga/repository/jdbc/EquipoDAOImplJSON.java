@@ -24,16 +24,16 @@ public class EquipoDAOImplJSON implements EquipoDAO {
       List<Equipo> equipos;
    }
 
-   private Root loadData() {
+   private Root loadData() throws IOException {
       try (Reader reader = new FileReader(FILE_PATH)) {
          return gson.fromJson(reader, Root.class);
       } catch (IOException e) {
          e.printStackTrace();
-         return new Root(); // Return empty if file not found or error
+         return new Root();
       }
    }
 
-   private void saveData(Root root) {
+   private void saveData(Root root) throws IOException {
       try (Writer writer = new FileWriter(FILE_PATH)) {
          gson.toJson(root, writer);
       } catch (IOException e) {
@@ -43,8 +43,13 @@ public class EquipoDAOImplJSON implements EquipoDAO {
 
    @Override
    public List<Equipo> findAll() {
-      Root root = loadData();
-      return root.equipos != null ? root.equipos : new ArrayList<>();
+      try {
+         Root root = loadData();
+         return root.equipos != null ? root.equipos : new ArrayList<>();
+      } catch (IOException e) {
+         e.printStackTrace();
+         return new ArrayList<>();
+      }
    }
 
    @Override
@@ -56,40 +61,50 @@ public class EquipoDAOImplJSON implements EquipoDAO {
 
    @Override
    public void save(Equipo equipo) {
-      Root root = loadData();
-      if (root.equipos == null) {
-         root.equipos = new ArrayList<>();
+      try {
+         Root root = loadData();
+         if (root.equipos == null) {
+            root.equipos = new ArrayList<>();
+         }
+         root.equipos.removeIf(e -> e.getId().equals(equipo.getId()));
+         root.equipos.add(equipo);
+
+         saveData(root);
+      } catch (IOException e) {
+         e.printStackTrace();
       }
-
-      // Remove existing if present (update)
-      root.equipos.removeIf(e -> e.getId().equals(equipo.getId()));
-      root.equipos.add(equipo);
-
-      saveData(root);
    }
 
    @Override
    public void saveAll(List<Equipo> equipos) {
-      Root root = loadData();
-      if (root.equipos == null) {
-         root.equipos = new ArrayList<>();
-      }
+      try {
+         Root root = loadData();
+         if (root.equipos == null) {
+            root.equipos = new ArrayList<>();
+         }
 
-      for (Equipo equipo : equipos) {
-         root.equipos.removeIf(e -> e.getId().equals(equipo.getId()));
-         root.equipos.add(equipo);
+         for (Equipo equipo : equipos) {
+            root.equipos.removeIf(e -> e.getId().equals(equipo.getId()));
+            root.equipos.add(equipo);
+         }
+         saveData(root);
+      } catch (IOException e) {
+         e.printStackTrace();
       }
-      saveData(root);
    }
 
    @Override
    public void deleteById(String id) {
-      Root root = loadData();
-      if (root.equipos != null) {
-         boolean removed = root.equipos.removeIf(e -> e.getId().equals(id));
-         if (removed) {
-            saveData(root);
+      try {
+         Root root = loadData();
+         if (root.equipos != null) {
+            boolean removed = root.equipos.removeIf(e -> e.getId().equals(id));
+            if (removed) {
+               saveData(root);
+            }
          }
+      } catch (IOException e) {
+         e.printStackTrace();
       }
    }
 }

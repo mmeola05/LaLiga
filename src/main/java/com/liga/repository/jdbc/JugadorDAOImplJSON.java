@@ -22,7 +22,7 @@ public class JugadorDAOImplJSON implements JugadorDAO {
       List<Jugador> jugadores;
    }
 
-   private Root loadData() {
+   private Root loadData() throws IOException {
       try (Reader reader = new FileReader(FILE_PATH)) {
          return gson.fromJson(reader, Root.class);
       } catch (IOException e) {
@@ -31,7 +31,7 @@ public class JugadorDAOImplJSON implements JugadorDAO {
       }
    }
 
-   private void saveData(Root root) {
+   private void saveData(Root root) throws IOException {
       try (Writer writer = new FileWriter(FILE_PATH)) {
          gson.toJson(root, writer);
       } catch (IOException e) {
@@ -41,8 +41,13 @@ public class JugadorDAOImplJSON implements JugadorDAO {
 
    @Override
    public List<Jugador> findAll() {
-      Root root = loadData();
-      return root.jugadores != null ? root.jugadores : new ArrayList<>();
+      try {
+         Root root = loadData();
+         return root.jugadores != null ? root.jugadores : new ArrayList<>();
+      } catch (IOException e) {
+         e.printStackTrace();
+         return new ArrayList<>();
+      }
    }
 
    @Override
@@ -61,37 +66,48 @@ public class JugadorDAOImplJSON implements JugadorDAO {
 
    @Override
    public void save(Jugador jugador) {
-      Root root = loadData();
-      if (root.jugadores == null) {
-         root.jugadores = new ArrayList<>();
+      try {
+         Root root = loadData();
+         if (root.jugadores == null) {
+            root.jugadores = new ArrayList<>();
+         }
+         root.jugadores.removeIf(j -> j.getId().equals(jugador.getId()));
+         root.jugadores.add(jugador);
+         saveData(root);
+      } catch (IOException e) {
+         e.printStackTrace();
       }
-      root.jugadores.removeIf(j -> j.getId().equals(jugador.getId()));
-      root.jugadores.add(jugador);
-      saveData(root);
    }
 
    @Override
    public void saveAll(List<Jugador> jugadores) {
-      Root root = loadData();
-      if (root.jugadores == null) {
-         root.jugadores = new ArrayList<>();
+      try {
+         Root root = loadData();
+         if (root.jugadores == null) {
+            root.jugadores = new ArrayList<>();
+         }
+         for (Jugador jugador : jugadores) {
+            root.jugadores.removeIf(j -> j.getId().equals(jugador.getId()));
+            root.jugadores.add(jugador);
+         }
+         saveData(root);
+      } catch (IOException e) {
+         e.printStackTrace();
       }
-      for (Jugador jugador : jugadores) {
-         root.jugadores.removeIf(j -> j.getId().equals(jugador.getId()));
-         root.jugadores.add(jugador);
-      }
-      saveData(root);
    }
 
    @Override
    public void deleteById(String id) {
-      Root root = loadData();
-      if (root.jugadores != null) {
-         boolean removed = root.jugadores.removeIf(j -> j.getId().equals(id));
-         if (removed) {
-            saveData(root);
+      try {
+         Root root = loadData();
+         if (root.jugadores != null) {
+            boolean removed = root.jugadores.removeIf(j -> j.getId().equals(id));
+            if (removed) {
+               saveData(root);
+            }
          }
+      } catch (IOException e) {
+         e.printStackTrace();
       }
    }
-
 }
