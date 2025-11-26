@@ -1,11 +1,8 @@
 package com.liga.view.cli;
 
-import java.util.Scanner;
-
 public class MenuPrincipal {
-    Scanner sc = new Scanner(System.in);
 
-    public void mostrarMenu(){
+    public void mostrarMenu() {
         System.out.println("=== LIGA FANTASY ===");
         System.out.println("1. Usuarios");
         System.out.println("2. Equipos/Jugadores");
@@ -15,5 +12,5 @@ public class MenuPrincipal {
         System.out.println("0. Salir");
     }
 
-    //TODO: hacer todos los metodos de cada opcion en funciones distintas
+    // TODO: hacer todos los metodos de cada opcion en funciones distintas
 }

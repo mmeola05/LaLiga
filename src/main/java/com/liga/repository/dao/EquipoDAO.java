@@ -7,8 +7,12 @@ import java.util.Optional;
 
 public interface EquipoDAO {
     List<Equipo> findAll();
-    Optional<Equipo> findById(String id);
+
+    Optional<Equipo> findById(String idEquipo);
+
     void save(Equipo equipo);
+
     void saveAll(List<Equipo> equipos);
+
     void deleteById(String id);
 }

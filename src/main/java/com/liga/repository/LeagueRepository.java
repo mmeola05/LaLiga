@@ -9,11 +9,18 @@ import java.util.Optional;
 
 public interface LeagueRepository {
         List<Equipo> listarEquipos();
+
         Optional<Equipo> buscarEquipoPorId(String id);
+
         List<Jugador> listarJugadores();
+
         List<Jugador> buscarJugadorPorEquipo(String equipoId);
+
         Optional<Jugador> buscarJugadorPorId(String id);
+
         List<Usuario> listarUsuarios();
+
         Optional<Usuario> buscarUsuarioPorId(String id);
+
         void guardarUsuarios(List<Usuario> usuarios);
 }
