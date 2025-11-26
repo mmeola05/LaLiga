@@ -1,4 +1,17 @@
 package com.liga.view.cli;
 
+import java.util.Scanner;
+
 public class MenuPrincipal {
+    Scanner sc = new Scanner(System.in);
+
+    public void mostrarMenu(){
+        System.out.println("=== LIGA FANTASY ===");
+        System.out.println("1. Usuarios");
+        System.out.println("2. Equipos/Jugadores");
+        System.out.println("3. Mercado");
+        System.out.println("4. Alineaciones");
+        System.out.println("5. Jornadas");
+        System.out.println("0. Salir");
+    }
 }
