@@ -28,24 +28,45 @@ public class VistaPrincipalController {
 
     MenuPrincipal menuPrincipal;
 
-    // TODO: aquí se controla todo sobre el menu, luego se llamará a esta clase
-    // desde el main. Poner scanner
-    // y luego llamar a funciones de menu principal en esta clase
+    public VistaPrincipalController(MenuPrincipal menuPrincipal) {
+        this.menuPrincipal = menuPrincipal;
+    }
 
     public void ejecutarMenu() {
         int opcion;
         do {
             menuPrincipal.mostrarMenu();
             opcion = sc.nextInt();
+            sc.nextLine();
             switch (opcion) {
                 case 1:
                     break;
                 case 2:
-                    System.out.println("Escribe el id del equipo");
-                    String idEquipo = sc.nextLine();
                     try {
+                        System.out.println("Equipos Disponibles: ");
+                        List<Equipo> equipos = leagueRepository.listarEquipos();
+                        if (equipos.isEmpty()) {
+                            System.out.println("No se encontraron equipos");
+                            break;
+                        } else {
+                            for (Equipo equipo : equipos) {
+                                System.out.println(equipo.getId() + " - " + equipo.getNombre());
+                            }
+                        }
+                        System.out.print("Escribe el id del equipo: ");
+                        String idEquipo = sc.nextLine();
+                        Optional<Equipo> equipo = leagueRepository.buscarEquipoPorId(idEquipo);
                         List<Jugador> jugadores = leagueRepository.buscarJugadorPorEquipo(idEquipo);
-                        System.out.println(jugadores);
+                        if (jugadores.isEmpty()) {
+                            System.out.println("No se encontraron jugadores para el equipo con ID '" + idEquipo
+                                    + "' o el equipo no existe.");
+                        } else {
+                            System.out.println("\n--- Jugadores del " + equipo.get().getNombre() + " ---");
+                            for (Jugador jugador : jugadores) {
+                                System.out.println(" -> " + jugador.getNombre() + " (" + jugador.getPosicion() + ")");
+                            }
+                            System.out.println("----------------------------\n");
+                        }
                     } catch (Exception e) {
                         System.out.println("Equipo no encontrado");
                     }

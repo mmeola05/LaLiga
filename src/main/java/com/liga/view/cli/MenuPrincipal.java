@@ -10,7 +10,6 @@ public class MenuPrincipal {
         System.out.println("4. Alineaciones");
         System.out.println("5. Jornadas");
         System.out.println("0. Salir");
+        System.out.print("Elige una opción: ");
     }
-
-    // TODO: hacer todos los metodos de cada opcion en funciones distintas
 }
