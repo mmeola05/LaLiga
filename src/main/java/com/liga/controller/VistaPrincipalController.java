@@ -63,7 +63,7 @@ public class VistaPrincipalController {
                         } else {
                             System.out.println("\n--- Jugadores del " + equipo.get().getNombre() + " ---");
                             for (Jugador jugador : jugadores) {
-                                System.out.println(" -> " + jugador.getNombre() + " (" + jugador.getPosicion() + ")");
+                                System.out.println(" - " + jugador.getNombre() + " (" + jugador.getPosicion() + ")");
                             }
                             System.out.println("----------------------------\n");
                         }
@@ -72,10 +72,47 @@ public class VistaPrincipalController {
                     }
                     break;
                 case 3:
+                    System.out.println("Buscar jugador por: ");
+                    System.out.println("1. Nombre");
+                    System.out.println("2. Posición");
+                    System.out.print("Elige una opción: ");
+                    int opcionBuscarJugador = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Introduce el término de búsqueda: ");
+                    String searchTerm = sc.nextLine().toLowerCase();
+
+                    List<Jugador> jugadores = leagueRepository.listarJugadores();
+                    List<Jugador> jugadoresFiltrados;
+
+                    if (opcionBuscarJugador == 1) {
+                        jugadoresFiltrados = jugadores.stream()
+                                .filter(j -> j.getNombre().toLowerCase().contains(searchTerm))
+                                .toList();
+                    } else {
+                        jugadoresFiltrados = jugadores.stream()
+                                .filter(j -> j.getPosicion().name().toLowerCase().contains(searchTerm))
+                                .toList();
+                    }
+
+                    if (jugadoresFiltrados.isEmpty()) {
+                        System.out.println("No se encontraron jugadores con el término de búsqueda: " + searchTerm);
+                    } else {
+                        System.out.println("\n--- Jugadores encontrados ---");
+                        for (Jugador jugador : jugadoresFiltrados) {
+                            Optional<Equipo> equipo = leagueRepository.buscarEquipoPorId(jugador.getEquipoId());
+                            String nombreEquipo = equipo.map(Equipo::getNombre).orElse("Desconocido");
+                            System.out.println(
+                                    "- " + jugador.getNombre() + " (" + jugador.getPosicion() + ") - " + nombreEquipo);
+                        }
+                        System.out.println("---------------------------\n");
+                    }
                     break;
                 case 4:
                     break;
                 case 5:
+                    break;
+                case 6:
                     break;
                 case 0:
                     break;
