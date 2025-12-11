@@ -10,6 +10,7 @@ public class MenuPrincipal {
         System.out.println("4. Mercado");
         System.out.println("5. Alineaciones");
         System.out.println("6. Jornadas");
+        System.out.println("7. Simular Jornadas");
         System.out.println("0. Salir");
         System.out.print("Elige una opción: ");
     }

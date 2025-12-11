@@ -1,13 +1,21 @@
 package com.liga.controller;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.Scanner;
 
 import com.liga.model.Equipo;
+import com.liga.model.Gol;
+import com.liga.model.Jornada;
 import com.liga.model.Jugador;
+import com.liga.model.Partido;
 import com.liga.repository.LeagueRepository;
 import com.liga.repository.LeagueRepositoryImpl;
+import com.liga.repository.RepositoryFactory;
 import com.liga.repository.dao.EquipoDAO;
 import com.liga.repository.dao.JugadorDAO;
 import com.liga.repository.dao.MarketDAO;
@@ -24,7 +32,7 @@ public class VistaPrincipalController {
     JugadorDAO jugadorDAO = new JugadorDAOImplJSON();
     MarketDAO marketDAO = new MarketDAOImplJSON();
     UsersDAO usersDAO = new UsersDAOImplJSON();
-    LeagueRepository leagueRepository = new LeagueRepositoryImpl(equipoDAO, jugadorDAO, marketDAO, usersDAO);
+    LeagueRepository leagueRepository = RepositoryFactory.getLeagueRepository();
 
     MenuPrincipal menuPrincipal;
 
@@ -113,6 +121,62 @@ public class VistaPrincipalController {
                 case 5:
                     break;
                 case 6:
+                    break;
+                case 7:
+                    System.out.println("Simulando jornada...");
+                    SimuladorJornada simulador = new SimuladorJornada();
+                    int nextJornadaNumber = 1;
+                    Optional<Jornada> lastJornada = leagueRepository.listarJornadas().stream()
+                            .max((j1, j2) -> Integer.compare(j1.getNumJornada(), j2.getNumJornada()));
+                    if (lastJornada.isPresent()) {
+                        nextJornadaNumber = lastJornada.get().getNumJornada() + 1;
+                    }
+
+                    List<Equipo> allEquipos = leagueRepository.listarEquipos();
+                    if (allEquipos.size() < 2) {
+                        System.out.println("No hay suficientes equipos para simular una jornada");
+                        break;
+                    }
+
+                    List<Partido> partidosSimular = new ArrayList<>();
+
+                    Collections.shuffle(allEquipos);
+                    for (int i = 0; i < allEquipos.size(); i += 2) {
+                        Equipo equipoLocal = allEquipos.get(i);
+                        Equipo equipoVisitante = allEquipos.get(i + 1);
+                        partidosSimular.add(new Partido(equipoLocal, equipoVisitante));
+                    }
+
+                    Jornada jorandaSimulda = simulador.simularJornada(nextJornadaNumber, partidosSimular);
+
+                    leagueRepository.guardarJornada(jorandaSimulda);
+
+                    System.out.println("\n========================================");
+                    System.out.println("       RESULTADOS JORNADA " + jorandaSimulda.getNumJornada());
+                    System.out.println("========================================\n");
+
+                    for (Partido partido : jorandaSimulda.getPartidos()) {
+                        System.out.printf("%s [%d - %d] %s%n",
+                                partido.getEquipoLocal().getNombre(),
+                                partido.getGolesLocal(),
+                                partido.getGolesVisitante(),
+                                partido.getEquipoVisitante().getNombre());
+
+                        List<Gol> goles = partido.getGoles();
+                        if (!goles.isEmpty()) {
+                            goles.sort((g1, g2) -> Integer.compare(g1.getMinuto(), g2.getMinuto()));
+                            for (Gol gol : goles) {
+                                System.out.printf("   Min %d' - %s (%s)%n",
+                                        gol.getMinuto(),
+                                        gol.getJugador().getNombre(),
+                                        gol.getJugador().getEquipoId().equals(partido.getEquipoLocal().getId())
+                                                ? "Local"
+                                                : "Visitante");
+                            }
+                        }
+                        System.out.println("----------------------------------------");
+                    }
+                    System.out.println("Jornada simulada y guardada exitosamente.\n");
                     break;
                 case 0:
                     break;
