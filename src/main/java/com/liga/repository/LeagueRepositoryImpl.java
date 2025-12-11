@@ -1,9 +1,11 @@
 package com.liga.repository;
 
 import com.liga.model.Equipo;
+import com.liga.model.Jornada;
 import com.liga.model.Jugador;
 import com.liga.model.Usuario;
 import com.liga.repository.dao.EquipoDAO;
+import com.liga.repository.dao.JorandaDAO;
 import com.liga.repository.dao.JugadorDAO;
 import com.liga.repository.dao.MarketDAO;
 import com.liga.repository.dao.UsersDAO;
@@ -16,12 +18,15 @@ public class LeagueRepositoryImpl implements LeagueRepository {
     private final JugadorDAO jugadorDAO;
     private final MarketDAO marketDAO;
     private final UsersDAO usersDAO;
+    private final JorandaDAO jornadaDAO;
 
-    public LeagueRepositoryImpl(EquipoDAO equipoDAO, JugadorDAO jugadorDAO, MarketDAO marketDAO, UsersDAO usersDAO) {
+    public LeagueRepositoryImpl(EquipoDAO equipoDAO, JugadorDAO jugadorDAO, MarketDAO marketDAO, UsersDAO usersDAO,
+            JorandaDAO jorandaDAO) {
         this.equipoDAO = equipoDAO;
         this.jugadorDAO = jugadorDAO;
         this.marketDAO = marketDAO;
         this.usersDAO = usersDAO;
+        this.jornadaDAO = jorandaDAO;
     }
 
     @Override
@@ -62,5 +67,20 @@ public class LeagueRepositoryImpl implements LeagueRepository {
     @Override
     public void guardarUsuarios(List<Usuario> usuarios) {
         usersDAO.saveAll(usuarios);
+    }
+
+    @Override
+    public List<Jornada> listarJornadas() {
+        return jornadaDAO.findAll();
+    }
+
+    @Override
+    public Optional<Jornada> buscarJornadaPorId(int id) {
+        return jornadaDAO.findById(id);
+    }
+
+    @Override
+    public void guardarJornada(Jornada jornada) {
+        jornadaDAO.save(jornada);
     }
 }

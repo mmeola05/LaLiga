@@ -1,6 +1,7 @@
 package com.liga.repository;
 
 import com.liga.model.Equipo;
+import com.liga.model.Jornada;
 import com.liga.model.Jugador;
 import com.liga.model.Usuario;
 
@@ -23,4 +24,10 @@ public interface LeagueRepository {
         Optional<Usuario> buscarUsuarioPorId(String id);
 
         void guardarUsuarios(List<Usuario> usuarios);
+
+        List<Jornada> listarJornadas();
+
+        Optional<Jornada> buscarJornadaPorId(int id);
+
+        void guardarJornada(Jornada jornada);
 }
