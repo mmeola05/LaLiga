@@ -20,13 +20,13 @@ public class UsersDAOImplJSON implements UsersDAO {
 
   private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-  private static class Root {
-    String temporada;
-    String liga;
-    List<Usuario> usuarios = new ArrayList<>();
-  }
+    private static class Root {
+        String temporada;
+        String liga;
+        List<Usuario> usuarios = new ArrayList<>();
+    }
 
-  private Root loadData() {
+    private Root loadData() {
     Path path = Paths.get(FILE_PATH);
 
     if (!Files.exists(path)) {

@@ -1,5 +1,6 @@
 package com.liga.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Usuario {
@@ -10,6 +11,7 @@ public class Usuario {
     private double saldo;
     private String equipo;
     private Alineacion alineacion;
+    private List<String> plantilla;
 
     public Usuario() {}
 
@@ -73,6 +75,13 @@ public class Usuario {
 
     public void setAlineacion(Alineacion alineacion) {
         this.alineacion = alineacion;
+    }
+    public List<String> getPlantilla() {
+        return plantilla;
+    }
+
+    public void setPlantilla(List<String> plantilla) {
+        this.plantilla = plantilla;
     }
 
     @Override
