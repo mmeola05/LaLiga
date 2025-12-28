@@ -1,6 +1,10 @@
 package com.liga.view.cli;
 
+import java.util.Scanner;
+
 public class MenuPrincipal {
+
+    Scanner sc = new Scanner(System.in);
 
     public void mostrarMenu() {
         System.out.println("=== LIGA FANTASY ===");
@@ -13,5 +17,14 @@ public class MenuPrincipal {
         System.out.println("7. Simular Jornadas");
         System.out.println("0. Salir");
         System.out.print("Elige una opción: ");
+    }
+
+    public int menuUsuarios() {
+        System.out.println("\n=== USUARIOS ===");
+        System.out.println("1. Iniciar sesión");
+        System.out.println("2. Registrarse");
+        System.out.println("0. Volver");
+        System.out.print("Opción: ");
+        return sc.nextInt();
     }
 }
