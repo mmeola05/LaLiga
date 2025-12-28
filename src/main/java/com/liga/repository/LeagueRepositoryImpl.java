@@ -4,6 +4,7 @@ import com.liga.model.Equipo;
 import com.liga.model.Jornada;
 import com.liga.model.Jugador;
 import com.liga.model.Usuario;
+import com.liga.model.JugadorMercado;
 import com.liga.repository.dao.EquipoDAO;
 import com.liga.repository.dao.JorandaDAO;
 import com.liga.repository.dao.JugadorDAO;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class LeagueRepositoryImpl implements LeagueRepository {
+
     private final EquipoDAO equipoDAO;
     private final JugadorDAO jugadorDAO;
     private final MarketDAO marketDAO;
@@ -61,7 +63,7 @@ public class LeagueRepositoryImpl implements LeagueRepository {
 
     @Override
     public Optional<Usuario> buscarUsuarioPorId(String id) {
-        return Optional.empty();
+        return usersDAO.findById(id);
     }
 
     @Override
@@ -83,4 +85,25 @@ public class LeagueRepositoryImpl implements LeagueRepository {
     public void guardarJornada(Jornada jornada) {
         jornadaDAO.save(jornada);
     }
+
+    @Override
+    public List<JugadorMercado> listarMercado() {
+        return marketDAO.findAllJugadoresMercados();
+    }
+
+    @Override
+    public Optional<JugadorMercado> buscarJugadorMercadoPorId(String id) {
+        return marketDAO.findJugadorMercadoById(id);
+    }
+
+    @Override
+    public void guardarJugadorMercado(JugadorMercado jugadorMercado) {
+        marketDAO.saveJugadorMercado(jugadorMercado);
+    }
+
+    @Override
+    public void eliminarJugadorMercado(String id) {
+        marketDAO.deleteJugadorMercadoById(id);
+    }
+
 }

@@ -6,8 +6,9 @@ import com.liga.repository.LeagueRepositoryImpl;
 import com.liga.repository.file.*;
 import com.liga.service.UserService;
 import com.liga.util.AlineacionGenerator;
-
+import com.liga.repository.RepositoryFactory;
 import java.util.*;
+import com.liga.service.MarketService;
 
 public class UserMenuController {
 
@@ -20,13 +21,10 @@ public class UserMenuController {
     private final EquipoController equipoController = new EquipoController();
 
     private final LeagueRepository leagueRepository =
-            new LeagueRepositoryImpl(
-                    new EquipoDAOImplJSON(),
-                    new JugadorDAOImplJSON(),
-                    new MarketDAOImplJSON(),
-                    new UsersDAOImplJSON(),
-                    new JornadaDAOImplJSON()
-            );
+            RepositoryFactory.getLeagueRepository();
+
+    private final MarketService marketService =
+            new MarketService(RepositoryFactory.getLeagueRepository());
 
     // ============================================================
     // MENÚ PRINCIPAL
@@ -124,6 +122,7 @@ public class UserMenuController {
             System.out.println("2. Ver alineación");
             System.out.println("3. Editar alineación");
             System.out.println("4. Ver plantilla (banquillo)");
+            System.out.println("5. Mercado");
             System.out.println("7. Simular jornada");
             System.out.println("0. Cerrar sesión");
             System.out.print("Opción: ");
@@ -135,8 +134,34 @@ public class UserMenuController {
                 case 2 -> alineacionController.mostrarAlineacionUsuario(usuario);
                 case 3 -> alineacionController.editarAlineacion(usuario);
                 case 4 -> alineacionController.mostrarPlantilla(usuario);
+                case 5 -> menuMercado(usuario);
                 case 7 -> simularJornada();
                 case 0 -> System.out.println("Sesión cerrada.");
+                default -> System.out.println("Opción no válida.");
+            }
+
+        } while (opcion != 0);
+    }
+    private void menuMercado(Usuario usuario) {
+
+        int opcion;
+
+        do {
+            System.out.println("\n=== MERCADO DE JUGADORES ===");
+            System.out.println("1. Ver jugadores en venta");
+            System.out.println("2. Poner jugador en venta");
+            System.out.println("3. Comprar jugador");
+            System.out.println("0. Volver");
+            System.out.print("Opción: ");
+
+            opcion = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcion) {
+                case 1 -> mostrarMercado();
+                case 2 -> ponerJugadorEnVenta(usuario);
+                case 3 -> comprarJugadorMercado(usuario);
+                case 0 -> System.out.println("Volviendo al menú anterior...");
                 default -> System.out.println("Opción no válida.");
             }
 
@@ -207,4 +232,93 @@ public class UserMenuController {
     public void iniciarApp() {
         menuUsuarios();
     }
+
+    private void mostrarMercado() {
+
+        List<JugadorMercado> mercado = marketService.listarMercado();
+
+        if (mercado.isEmpty()) {
+            System.out.println("No hay jugadores en el mercado.");
+            return;
+        }
+
+        System.out.println("\n=== JUGADORES EN VENTA ===");
+
+        for (JugadorMercado jm : mercado) {
+            leagueRepository.buscarJugadorPorId(jm.getJugadorId())
+                    .ifPresent(j ->
+                            System.out.printf(
+                                    "- ID Mercado: %s | %s (%s) | Precio: %.2f M | Vendedor: %s%n",
+                                    jm.getId(),
+                                    j.getNombre(),
+                                    j.getPosicion(),
+                                    jm.getPrecioSalida(),
+                                    jm.getVendedor()
+                            )
+                    );
+        }
+    }
+
+    private void ponerJugadorEnVenta(Usuario usuario) {
+
+        if (usuario.getPlantilla() == null || usuario.getPlantilla().isEmpty()) {
+            System.out.println("No tienes jugadores en tu plantilla.");
+            return;
+        }
+
+        System.out.println("\n=== TU PLANTILLA ===");
+
+        for (String jugadorId : usuario.getPlantilla()) {
+            leagueRepository.buscarJugadorPorId(jugadorId)
+                    .ifPresent(j ->
+                            System.out.printf(
+                                    "- %s | %s (%s)%n",
+                                    j.getId(),
+                                    j.getNombre(),
+                                    j.getPosicion()
+                            )
+                    );
+        }
+
+
+        System.out.print("ID del jugador: ");
+        String jugadorId = sc.nextLine();
+
+        System.out.print("Precio de venta: ");
+        double precio = sc.nextDouble();
+        sc.nextLine();
+
+        boolean ok = marketService.ponerEnVenta(
+                usuario.getId(),
+                jugadorId,
+                precio
+        );
+
+        if (ok) {
+            System.out.println("✔ Jugador puesto en venta correctamente.");
+        } else {
+            System.out.println("✘ No se pudo poner el jugador en venta.");
+        }
+    }
+    private void comprarJugadorMercado(Usuario usuario) {
+
+        System.out.println("\n=== COMPRAR JUGADOR ===");
+
+        mostrarMercado();
+
+        System.out.print("ID del jugador en mercado: ");
+        String idMercado = sc.nextLine();
+
+        boolean ok = marketService.comprarJugador(
+                usuario.getId(),
+                idMercado
+        );
+
+        if (ok) {
+            System.out.println("✔ Compra realizada con éxito.");
+        } else {
+            System.out.println("✘ No se pudo realizar la compra.");
+        }
+    }
+
 }

@@ -20,32 +20,29 @@ public class EquipoDAOImplJSON implements EquipoDAO {
    private static final String FILE_PATH = "src/main/resources/json/teams.json";
    private final Gson gson = new Gson();
 
-   private static class Root {
-      String temporada;
-      String liga;
-      List<Equipo> equipos;
-   }
+    private static class Root {
+        String temporada;
+        String liga;
+        List<Equipo> equipos = new ArrayList<>();
+    }
 
-   private Root loadData() {
-      Path path = Paths.get(FILE_PATH);
+    private Root loadData() {
+        Path path = Paths.get(FILE_PATH);
 
-      if (!Files.exists(path)) {
-         return new Root();
-      }
-
-      try (Reader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-         Root root = gson.fromJson(reader, Root.class);
-         if (root == null)
+        if (!Files.exists(path)) {
             return new Root();
-         if (root.equipos == null)
-            root.equipos = new ArrayList<>();
-         return root;
-      } catch (IOException e) {
-         throw new RuntimeException("Error al leer el archivo JSON", e);
-      }
-   }
+        }
 
-   private void saveData(Root root) {
+        try (Reader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            Root root = gson.fromJson(reader, Root.class);
+            return root != null ? root : new Root();
+        } catch (IOException e) {
+            return new Root();
+        }
+    }
+
+
+    private void saveData(Root root) {
       Path path = Paths.get(FILE_PATH);
 
       try {
