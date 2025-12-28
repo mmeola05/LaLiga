@@ -13,9 +13,13 @@ public class AlineacionController {
 
     private final LeagueRepository repo =
             new LeagueRepositoryImpl(
-                    new EquipoDAOImplJSON(), new JugadorDAOImplJSON(),
-                    new MarketDAOImplJSON(), new UsersDAOImplJSON()
+                    new EquipoDAOImplJSON(),
+                    new JugadorDAOImplJSON(),
+                    new MarketDAOImplJSON(),
+                    new UsersDAOImplJSON(),
+                    new JornadaDAOImplJSON()
             );
+
 
     private final UsersDAOImplJSON usersDAO = new UsersDAOImplJSON();
 

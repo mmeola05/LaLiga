@@ -13,8 +13,11 @@ public class EquipoController {
 
     private final LeagueRepository repo =
             new LeagueRepositoryImpl(
-                    new EquipoDAOImplJSON(), new JugadorDAOImplJSON(),
-                    new MarketDAOImplJSON(), new UsersDAOImplJSON()
+                    new EquipoDAOImplJSON(),
+                    new JugadorDAOImplJSON(),
+                    new MarketDAOImplJSON(),
+                    new UsersDAOImplJSON(),
+                    new JornadaDAOImplJSON()
             );
 
     // 👉 NECESARIO PARA OTROS CONTROLADORES
