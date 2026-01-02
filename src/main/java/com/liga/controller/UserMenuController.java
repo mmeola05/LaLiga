@@ -181,6 +181,7 @@ public class UserMenuController {
             System.out.println("\n=== LIGA ===");
             System.out.println("1. Ver clasificación");
             System.out.println("2. Simular jornada");
+            System.out.println("3. Ver historial de jornadas");
             System.out.println("0. Volver");
             System.out.print("Opción: ");
             opcion = sc.nextInt();
@@ -189,6 +190,7 @@ public class UserMenuController {
             switch (opcion) {
                 case 1 -> mostrarClasificacion();
                 case 2 -> simularJornada();
+                case 3 -> mostrarHistorialJornadas();
                 case 0 -> {
                 }
                 default -> System.out.println("Opción no válida.");
@@ -256,6 +258,30 @@ public class UserMenuController {
 
     private Equipo buscarEnLista(List<Equipo> equipos, String id) {
         return equipos.stream().filter(e -> e.getId().equals(id)).findFirst().orElse(null);
+    }
+
+    private void mostrarHistorialJornadas() {
+        List<Jornada> jornadas = leagueRepository.listarJornadas();
+
+        if (jornadas.isEmpty()) {
+            System.out.println("No hay jornadas jugadas aún.");
+            return;
+        }
+
+        // Ordenar por número de jornada
+        jornadas.sort(Comparator.comparingInt(Jornada::getNumJornada));
+
+        for (Jornada jornada : jornadas) {
+            System.out.println("\n========== JORNADA " + jornada.getNumJornada() + " ==========");
+            for (Partido partido : jornada.getPartidos()) {
+                System.out.printf("%-25s %d - %d %25s%n",
+                        partido.getEquipoLocal().getNombre(),
+                        partido.getGolesLocal(),
+                        partido.getGolesVisitante(),
+                        partido.getEquipoVisitante().getNombre());
+            }
+            System.out.println("-------------------------------------------------------");
+        }
     }
 
     // ============================================================
