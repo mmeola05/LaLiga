@@ -10,6 +10,8 @@ import com.liga.repository.RepositoryFactory;
 import java.util.*;
 import com.liga.service.MarketService;
 
+import com.liga.service.ClasificacionService;
+
 public class UserMenuController {
 
     private final Scanner sc = new Scanner(System.in);
@@ -20,11 +22,11 @@ public class UserMenuController {
     private final AlineacionController alineacionController = new AlineacionController();
     private final EquipoController equipoController = new EquipoController();
 
-    private final LeagueRepository leagueRepository =
-            RepositoryFactory.getLeagueRepository();
+    private final LeagueRepository leagueRepository = RepositoryFactory.getLeagueRepository();
 
-    private final MarketService marketService =
-            new MarketService(RepositoryFactory.getLeagueRepository());
+    private final MarketService marketService = new MarketService(RepositoryFactory.getLeagueRepository());
+
+    private final ClasificacionService clasificacionService = new ClasificacionService();
 
     // ============================================================
     // MENÚ PRINCIPAL
@@ -44,7 +46,8 @@ public class UserMenuController {
             switch (opcion) {
                 case 1 -> iniciarSesion();
                 case 2 -> registrarUsuario();
-                case 0 -> {}
+                case 0 -> {
+                }
                 default -> System.out.println("Opción no válida.");
             }
 
@@ -123,7 +126,7 @@ public class UserMenuController {
             System.out.println("3. Editar alineación");
             System.out.println("4. Ver plantilla (banquillo)");
             System.out.println("5. Mercado");
-            System.out.println("7. Simular jornada");
+            System.out.println("6. Liga");
             System.out.println("0. Cerrar sesión");
             System.out.print("Opción: ");
             opcion = sc.nextInt();
@@ -135,13 +138,14 @@ public class UserMenuController {
                 case 3 -> alineacionController.editarAlineacion(usuario);
                 case 4 -> alineacionController.mostrarPlantilla(usuario);
                 case 5 -> menuMercado(usuario);
-                case 7 -> simularJornada();
+                case 6 -> menuLiga();
                 case 0 -> System.out.println("Sesión cerrada.");
                 default -> System.out.println("Opción no válida.");
             }
 
         } while (opcion != 0);
     }
+
     private void menuMercado(Usuario usuario) {
 
         int opcion;
@@ -166,6 +170,92 @@ public class UserMenuController {
             }
 
         } while (opcion != 0);
+    }
+
+    // ============================================================
+    // MENU LIGA
+    // ============================================================
+    private void menuLiga() {
+        int opcion;
+        do {
+            System.out.println("\n=== LIGA ===");
+            System.out.println("1. Ver clasificación");
+            System.out.println("2. Simular jornada");
+            System.out.println("0. Volver");
+            System.out.print("Opción: ");
+            opcion = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcion) {
+                case 1 -> mostrarClasificacion();
+                case 2 -> simularJornada();
+                case 0 -> {
+                }
+                default -> System.out.println("Opción no válida.");
+            }
+        } while (opcion != 0);
+    }
+
+    private void mostrarClasificacion() {
+        // 1. Obtener todos los equipos
+        List<Equipo> equipos = leagueRepository.listarEquipos();
+
+        // 2. Cargar historial de partidos para calcular puntos actuales
+        // NOTA: Como el atributo puntos se guarda en el equipo, si ya está actualizado
+        // en el JSON
+        // no hace falta recalcularlo. Pero si queremos asegurarnos de que está al día
+        // con las jornadas
+        // guardadas, podríamos re-procesar.
+        // Por ahora asumimos que los equipos ya tienen sus estadisticas actualizadas
+        // o llamamos a actualizar con todas las jornadas.
+
+        List<Jornada> jornadas = leagueRepository.listarJornadas();
+        // Resetear estadisticas antes de recalcular (opcional, pero recomendado si no
+        // se guardan persistentes correctamente)
+        // Como estamos guardando el objeto Equipo completo, las estadísticas deberían
+        // estar ahí.
+        // Pero para asegurar consistencia con las jornadas guardadas:
+        for (Equipo e : equipos) {
+            e.setPuntos(0);
+            e.setPartidosJugados(0);
+            e.setVictorias(0);
+            e.setDerrotas(0);
+            e.setEmpates(0);
+            e.setGolesFavor(0);
+            e.setGolesContra(0);
+        }
+
+        // Recalcular todo en base a jornadas jugadas
+        for (Jornada j : jornadas) {
+            clasificacionService.actualizarClasificacion(j.getPartidos());
+            // IMPORTANTISIMO: actualizarClasificacion trabaja sobre las referencias de los
+            // equipos en los partidos.
+            // Necesitamos que esos partidos apunten a los objetos 'Equipo' de nuestra lista
+            // 'equipos'.
+            // Como los partidos se cargan del JSON, traen sus propias copias de Equipo.
+            // Esto es un problema común. Vamos a hacer un apaño rápido: mapear los
+            // resultados a nuestra lista 'equipos'.
+
+            for (Partido p : j.getPartidos()) {
+                Equipo local = buscarEnLista(equipos, p.getEquipoLocal().getId());
+                Equipo visit = buscarEnLista(equipos, p.getEquipoVisitante().getId());
+
+                if (local != null && visit != null) {
+                    local.actualizarEstadisticas(p.getGolesLocal(), p.getGolesVisitante());
+                    visit.actualizarEstadisticas(p.getGolesVisitante(), p.getGolesLocal());
+                }
+            }
+        }
+
+        // 3. Ordenar
+        clasificacionService.ordenarClasificacion(equipos);
+
+        // 4. Imprimir
+        clasificacionService.imprimirClasificacion(equipos);
+    }
+
+    private Equipo buscarEnLista(List<Equipo> equipos, String id) {
+        return equipos.stream().filter(e -> e.getId().equals(id)).findFirst().orElse(null);
     }
 
     // ============================================================
@@ -197,8 +287,7 @@ public class UserMenuController {
             partidos.add(new Partido(allEquipos.get(i), allEquipos.get(i + 1)));
         }
 
-        Jornada jornadaSimulada =
-                simulador.simularJornada(nextJornadaNumber, partidos);
+        Jornada jornadaSimulada = simulador.simularJornada(nextJornadaNumber, partidos);
 
         leagueRepository.guardarJornada(jornadaSimulada);
 
@@ -214,14 +303,13 @@ public class UserMenuController {
             if (p.getGoles() != null) {
                 p.getGoles().stream()
                         .sorted(Comparator.comparingInt(Gol::getMinuto))
-                        .forEach(g ->
-                                System.out.printf("   Min %d' - %s (%s)%n",
-                                        g.getMinuto(),
-                                        g.getJugador().getNombre(),
-                                        g.getJugador().getEquipoId()
-                                                .equals(p.getEquipoLocal().getId())
-                                                ? "Local" : "Visitante")
-                        );
+                        .forEach(g -> System.out.printf("   Min %d' - %s (%s)%n",
+                                g.getMinuto(),
+                                g.getJugador().getNombre(),
+                                g.getJugador().getEquipoId()
+                                        .equals(p.getEquipoLocal().getId())
+                                                ? "Local"
+                                                : "Visitante"));
             }
             System.out.println("--------------------------------");
         }
@@ -246,16 +334,13 @@ public class UserMenuController {
 
         for (JugadorMercado jm : mercado) {
             leagueRepository.buscarJugadorPorId(jm.getJugadorId())
-                    .ifPresent(j ->
-                            System.out.printf(
-                                    "- ID Mercado: %s | %s (%s) | Precio: %.2f M | Vendedor: %s%n",
-                                    jm.getId(),
-                                    j.getNombre(),
-                                    j.getPosicion(),
-                                    jm.getPrecioSalida(),
-                                    jm.getVendedor()
-                            )
-                    );
+                    .ifPresent(j -> System.out.printf(
+                            "- ID Mercado: %s | %s (%s) | Precio: %.2f M | Vendedor: %s%n",
+                            jm.getId(),
+                            j.getNombre(),
+                            j.getPosicion(),
+                            jm.getPrecioSalida(),
+                            jm.getVendedor()));
         }
     }
 
@@ -270,16 +355,12 @@ public class UserMenuController {
 
         for (String jugadorId : usuario.getPlantilla()) {
             leagueRepository.buscarJugadorPorId(jugadorId)
-                    .ifPresent(j ->
-                            System.out.printf(
-                                    "- %s | %s (%s)%n",
-                                    j.getId(),
-                                    j.getNombre(),
-                                    j.getPosicion()
-                            )
-                    );
+                    .ifPresent(j -> System.out.printf(
+                            "- %s | %s (%s)%n",
+                            j.getId(),
+                            j.getNombre(),
+                            j.getPosicion()));
         }
-
 
         System.out.print("ID del jugador: ");
         String jugadorId = sc.nextLine();
@@ -291,8 +372,7 @@ public class UserMenuController {
         boolean ok = marketService.ponerEnVenta(
                 usuario.getId(),
                 jugadorId,
-                precio
-        );
+                precio);
 
         if (ok) {
             System.out.println("✔ Jugador puesto en venta correctamente.");
@@ -300,6 +380,7 @@ public class UserMenuController {
             System.out.println("✘ No se pudo poner el jugador en venta.");
         }
     }
+
     private void comprarJugadorMercado(Usuario usuario) {
 
         System.out.println("\n=== COMPRAR JUGADOR ===");
@@ -311,8 +392,7 @@ public class UserMenuController {
 
         boolean ok = marketService.comprarJugador(
                 usuario.getId(),
-                idMercado
-        );
+                idMercado);
 
         if (ok) {
             System.out.println("✔ Compra realizada con éxito.");

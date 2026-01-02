@@ -2,7 +2,6 @@
   "usuarios": [
     {
       "id": "U0000",
-      "tipo": "admin",
       "email": "admin@fm.com",
       "password": "5e5bdb9bb8366ca74e4cba341b5c6a36d1b2a4b3c7fcb7ff2519b9b4f6f2d85d",
       "saldo": -1.0,
@@ -28,7 +27,6 @@
         ]
       }
     },
-
     {
       "id": "U0001",
       "tipo": "ESTANDAR",
@@ -56,6 +54,58 @@
           "P0241"
         ]
       }
+    },
+    {
+      "id": "U0002",
+      "tipo": "ESTANDAR",
+      "email": "eze@gmail.com",
+      "password": "c4d1c5042df81433159e365c95fa7e1fbfcbf1ce29b3acfaefb5897bcaafa17c",
+      "saldo": 50.0,
+      "equipo": "T07",
+      "alineacion": {
+        "formacion": "4-4-2",
+        "portero": "P0133",
+        "defensas": [
+          "P0136",
+          "P0152",
+          "P0135",
+          "P0140"
+        ],
+        "medios": [
+          "P0142",
+          "P0143",
+          "P0154",
+          "P0141"
+        ],
+        "delanteros": [
+          "P0146",
+          "P0145"
+        ]
+      },
+      "plantilla": [
+        "P0133",
+        "P0134",
+        "P0135",
+        "P0136",
+        "P0137",
+        "P0138",
+        "P0139",
+        "P0140",
+        "P0141",
+        "P0142",
+        "P0143",
+        "P0144",
+        "P0145",
+        "P0146",
+        "P0147",
+        "P0148",
+        "P0149",
+        "P0150",
+        "P0151",
+        "P0152",
+        "P0153",
+        "P0154"
+      ]
     }
   ]
 }

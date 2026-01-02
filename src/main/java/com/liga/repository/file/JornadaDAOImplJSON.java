@@ -20,7 +20,7 @@ import java.util.Optional;
 
 public class JornadaDAOImplJSON implements JorandaDAO {
 
-    private static final String FILE_PATH = "data/competicion.json";
+    private static final String FILE_PATH = "src/main/resources/json/competicion.json";
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     @Override
@@ -32,7 +32,8 @@ public class JornadaDAOImplJSON implements JorandaDAO {
         }
 
         try (Reader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            Type type = new TypeToken<List<Jornada>>() {}.getType();
+            Type type = new TypeToken<List<Jornada>>() {
+            }.getType();
             List<Jornada> jornadas = gson.fromJson(reader, type);
             return jornadas != null ? jornadas : new ArrayList<>();
         } catch (IOException e) {

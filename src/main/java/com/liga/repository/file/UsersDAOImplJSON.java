@@ -16,7 +16,7 @@ import java.util.Optional;
 
 public class UsersDAOImplJSON implements UsersDAO {
 
-    private static final String FILE_PATH = "data/users.json";
+    private static final String FILE_PATH = "src/main/resources/json/users.json";
 
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
