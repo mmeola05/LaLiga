@@ -77,13 +77,20 @@ public class ClasificacionService {
    * Imprime la tabla de clasificación formateada por consola.
    * Se asume que la lista de equipos ya viene ordenada.
    *
-   * @param equipos Lista de equipos a mostrar
+   * @param equipos    Lista de equipos a mostrar
+   * @param userTeamId ID del equipo del usuario logueado (para resaltar). Puede
+   *                   ser null.
    */
-  public void imprimirClasificacion(List<Equipo> equipos) {
+  public void imprimirClasificacion(List<Equipo> equipos, String userTeamId) {
     if (equipos == null || equipos.isEmpty()) {
       System.out.println("No hay equipos para mostrar en la clasificación.");
       return;
     }
+
+    // Códigos ANSI para colores
+    final String RESET = "\u001B[0m";
+    final String GREEN_BOLD = "\u001B[1;32m";
+    final String WHITE = "\u001B[0m";
 
     System.out.println("\n=========================================================================================");
     System.out.printf("%-4s %-25s | %3s  %3s  %3s  %3s | %3s  %3s  %4s | %3s%n",
@@ -93,9 +100,25 @@ public class ClasificacionService {
     int posicion = 1;
     for (Equipo e : equipos) {
       int dg = e.getGolesFavor() - e.getGolesContra();
+
+      boolean isUserTeam = userTeamId != null && userTeamId.equals(e.getId());
+
+      // Si es el equipo del usuario, ponemos color verde y un asterisco '*'
+      String color = isUserTeam ? GREEN_BOLD : WHITE;
+      String mark = isUserTeam ? "* " : "";
+      String nombreMostrar = mark + e.getNombre();
+      // Ajustamos el padding si añadimos caracteres
+      // (Es complicado ajustar padding con ANSI, así que simplificamos: el nombre se
+      // imprime normal,
+      // pero si es el usuario, toda la línea sale verde).
+
+      if (isUserTeam) {
+        System.out.print(GREEN_BOLD);
+      }
+
       System.out.printf("%-4d %-25s | %3d  %3d  %3d  %3d | %3d  %3d  %4d | %3d%n",
           posicion++,
-          e.getNombre(),
+          nombreMostrar, // nombre con marca si aplica
           e.getPartidosJugados(),
           e.getVictorias(),
           e.getEmpates(),
@@ -104,6 +127,10 @@ public class ClasificacionService {
           e.getGolesContra(),
           dg,
           e.getPuntos());
+
+      if (isUserTeam) {
+        System.out.print(RESET);
+      }
     }
     System.out.println("=========================================================================================\n");
   }

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import com.liga.model.Posicion;
 import com.liga.repository.RepositoryFactory;
 
 public class SimuladorJornada {
@@ -96,16 +97,52 @@ public class SimuladorJornada {
       }
     }
 
-    // Generar los goles usando la lista filtrada (o completa si es CPU)
-    for (int i = 0; i < numGoles; i++) {
-      if (candidatosGol.isEmpty())
-        break; // Seguridad extra
+    // Filtrar porteros de la lista de candidatos para gol
+    candidatosGol = candidatosGol.stream()
+        .filter(j -> j.getPosicion() != Posicion.PORTERO)
+        .collect(Collectors.toList());
 
-      // Seleccionar un jugador aleatorio de los candidatos
-      Jugador goleador = candidatosGol.get(random.nextInt(candidatosGol.size()));
-      // Seleccionar un minuto aleatorio (entre 1 y 90)
-      int minutoGol = random.nextInt(90) + 1;
-      partido.addGol(new Gol(goleador, minutoGol));
+    // Calcular peso total para la selección ponderada
+    int pesoTotal = candidatosGol.stream()
+        .mapToInt(j -> getPesoPosicion(j.getPosicion()))
+        .sum();
+
+    if (pesoTotal <= 0)
+      return;
+
+    // Generar los goles usando selección ponderada
+    for (int i = 0; i < numGoles; i++) {
+      int randomValue = random.nextInt(pesoTotal);
+      int acumulado = 0;
+      Jugador goleador = null;
+
+      for (Jugador j : candidatosGol) {
+        acumulado += getPesoPosicion(j.getPosicion());
+        if (randomValue < acumulado) {
+          goleador = j;
+          break;
+        }
+      }
+
+      if (goleador != null) {
+        int minutoGol = random.nextInt(90) + 1;
+        partido.addGol(new Gol(goleador, minutoGol));
+      }
+    }
+  }
+
+  private int getPesoPosicion(Posicion p) {
+    if (p == null)
+      return 0;
+    switch (p) {
+      case DELANTERO:
+        return 10;
+      case MEDIO:
+        return 4;
+      case DEFENSA:
+        return 1;
+      default:
+        return 0;
     }
   }
 }

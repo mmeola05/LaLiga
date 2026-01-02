@@ -138,7 +138,7 @@ public class UserMenuController {
                 case 3 -> alineacionController.editarAlineacion(usuario);
                 case 4 -> alineacionController.mostrarPlantilla(usuario);
                 case 5 -> menuMercado(usuario);
-                case 6 -> menuLiga();
+                case 6 -> menuLiga(usuario);
                 case 0 -> System.out.println("Sesión cerrada.");
                 default -> System.out.println("Opción no válida.");
             }
@@ -175,22 +175,27 @@ public class UserMenuController {
     // ============================================================
     // MENU LIGA
     // ============================================================
-    private void menuLiga() {
+    // ============================================================
+    // MENU LIGA
+    // ============================================================
+    private void menuLiga(Usuario usuario) {
         int opcion;
         do {
             System.out.println("\n=== LIGA ===");
             System.out.println("1. Ver clasificación");
-            System.out.println("2. Simular jornada");
-            System.out.println("3. Ver historial de jornadas");
+            System.out.println("2. Ver goleadores");
+            System.out.println("3. Simular jornada");
+            System.out.println("4. Ver historial de jornadas");
             System.out.println("0. Volver");
             System.out.print("Opción: ");
             opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
-                case 1 -> mostrarClasificacion();
-                case 2 -> simularJornada();
-                case 3 -> mostrarHistorialJornadas();
+                case 1 -> mostrarClasificacion(usuario);
+                case 2 -> mostrarGoleadores(usuario);
+                case 3 -> simularJornada(usuario);
+                case 4 -> mostrarHistorialJornadas(usuario);
                 case 0 -> {
                 }
                 default -> System.out.println("Opción no válida.");
@@ -198,7 +203,7 @@ public class UserMenuController {
         } while (opcion != 0);
     }
 
-    private void mostrarClasificacion() {
+    private void mostrarClasificacion(Usuario usuario) {
         // 1. Obtener todos los equipos
         List<Equipo> equipos = leagueRepository.listarEquipos();
 
@@ -253,14 +258,101 @@ public class UserMenuController {
         clasificacionService.ordenarClasificacion(equipos);
 
         // 4. Imprimir
-        clasificacionService.imprimirClasificacion(equipos);
+        String userTeamId = (usuario != null) ? usuario.getEquipo() : null;
+        clasificacionService.imprimirClasificacion(equipos, userTeamId);
+    }
+
+    // ============================================================
+    // MOSTRAR GOLEADORES
+    // ============================================================
+    private void mostrarGoleadores(Usuario usuario) {
+        // Mapa para contar goles: Jugador -> Integer
+        Map<String, Integer> tablaGoleadores = new HashMap<>();
+        Map<String, Jugador> infoJugadores = new HashMap<>();
+
+        // 1. Recorrer historial de partidos
+        List<Jornada> jornadas = leagueRepository.listarJornadas();
+
+        if (jornadas.isEmpty()) {
+            System.out.println("No hay goles para mostrar (sin jornadas jugadas).");
+            return;
+        }
+
+        for (Jornada j : jornadas) {
+            for (Partido p : j.getPartidos()) {
+                if (p.getGoles() != null) {
+                    for (Gol gol : p.getGoles()) {
+                        String idJugador = gol.getJugador().getId();
+
+                        // Sumar gol
+                        tablaGoleadores.put(idJugador, tablaGoleadores.getOrDefault(idJugador, 0) + 1);
+
+                        // Guardar referencia al jugador para tener nombre, equipo...
+                        if (!infoJugadores.containsKey(idJugador)) {
+                            infoJugadores.put(idJugador, gol.getJugador());
+                        }
+                    }
+                }
+            }
+        }
+
+        if (tablaGoleadores.isEmpty()) {
+            System.out.println("Aún no se han marcado goles.");
+            return;
+        }
+
+        // 2. Ordenar por goles (descendente)
+        List<Map.Entry<String, Integer>> listaOrdenada = new ArrayList<>(tablaGoleadores.entrySet());
+        listaOrdenada.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+
+        // 3. Mostrar Top 20 (o todos)
+        System.out.println("\n========== TABLA DE GOLEADORES ==========");
+        System.out.printf("%-5s %-30s %-25s %s%n", "Pos", "Jugador", "Equipo", "Goles");
+        System.out.println("-------------------------------------------------------------------------");
+
+        // ANSI Colors
+        final String GREEN_BOLD = "\u001B[1;32m";
+        final String RESET = "\u001B[0m";
+        String userTeamId = (usuario != null) ? usuario.getEquipo() : null;
+
+        int pos = 1;
+        int limit = 20; // Limite para no spamear la terminal
+
+        for (Map.Entry<String, Integer> entry : listaOrdenada) {
+            if (pos > limit)
+                break;
+
+            String id = entry.getKey();
+            int goles = entry.getValue();
+            Jugador j = infoJugadores.get(id);
+
+            // Intentar obtener el nombre del equipo actual del jugador
+            Optional<Equipo> equipoOpt = leagueRepository.buscarEquipoPorId(j.getEquipoId());
+            String nombreEquipo = equipoOpt.map(Equipo::getNombre).orElse("Sin Equipo");
+            String equipoId = j.getEquipoId();
+
+            boolean isUserPlayer = userTeamId != null && userTeamId.equals(equipoId);
+
+            if (isUserPlayer)
+                System.out.print(GREEN_BOLD);
+
+            System.out.printf("%-5d %-30s %-25s %d%n",
+                    pos++,
+                    j.getNombre(),
+                    nombreEquipo + (isUserPlayer ? " *" : ""),
+                    goles);
+
+            if (isUserPlayer)
+                System.out.print(RESET);
+        }
+        System.out.println("=========================================================================\n");
     }
 
     private Equipo buscarEnLista(List<Equipo> equipos, String id) {
         return equipos.stream().filter(e -> e.getId().equals(id)).findFirst().orElse(null);
     }
 
-    private void mostrarHistorialJornadas() {
+    private void mostrarHistorialJornadas(Usuario usuario) {
         List<Jornada> jornadas = leagueRepository.listarJornadas();
 
         if (jornadas.isEmpty()) {
@@ -268,17 +360,54 @@ public class UserMenuController {
             return;
         }
 
+        final String GREEN_BOLD = "\u001B[1;32m";
+        final String RESET = "\u001B[0m";
+        String userTeamId = (usuario != null) ? usuario.getEquipo() : null;
+
         // Ordenar por número de jornada
         jornadas.sort(Comparator.comparingInt(Jornada::getNumJornada));
 
         for (Jornada jornada : jornadas) {
             System.out.println("\n========== JORNADA " + jornada.getNumJornada() + " ==========");
             for (Partido partido : jornada.getPartidos()) {
-                System.out.printf("%-25s %d - %d %25s%n",
-                        partido.getEquipoLocal().getNombre(),
-                        partido.getGolesLocal(),
-                        partido.getGolesVisitante(),
-                        partido.getEquipoVisitante().getNombre());
+
+                boolean localIsUser = userTeamId != null && userTeamId.equals(partido.getEquipoLocal().getId());
+                boolean visitIsUser = userTeamId != null && userTeamId.equals(partido.getEquipoVisitante().getId());
+
+                String nombreLocalOriginal = partido.getEquipoLocal().getNombre();
+                String nombreVisitOriginal = partido.getEquipoVisitante().getNombre();
+
+                // Añadimos el asterisco si es necesario para calcular la longitud VISUAL
+                String visualLocal = localIsUser ? "* " + nombreLocalOriginal : nombreLocalOriginal;
+                String visualVisit = visitIsUser ? "* " + nombreVisitOriginal : nombreVisitOriginal;
+
+                // Definimos ancho de columna
+                int colWidth = 25;
+
+                // 1. Imprimir Local (Alineado a la IZQUIERDA)
+                // Imprimimos el texto con color si hace falta
+                if (localIsUser)
+                    System.out.print(GREEN_BOLD + visualLocal + RESET);
+                else
+                    System.out.print(visualLocal);
+
+                // Rellenamos con espacios hasta completar el ancho
+                // Si el nombre es muy largo, cortamos o dejamos que empuje (aqui dejamos que
+                // empuje min 1 espacio)
+                int paddingLocal = Math.max(1, colWidth - visualLocal.length());
+                System.out.print(" ".repeat(paddingLocal));
+
+                // 2. Imprimir Marcador
+                System.out.printf("%d - %d", partido.getGolesLocal(), partido.getGolesVisitante());
+
+                // 3. Imprimir Visitante (Alineado a la DERECHA)
+                int paddingVisit = Math.max(1, colWidth - visualVisit.length());
+                System.out.print(" ".repeat(paddingVisit));
+
+                if (visitIsUser)
+                    System.out.println(GREEN_BOLD + visualVisit + RESET);
+                else
+                    System.out.println(visualVisit);
             }
             System.out.println("-------------------------------------------------------");
         }
@@ -287,60 +416,165 @@ public class UserMenuController {
     // ============================================================
     // SIMULAR JORNADA
     // ============================================================
-    private void simularJornada() {
+    private void simularJornada(Usuario usuario) {
+        List<Equipo> equipos = leagueRepository.listarEquipos();
+        int totalEquipos = equipos.size();
 
-        System.out.println("Simulando jornada...");
+        if (totalEquipos < 2 || totalEquipos % 2 != 0) {
+            System.out.println("No hay suficientes equipos (o número impar) para generar el calendario.");
+            return;
+        }
 
-        SimuladorJornada simulador = new SimuladorJornada();
-
-        int nextJornadaNumber = leagueRepository.listarJornadas().stream()
+        // 1. Calcular número de jornada siguiente
+        List<Jornada> jornadasJugadas = leagueRepository.listarJornadas();
+        int nextJornadaNumber = jornadasJugadas.stream()
                 .mapToInt(Jornada::getNumJornada)
                 .max()
                 .orElse(0) + 1;
 
-        List<Equipo> allEquipos = new ArrayList<>(leagueRepository.listarEquipos());
+        int jornadasPorVuelta = totalEquipos - 1;
+        int totalJornadasLiga = jornadasPorVuelta * 2;
 
-        if (allEquipos.size() < 2 || allEquipos.size() % 2 != 0) {
-            System.out.println("No hay suficientes equipos (o son impares).");
+        if (nextJornadaNumber > totalJornadasLiga) {
+            System.out.println("¡La Liga ha finalizado! Se han jugado todas las jornadas (" + totalJornadasLiga + ").");
             return;
         }
 
-        Collections.shuffle(allEquipos);
+        System.out.println("Simulando jornada " + nextJornadaNumber + " de " + totalJornadasLiga + "...");
 
-        List<Partido> partidos = new ArrayList<>();
+        SimuladorJornada simulador = new SimuladorJornada();
 
-        for (int i = 0; i < allEquipos.size(); i += 2) {
-            partidos.add(new Partido(allEquipos.get(i), allEquipos.get(i + 1)));
-        }
+        // 2. Generar emparejamientos DETERMINISTAS (Algoritmo Circular / Berger)
+        List<Partido> partidos = generarPartidosBerger(nextJornadaNumber, equipos);
 
+        // 3. Simular resultados
         Jornada jornadaSimulada = simulador.simularJornada(nextJornadaNumber, partidos);
 
+        // 4. Guardar
         leagueRepository.guardarJornada(jornadaSimulada);
 
+        // 5. Mostrar
         System.out.println("\n=== RESULTADOS JORNADA " + jornadaSimulada.getNumJornada() + " ===");
 
-        for (Partido p : jornadaSimulada.getPartidos()) {
-            System.out.printf("%s [%d - %d] %s%n",
-                    p.getEquipoLocal().getNombre(),
-                    p.getGolesLocal(),
-                    p.getGolesVisitante(),
-                    p.getEquipoVisitante().getNombre());
+        final String GREEN_BOLD = "\u001B[1;32m";
+        final String RESET = "\u001B[0m";
+        String userTeamId = (usuario != null) ? usuario.getEquipo() : null;
 
+        for (Partido p : jornadaSimulada.getPartidos()) {
+            boolean localIsUser = userTeamId != null && userTeamId.equals(p.getEquipoLocal().getId());
+            boolean visitIsUser = userTeamId != null && userTeamId.equals(p.getEquipoVisitante().getId());
+
+            String nombreLocalOriginal = p.getEquipoLocal().getNombre();
+            String nombreVisitOriginal = p.getEquipoVisitante().getNombre();
+
+            String visualLocal = localIsUser ? "* " + nombreLocalOriginal : nombreLocalOriginal;
+            String visualVisit = visitIsUser ? "* " + nombreVisitOriginal : nombreVisitOriginal;
+
+            int colWidth = 25;
+
+            // Local
+            if (localIsUser)
+                System.out.print(GREEN_BOLD + visualLocal + RESET);
+            else
+                System.out.print(visualLocal);
+
+            int paddingLocal = Math.max(1, colWidth - visualLocal.length());
+            System.out.print(" ".repeat(paddingLocal));
+
+            // Marcador
+            System.out.printf("%d - %d", p.getGolesLocal(), p.getGolesVisitante());
+
+            // Visitante
+            int paddingVisit = Math.max(1, colWidth - visualVisit.length());
+            System.out.print(" ".repeat(paddingVisit));
+
+            if (visitIsUser)
+                System.out.println(GREEN_BOLD + visualVisit + RESET);
+            else
+                System.out.println(visualVisit);
+
+            // Goleadores
             if (p.getGoles() != null) {
                 p.getGoles().stream()
                         .sorted(Comparator.comparingInt(Gol::getMinuto))
-                        .forEach(g -> System.out.printf("   Min %d' - %s (%s)%n",
-                                g.getMinuto(),
-                                g.getJugador().getNombre(),
-                                g.getJugador().getEquipoId()
-                                        .equals(p.getEquipoLocal().getId())
-                                                ? "Local"
-                                                : "Visitante"));
+                        .forEach(g -> {
+                            boolean isUserPlayer = userTeamId != null
+                                    && userTeamId.equals(g.getJugador().getEquipoId());
+                            if (isUserPlayer)
+                                System.out.print(GREEN_BOLD);
+                            System.out.printf("   Min %d' - %s (%s)%n",
+                                    g.getMinuto(),
+                                    g.getJugador().getNombre(),
+                                    g.getJugador().getEquipoId()
+                                            .equals(p.getEquipoLocal().getId())
+                                                    ? "Local"
+                                                    : "Visitante");
+                            if (isUserPlayer)
+                                System.out.print(RESET);
+                        });
             }
             System.out.println("--------------------------------");
         }
 
         System.out.println("✔ Jornada simulada y guardada.\n");
+    }
+
+    /**
+     * Genera los partidos correspondientes a una jornada específica usando el
+     * sistema de Liga (Todos contra todos).
+     * Garantiza ida y vuelta y evita repeticiones aleatorias.
+     */
+    private List<Partido> generarPartidosBerger(int numJornada, List<Equipo> equipos) {
+        int n = equipos.size();
+        int rondasIda = n - 1;
+
+        // Ordenamos la lista por ID para que el algoritmo sea siempre consistente,
+        // sin importar el orden en que vengan del repositorio.
+        List<Equipo> sorted = new ArrayList<>(equipos);
+        sorted.sort(Comparator.comparing(Equipo::getId));
+
+        boolean esVuelta = numJornada > rondasIda;
+        int rondaIndex = (numJornada - 1) % rondasIda;
+
+        // Algoritmo circular:
+        // Separamos al primer equipo (fijo) y rotamos al resto 'rondaIndex' veces.
+        Equipo fijo = sorted.remove(0);
+        Collections.rotate(sorted, rondaIndex);
+        sorted.add(0, fijo); // Lo volvemos a poner al principio
+
+        List<Partido> partidos = new ArrayList<>();
+
+        // Emparejamos extremos: 0 con N-1, 1 con N-2...
+        // 0 1 2 ...
+        // 5 4 3 ...
+        for (int i = 0; i < n / 2; i++) {
+            Equipo local = sorted.get(i);
+            Equipo visit = sorted.get(n - 1 - i);
+
+            // Alternancia de localía para el equipo fijo (índice 0) para equilibrar
+            if (i == 0) {
+                if (rondaIndex % 2 != 0) { // En rondas impares (0-indexed), invertimos
+                    Equipo tmp = local;
+                    local = visit;
+                    visit = tmp;
+                }
+            } else {
+                // Para el resto de pares, el esquema base es: el de la "fila de arriba" juega
+                // en casa en la ida.
+                // En nuestra lista plana 'sorted', fila de arriba son los indices i (0..N/2-1).
+                // Así que 'local' ya es sorted.get(i). Correcto.
+            }
+
+            // Si estamos en la segunda vuelta, invertimos SIEMPRE la localía base de la ida
+            if (esVuelta) {
+                Equipo tmp = local;
+                local = visit;
+                visit = tmp;
+            }
+
+            partidos.add(new Partido(local, visit));
+        }
+        return partidos;
     }
 
     public void iniciarApp() {
