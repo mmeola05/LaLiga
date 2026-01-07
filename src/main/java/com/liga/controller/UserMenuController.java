@@ -2,7 +2,7 @@ package com.liga.controller;
 
 import com.liga.model.*;
 import com.liga.repository.LeagueRepository;
-import com.liga.repository.LeagueRepositoryImpl;
+
 import com.liga.repository.file.*;
 import com.liga.service.UserService;
 import com.liga.util.AlineacionGenerator;
@@ -282,6 +282,8 @@ public class UserMenuController {
             for (Partido p : j.getPartidos()) {
                 if (p.getGoles() != null) {
                     for (Gol gol : p.getGoles()) {
+                        if (gol.getJugador() == null)
+                            continue;
                         String idJugador = gol.getJugador().getId();
 
                         // Sumar gol
@@ -448,7 +450,8 @@ public class UserMenuController {
         List<Partido> partidos = generarPartidosBerger(nextJornadaNumber, equipos);
 
         // 3. Simular resultados
-        Jornada jornadaSimulada = simulador.simularJornada(nextJornadaNumber, partidos);
+        String idUserTeam = (usuario != null) ? usuario.getEquipo() : null;
+        Jornada jornadaSimulada = simulador.simularJornada(nextJornadaNumber, partidos, idUserTeam);
 
         // 4. Guardar
         leagueRepository.guardarJornada(jornadaSimulada);
@@ -498,6 +501,9 @@ public class UserMenuController {
                 p.getGoles().stream()
                         .sorted(Comparator.comparingInt(Gol::getMinuto))
                         .forEach(g -> {
+                            if (g.getJugador() == null || g.getJugador().getEquipoId() == null)
+                                return;
+
                             boolean isUserPlayer = userTeamId != null
                                     && userTeamId.equals(g.getJugador().getEquipoId());
                             if (isUserPlayer)
