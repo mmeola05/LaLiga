@@ -22,127 +22,164 @@ import com.liga.repository.RepositoryFactory;
 public class SimuladorJornada {
   private LeagueRepository leagueRepository;
   private Random random;
+  private com.liga.service.SimuladorService simuladorService;
 
   public SimuladorJornada() {
     this.leagueRepository = RepositoryFactory.getLeagueRepository();
     this.random = new Random();
+    this.simuladorService = new com.liga.service.SimuladorService();
   }
 
-  public Jornada simularJornada(int numeroJornada, List<Partido> partidosPendientes) {
+  public Jornada simularJornada(int numeroJornada, List<Partido> partidosPendientes, String idUsuario) {
     Jornada jornada = new Jornada(numeroJornada);
+    // String idUsuario = obtenerIdUsuario(); // REMOVED: Usamos el parametro
+    // explicito
 
     for (Partido partido : partidosPendientes) {
-      simularPartido(partido);
+      simularPartido(partido, idUsuario);
       jornada.addPartido(partido);
     }
     return jornada;
   }
 
-  private void simularPartido(Partido partido) {
-    // Simular goles aleatorios para cadad equipo (entre 0 y 5 goles)
-    int golesLocal = random.nextInt(6);
-    int golesVisitante = random.nextInt(6);
+  private void simularPartido(Partido partido, String idUsuario) {
+    // 1. Obtener jugadores para cada equipo (Titulares / 11 iniciales)
+    Jugador[] localXI = obtenerOnceInicial(partido.getEquipoLocal(), idUsuario);
+    Jugador[] visitXI = obtenerOnceInicial(partido.getEquipoVisitante(), idUsuario);
 
-    partido.setGolesLocal(golesLocal);
-    partido.setGolesVisitante(golesVisitante);
+    // 2. Ejecutar simulación híbrida
+    // El servicio decide si usa Pro o Rápido
+    Partido resultado = simuladorService.jugarPartido(partido, localXI, visitXI, idUsuario);
 
-    generarGolesDetalle(partido, partido.getEquipoLocal(), golesLocal);
-    generarGolesDetalle(partido, partido.getEquipoVisitante(), golesVisitante);
-
+    // (Opcional) Si el servicio devuelve una nueva instancia, actualizar la ref.
+    // Pero como pasamos 'partido' por referencia, ya debería estar actualizado.
   }
 
-  private void generarGolesDetalle(Partido partido, Equipo equipo, int numGoles) {
-    // Obtener todos los jugadores que pertenecen al equipo actualmente
-    List<Jugador> jugadoresEquipo = leagueRepository.buscarJugadorPorEquipo(equipo.getId());
+  /**
+   * Selecciona los 11 jugadores titulares.
+   * - Si es equipo de Usuario: Usa su Alineacion.
+   * - Si es IA: Selecciona los mejores por posición (1-4-3-3 genérico).
+   */
+  private Jugador[] obtenerOnceInicial(Equipo equipo, String idUsuarioEquipo) {
+    Jugador[] once = new Jugador[11];
+    List<Jugador> plantilla = leagueRepository.buscarJugadorPorEquipo(equipo.getId());
 
-    if (jugadoresEquipo.isEmpty()) {
-      System.out.println("Advertencia: no hay jugadores en el equipo " + equipo.getNombre() + " para generar goles ");
-      return;
-    }
+    if (plantilla.isEmpty())
+      return once; // Retorna array con nulls
 
-    // LISTA FINAL DE POTENCIALES GOLEADORES
-    List<Jugador> candidatosGol = new ArrayList<>(jugadoresEquipo);
+    // CHEQUEO SI ES EQUIPO USUARIO
+    if (equipo.getId().equals(idUsuarioEquipo)) {
+      // Buscar usuario
+      Optional<Usuario> userOpt = leagueRepository.listarUsuarios().stream()
+          .filter(u -> u.getEquipo() != null && u.getEquipo().equals(equipo.getId()))
+          .findFirst();
 
-    // Verificar si este equipo es controlado por un USUARIO
-    List<Usuario> usuarios = leagueRepository.listarUsuarios();
-    Optional<Usuario> manager = usuarios.stream()
-        .filter(u -> u.getEquipo() != null && u.getEquipo().equals(equipo.getId()))
-        .findFirst();
-
-    // Si tiene manager humano, filtramos por la alineacion titular
-    if (manager.isPresent()) {
-      Usuario u = manager.get();
-      Alineacion ali = u.getAlineacion();
-
-      if (ali != null) {
-        Set<String> titularesIds = new HashSet<>();
-        if (ali.getPortero() != null)
-          titularesIds.add(ali.getPortero());
-        if (ali.getDefensas() != null)
-          titularesIds.addAll(ali.getDefensas());
-        if (ali.getMedios() != null)
-          titularesIds.addAll(ali.getMedios());
-        if (ali.getDelanteros() != null)
-          titularesIds.addAll(ali.getDelanteros());
-
-        // Filtramos: solo dejamos en 'candidatosGol' a los que sean titulares
-        List<Jugador> soloTitulares = jugadoresEquipo.stream()
-            .filter(j -> titularesIds.contains(j.getId()))
-            .collect(Collectors.toList());
-
-        // Solo aplicamos el filtro si hay titulares definidos (por seguridad)
-        if (!soloTitulares.isEmpty()) {
-          candidatosGol = soloTitulares;
-        }
+      if (userOpt.isPresent() && userOpt.get().getAlineacion() != null) {
+        return mapearAlineacion(userOpt.get().getAlineacion(), plantilla);
       }
     }
 
-    // Filtrar porteros de la lista de candidatos para gol
-    candidatosGol = candidatosGol.stream()
-        .filter(j -> j.getPosicion() != Posicion.PORTERO)
-        .collect(Collectors.toList());
+    // SELECCIÓN IA (Automática)
+    // Estrategia simple: 1 Portero, 4 Defensas, 3 Medios, 3 Delanteros
+    int idx = 0;
 
-    // Calcular peso total para la selección ponderada
-    int pesoTotal = candidatosGol.stream()
-        .mapToInt(j -> getPesoPosicion(j.getPosicion()))
-        .sum();
+    // 1. Portero
+    Jugador portero = buscarMejor(plantilla, Posicion.PORTERO, new HashSet<>());
+    if (portero != null)
+      once[idx++] = portero;
 
-    if (pesoTotal <= 0)
-      return;
-
-    // Generar los goles usando selección ponderada
-    for (int i = 0; i < numGoles; i++) {
-      int randomValue = random.nextInt(pesoTotal);
-      int acumulado = 0;
-      Jugador goleador = null;
-
-      for (Jugador j : candidatosGol) {
-        acumulado += getPesoPosicion(j.getPosicion());
-        if (randomValue < acumulado) {
-          goleador = j;
-          break;
-        }
-      }
-
-      if (goleador != null) {
-        int minutoGol = random.nextInt(90) + 1;
-        partido.addGol(new Gol(goleador, minutoGol));
+    // 2. Defensas (4)
+    for (int i = 0; i < 4; i++) {
+      if (idx < 11) {
+        Jugador def = buscarMejor(plantilla, Posicion.DEFENSA, alinearSet(once));
+        if (def != null)
+          once[idx++] = def;
       }
     }
+
+    // 3. Medios (3)
+    for (int i = 0; i < 3; i++) {
+      if (idx < 11) {
+        Jugador med = buscarMejor(plantilla, Posicion.MEDIO, alinearSet(once));
+        if (med != null)
+          once[idx++] = med;
+      }
+    }
+
+    // 4. Delanteros (3)
+    for (int i = 0; i < 3; i++) {
+      if (idx < 11) {
+        Jugador del = buscarMejor(plantilla, Posicion.DELANTERO, alinearSet(once));
+        if (del != null)
+          once[idx++] = del;
+      }
+    }
+
+    // Relleno si faltan (por si no hay suficientes de una pos)
+    for (Jugador j : plantilla) {
+      if (idx >= 11)
+        break;
+      if (!alinearSet(once).contains(j.getId())) {
+        once[idx++] = j;
+      }
+    }
+
+    return once;
   }
 
-  private int getPesoPosicion(Posicion p) {
-    if (p == null)
-      return 0;
-    switch (p) {
-      case DELANTERO:
-        return 10;
-      case MEDIO:
-        return 4;
-      case DEFENSA:
-        return 1;
-      default:
-        return 0;
+  private Jugador[] mapearAlineacion(Alineacion ali, List<Jugador> plantilla) {
+    Jugador[] once = new Jugador[11];
+    int idx = 0;
+
+    // Portero
+    if (ali.getPortero() != null)
+      once[idx++] = findById(plantilla, ali.getPortero());
+
+    // Defensas
+    if (ali.getDefensas() != null) {
+      for (String id : ali.getDefensas())
+        if (idx < 11)
+          once[idx++] = findById(plantilla, id);
     }
+    // Medios
+    if (ali.getMedios() != null) {
+      for (String id : ali.getMedios())
+        if (idx < 11)
+          once[idx++] = findById(plantilla, id);
+    }
+    // Delanteros
+    if (ali.getDelanteros() != null) {
+      for (String id : ali.getDelanteros())
+        if (idx < 11)
+          once[idx++] = findById(plantilla, id);
+    }
+
+    return once;
   }
+
+  private Jugador findById(List<Jugador> lista, String id) {
+    return lista.stream().filter(j -> j.getId().equals(id)).findFirst().orElse(null);
+  }
+
+  private Jugador buscarMejor(List<Jugador> lista, Posicion pos, Set<String> usados) {
+    return lista.stream()
+        .filter(j -> j.getPosicion() == pos && !usados.contains(j.getId()))
+        .max((a, b) -> Integer.compare(getMedia(a), getMedia(b)))
+        .orElse(null);
+  }
+
+  private int getMedia(Jugador j) {
+    // Simplificado
+    return (j.getAtaque() + j.getDefensa() + j.getPase() + j.getPorteria()) / 4;
+  }
+
+  private Set<String> alinearSet(Jugador[] once) {
+    Set<String> set = new HashSet<>();
+    for (Jugador j : once) {
+      if (j != null)
+        set.add(j.getId());
+    }
+    return set;
+  }
+
 }

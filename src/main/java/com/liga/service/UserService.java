@@ -25,7 +25,8 @@ public class UserService {
                 .orElse(null);
     }
 
-    public Usuario registrar(String email, String password, String equipoId, Alineacion alineacion, List<String> plantilla) {
+    public Usuario registrar(String email, String password, String equipoId, Alineacion alineacion,
+            List<String> plantilla) {
 
         boolean existe = dao.findAll().stream()
                 .anyMatch(u -> u.getEmail().equalsIgnoreCase(email));
@@ -40,14 +41,12 @@ public class UserService {
                 HashUtil.sha256(password),
                 50.0,
                 equipoId,
-                alineacion
-        );
+                alineacion);
 
         nuevo.setPlantilla(plantilla);
 
         dao.save(nuevo);
         return nuevo;
     }
-
 
 }
