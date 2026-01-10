@@ -11,6 +11,7 @@ import com.liga.repository.file.JugadorDAOImplJSON;
 import com.liga.repository.file.MarketDAOImplJSON;
 import com.liga.repository.file.UsersDAOImplJSON;
 import com.liga.repository.postgres.EquipoDAOImplPostgres;
+import com.liga.repository.postgres.JornadaDAOImplPostgres;
 import com.liga.repository.postgres.UsersDAOImplPostgres;
 
 public class RepositoryFactory {
@@ -19,13 +20,14 @@ public class RepositoryFactory {
   public static LeagueRepository getLeagueRepository() {
     if (leagueRepository == null) {
       //EquipoDAO equipoDAO = new EquipoDAOImplJSON();
-
         EquipoDAO equipoDAO = new EquipoDAOImplPostgres();
       JugadorDAO jugadorDAO = new JugadorDAOImplJSON();
-      MarketDAO marketDAO = new MarketDAOImplJSON();
+      //MarketDAO marketDAO = new MarketDAOImplJSON();
+        MarketDAO marketDAO = new MarketDAOImplJSON();
       //UsersDAO usersDAO = new UsersDAOImplJSON();
         UsersDAO usersDAO = new UsersDAOImplPostgres();
-      JorandaDAO jornadaDAO = new JornadaDAOImplJSON();
+      //JorandaDAO jornadaDAO = new JornadaDAOImplJSON();
+        JorandaDAO jornadaDAO = new JornadaDAOImplPostgres();
 
       leagueRepository = new LeagueRepositoryImpl(equipoDAO, jugadorDAO, marketDAO, usersDAO, jornadaDAO);
     }

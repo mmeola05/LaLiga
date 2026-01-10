@@ -12,20 +12,12 @@ import java.util.Optional;
 
 public class UsersDAOImplPostgres implements UsersDAO {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/la_liga";
-    private static final String USER = "admin";
-    private static final String PASS = "admin";
-
-    private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASS);
-    }
-
     @Override
     public List<Usuario> findAll() {
         String sql = "SELECT id, tipo, email, password, saldo, equipo_id FROM usuarios";
         List<Usuario> result = new ArrayList<>();
 
-        try (Connection conn = getConnection();
+        try (Connection conn = PostgresConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
@@ -44,7 +36,7 @@ public class UsersDAOImplPostgres implements UsersDAO {
     public Optional<Usuario> findById(String id) {
         String sql = "SELECT id, tipo, email, password, saldo, equipo_id FROM usuarios WHERE id = ?";
 
-        try (Connection conn = getConnection();
+        try (Connection conn = PostgresConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, id);
@@ -64,7 +56,7 @@ public class UsersDAOImplPostgres implements UsersDAO {
     @Override
     public void save(Usuario usuario) {
         // uso de conexión propia para este save
-        try (Connection conn = getConnection()) {
+        try (Connection conn = PostgresConnection.getConnection();) {
             conn.setAutoCommit(false);
             try {
                 saveUsingConnection(conn, usuario);
@@ -82,7 +74,7 @@ public class UsersDAOImplPostgres implements UsersDAO {
 
     @Override
     public void saveAll(List<Usuario> usuarios) {
-        try (Connection conn = getConnection()) {
+        try (Connection conn = PostgresConnection.getConnection();) {
             conn.setAutoCommit(false);
             try {
                 for (Usuario u : usuarios) {
@@ -104,7 +96,7 @@ public class UsersDAOImplPostgres implements UsersDAO {
     public void deleteById(String id) {
         String sql = "DELETE FROM usuarios WHERE id = ?";
 
-        try (Connection conn = getConnection();
+        try (Connection conn = PostgresConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, id);
