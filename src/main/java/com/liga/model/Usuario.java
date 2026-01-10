@@ -29,6 +29,8 @@ public class Usuario {
         return id;
     }
 
+    public void setId(String id) {this.id = id;}
+
     public TipoUsuario getTipo() {
         return tipo;
     }

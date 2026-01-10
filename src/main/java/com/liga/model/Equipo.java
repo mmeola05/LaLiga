@@ -36,6 +36,8 @@ public class Equipo {
         this.nombre = nombre;
     }
 
+    public void setId(String id) {this.id = id;}
+
     // ============================================================
     // MÉTODOS DE GESTIÓN DE ESTADÍSTICAS
     // ============================================================
