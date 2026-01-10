@@ -33,7 +33,7 @@ public class SimuladorService {
           String nombreLocal = partido.getEquipoLocal().getNombre();
           String nombreVisit = partido.getEquipoVisitante().getNombre();
 
-         if (nombreLocal.trim().equalsIgnoreCase(userTeamCheck)
+          if (nombreLocal.trim().equalsIgnoreCase(userTeamCheck)
               || nombreVisit.trim().equalsIgnoreCase(userTeamCheck)) {
             usuarioJuega = true;
           }
