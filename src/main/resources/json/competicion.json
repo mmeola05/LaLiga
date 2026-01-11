@@ -658,5 +658,7047 @@
         ]
       }
     ]
+  },
+  {
+    "numJornada": 21,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0009",
+              "nombre": "Iñaki Williams",
+              "posicion": "DELANTERO",
+              "equipoId": "T01",
+              "precio": 9.23,
+              "ataque": 84,
+              "defensa": 63,
+              "pase": 71,
+              "porteria": 60,
+              "condition": 72
+            },
+            "minuto": 55
+          },
+          {
+            "jugador": {
+              "id": "P0013",
+              "nombre": "Oihan Sancet",
+              "posicion": "MEDIO",
+              "equipoId": "T01",
+              "precio": 11.2,
+              "ataque": 73,
+              "defensa": 77,
+              "pase": 90,
+              "porteria": 73,
+              "condition": 79
+            },
+            "minuto": 50
+          },
+          {
+            "jugador": {
+              "id": "P0009",
+              "nombre": "Iñaki Williams",
+              "posicion": "DELANTERO",
+              "equipoId": "T01",
+              "precio": 9.23,
+              "ataque": 84,
+              "defensa": 63,
+              "pase": 71,
+              "porteria": 60,
+              "condition": 72
+            },
+            "minuto": 42
+          },
+          {
+            "jugador": {
+              "id": "P0413",
+              "nombre": "Peter Federico",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 12.87,
+              "ataque": 95,
+              "defensa": 81,
+              "pase": 91,
+              "porteria": 74,
+              "condition": 83
+            },
+            "minuto": 2
+          },
+          {
+            "jugador": {
+              "id": "P0404",
+              "nombre": "Yarek Gasiorowski",
+              "posicion": "DEFENSA",
+              "equipoId": "T19",
+              "precio": 9.89,
+              "ataque": 78,
+              "defensa": 83,
+              "pase": 79,
+              "porteria": 71,
+              "condition": 75
+            },
+            "minuto": 77
+          },
+          {
+            "jugador": {
+              "id": "P0414",
+              "nombre": "Selim Amallah",
+              "posicion": "MEDIO",
+              "equipoId": "T19",
+              "precio": 14.04,
+              "ataque": 79,
+              "defensa": 86,
+              "pase": 89,
+              "porteria": 76,
+              "condition": 84
+            },
+            "minuto": 55
+          },
+          {
+            "jugador": {
+              "id": "P0413",
+              "nombre": "Peter Federico",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 12.87,
+              "ataque": 95,
+              "defensa": 81,
+              "pase": 91,
+              "porteria": 74,
+              "condition": 83
+            },
+            "minuto": 29
+          },
+          {
+            "jugador": {
+              "id": "P0408",
+              "nombre": "Hugo Duro",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 13.78,
+              "ataque": 95,
+              "defensa": 88,
+              "pase": 83,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 84
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0390",
+              "nombre": "Adnan Januzaj",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 13.67,
+              "ataque": 92,
+              "defensa": 79,
+              "pase": 89,
+              "porteria": 74,
+              "condition": 83
+            },
+            "minuto": 83
+          },
+          {
+            "jugador": {
+              "id": "P0386",
+              "nombre": "Youssef En-Nesyri",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 10.56,
+              "ataque": 84,
+              "defensa": 65,
+              "pase": 73,
+              "porteria": 61,
+              "condition": 75
+            },
+            "minuto": 86
+          },
+          {
+            "jugador": {
+              "id": "P0421",
+              "nombre": "Juan Foyth",
+              "posicion": "DEFENSA",
+              "equipoId": "T20",
+              "precio": 13.94,
+              "ataque": 84,
+              "defensa": 95,
+              "pase": 81,
+              "porteria": 74,
+              "condition": 84
+            },
+            "minuto": 16
+          },
+          {
+            "jugador": {
+              "id": "P0429",
+              "nombre": "Álex Baena",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 12.99,
+              "ataque": 84,
+              "defensa": 81,
+              "pase": 90,
+              "porteria": 70,
+              "condition": 81
+            },
+            "minuto": 47
+          },
+          {
+            "jugador": {
+              "id": "P0439",
+              "nombre": "Yéremy",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 12.75,
+              "ataque": 90,
+              "defensa": 83,
+              "pase": 76,
+              "porteria": 66,
+              "condition": 80
+            },
+            "minuto": 31
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0365",
+              "nombre": "Mikel Oyarzabal",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 14.35,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 90,
+              "porteria": 71,
+              "condition": 85
+            },
+            "minuto": 45
+          },
+          {
+            "jugador": {
+              "id": "P0363",
+              "nombre": "Martín Zubimendi",
+              "posicion": "MEDIO",
+              "equipoId": "T17",
+              "precio": 13.5,
+              "ataque": 81,
+              "defensa": 87,
+              "pase": 88,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 41
+          },
+          {
+            "jugador": {
+              "id": "P0367",
+              "nombre": "Sheraldo Becker",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 10.09,
+              "ataque": 78,
+              "defensa": 72,
+              "pase": 77,
+              "porteria": 61,
+              "condition": 73
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0368",
+              "nombre": "Sadiq Umar",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 10.55,
+              "ataque": 83,
+              "defensa": 73,
+              "pase": 79,
+              "porteria": 70,
+              "condition": 76
+            },
+            "minuto": 79
+          },
+          {
+            "jugador": {
+              "id": "P0038",
+              "nombre": "Samuel Lino",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 24.69,
+              "ataque": 94,
+              "defensa": 93,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 89
+            },
+            "minuto": 17
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 34
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0341",
+              "nombre": "Sergi Enrich",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 3.31,
+              "ataque": 81,
+              "defensa": 61,
+              "pase": 76,
+              "porteria": 55,
+              "condition": 70
+            },
+            "minuto": 38
+          },
+          {
+            "jugador": {
+              "id": "P0348",
+              "nombre": "Camacho",
+              "posicion": "MEDIO",
+              "equipoId": "T16",
+              "precio": 3.32,
+              "ataque": 73,
+              "defensa": 73,
+              "pase": 79,
+              "porteria": 57,
+              "condition": 69
+            },
+            "minuto": 46
+          },
+          {
+            "jugador": {
+              "id": "P0338",
+              "nombre": "Viti Rozada",
+              "posicion": "MEDIO",
+              "equipoId": "T16",
+              "precio": 1.0,
+              "ataque": 65,
+              "defensa": 56,
+              "pase": 72,
+              "porteria": 52,
+              "condition": 60
+            },
+            "minuto": 45
+          },
+          {
+            "jugador": {
+              "id": "P0349",
+              "nombre": "Jaime Seoane",
+              "posicion": "MEDIO",
+              "equipoId": "T16",
+              "precio": 1.68,
+              "ataque": 71,
+              "defensa": 68,
+              "pase": 78,
+              "porteria": 60,
+              "condition": 66
+            },
+            "minuto": 81
+          },
+          {
+            "jugador": {
+              "id": "P0060",
+              "nombre": "Kike Barja",
+              "posicion": "DELANTERO",
+              "equipoId": "T03",
+              "precio": 5.02,
+              "ataque": 76,
+              "defensa": 60,
+              "pase": 70,
+              "porteria": 53,
+              "condition": 66
+            },
+            "minuto": 14
+          },
+          {
+            "jugador": {
+              "id": "P0065",
+              "nombre": "Rubén García",
+              "posicion": "MEDIO",
+              "equipoId": "T03",
+              "precio": 6.82,
+              "ataque": 71,
+              "defensa": 70,
+              "pase": 86,
+              "porteria": 68,
+              "condition": 76
+            },
+            "minuto": 30
+          },
+          {
+            "jugador": {
+              "id": "P0064",
+              "nombre": "Kike Saverio",
+              "posicion": "DELANTERO",
+              "equipoId": "T03",
+              "precio": 5.07,
+              "ataque": 76,
+              "defensa": 63,
+              "pase": 69,
+              "porteria": 55,
+              "condition": 70
+            },
+            "minuto": 76
+          },
+          {
+            "jugador": {
+              "id": "P0059",
+              "nombre": "Raúl García de Haro",
+              "posicion": "DELANTERO",
+              "equipoId": "T03",
+              "precio": 5.16,
+              "ataque": 81,
+              "defensa": 70,
+              "pase": 77,
+              "porteria": 59,
+              "condition": 71
+            },
+            "minuto": 65
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0327",
+              "nombre": "Arda Güler",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 25.49,
+              "ataque": 84,
+              "defensa": 84,
+              "pase": 99,
+              "porteria": 79,
+              "condition": 89
+            },
+            "minuto": 58
+          },
+          {
+            "jugador": {
+              "id": "P0317",
+              "nombre": "Aurélien Tchouaméni",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 22.35,
+              "ataque": 91,
+              "defensa": 79,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 85
+            },
+            "minuto": 43
+          },
+          {
+            "jugador": {
+              "id": "P0075",
+              "nombre": "Luca de la Torre",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 7.17,
+              "ataque": 73,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 67,
+              "condition": 78
+            },
+            "minuto": 40
+          },
+          {
+            "jugador": {
+              "id": "P0079",
+              "nombre": "Anastasios Douvikas",
+              "posicion": "DELANTERO",
+              "equipoId": "T04",
+              "precio": 6.25,
+              "ataque": 85,
+              "defensa": 75,
+              "pase": 84,
+              "porteria": 68,
+              "condition": 77
+            },
+            "minuto": 36
+          },
+          {
+            "jugador": {
+              "id": "P0074",
+              "nombre": "Fran Beltrán",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 4.75,
+              "ataque": 75,
+              "defensa": 69,
+              "pase": 80,
+              "porteria": 64,
+              "condition": 71
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0086",
+              "nombre": "Óscar Rodríguez",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 6.32,
+              "ataque": 71,
+              "defensa": 71,
+              "pase": 85,
+              "porteria": 66,
+              "condition": 74
+            },
+            "minuto": 76
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0296",
+              "nombre": "Isco",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 11.95,
+              "ataque": 72,
+              "defensa": 77,
+              "pase": 83,
+              "porteria": 70,
+              "condition": 78
+            },
+            "minuto": 78
+          },
+          {
+            "jugador": {
+              "id": "P0298",
+              "nombre": "Nabil Fekir",
+              "posicion": "DELANTERO",
+              "equipoId": "T14",
+              "precio": 11.58,
+              "ataque": 82,
+              "defensa": 71,
+              "pase": 77,
+              "porteria": 61,
+              "condition": 76
+            },
+            "minuto": 14
+          },
+          {
+            "jugador": {
+              "id": "P0294",
+              "nombre": "Guido Rodríguez",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 11.69,
+              "ataque": 78,
+              "defensa": 79,
+              "pase": 86,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0101",
+              "nombre": "Samú Omorodion",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 7.05,
+              "ataque": 87,
+              "defensa": 76,
+              "pase": 80,
+              "porteria": 61,
+              "condition": 75
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0103",
+              "nombre": "Xeber Alkain",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 6.62,
+              "ataque": 79,
+              "defensa": 72,
+              "pase": 72,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 30
+          },
+          {
+            "jugador": {
+              "id": "P0099",
+              "nombre": "Luis Rioja",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 6.02,
+              "ataque": 86,
+              "defensa": 64,
+              "pase": 80,
+              "porteria": 59,
+              "condition": 74
+            },
+            "minuto": 81
+          },
+          {
+            "jugador": {
+              "id": "P0103",
+              "nombre": "Xeber Alkain",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 6.62,
+              "ataque": 79,
+              "defensa": 72,
+              "pase": 72,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 80
+          },
+          {
+            "jugador": {
+              "id": "P0103",
+              "nombre": "Xeber Alkain",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 6.62,
+              "ataque": 79,
+              "defensa": 72,
+              "pase": 72,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 10
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0122",
+              "nombre": "Pere Milla",
+              "posicion": "DELANTERO",
+              "equipoId": "T06",
+              "precio": 2.92,
+              "ataque": 80,
+              "defensa": 66,
+              "pase": 78,
+              "porteria": 55,
+              "condition": 70
+            },
+            "minuto": 15
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 5,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0262",
+              "nombre": "Embarba",
+              "posicion": "DELANTERO",
+              "equipoId": "T12",
+              "precio": 6.68,
+              "ataque": 89,
+              "defensa": 71,
+              "pase": 74,
+              "porteria": 70,
+              "condition": 77
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0262",
+              "nombre": "Embarba",
+              "posicion": "DELANTERO",
+              "equipoId": "T12",
+              "precio": 6.68,
+              "ataque": 89,
+              "defensa": 71,
+              "pase": 74,
+              "porteria": 70,
+              "condition": 77
+            },
+            "minuto": 64
+          },
+          {
+            "jugador": {
+              "id": "P0257",
+              "nombre": "Vinicius Souza",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 4.08,
+              "ataque": 72,
+              "defensa": 62,
+              "pase": 76,
+              "porteria": 55,
+              "condition": 66
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0256",
+              "nombre": "Keidi Bare",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 4.28,
+              "ataque": 73,
+              "defensa": 75,
+              "pase": 76,
+              "porteria": 63,
+              "condition": 69
+            },
+            "minuto": 20
+          },
+          {
+            "jugador": {
+              "id": "P0251",
+              "nombre": "Edu Expósito",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 6.7,
+              "ataque": 84,
+              "defensa": 83,
+              "pase": 86,
+              "porteria": 72,
+              "condition": 79
+            },
+            "minuto": 58
+          },
+          {
+            "jugador": {
+              "id": "P0143",
+              "nombre": "Gavi",
+              "posicion": "MEDIO",
+              "equipoId": "T07",
+              "precio": 21.73,
+              "ataque": 84,
+              "defensa": 86,
+              "pase": 91,
+              "porteria": 72,
+              "condition": 84
+            },
+            "minuto": 69
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 21
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 5,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0234",
+              "nombre": "Sergio Camello",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.01,
+              "ataque": 81,
+              "defensa": 70,
+              "pase": 69,
+              "porteria": 64,
+              "condition": 70
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0234",
+              "nombre": "Sergio Camello",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.01,
+              "ataque": 81,
+              "defensa": 70,
+              "pase": 69,
+              "porteria": 64,
+              "condition": 70
+            },
+            "minuto": 26
+          },
+          {
+            "jugador": {
+              "id": "P0234",
+              "nombre": "Sergio Camello",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.01,
+              "ataque": 81,
+              "defensa": 70,
+              "pase": 69,
+              "porteria": 64,
+              "condition": 70
+            },
+            "minuto": 16
+          },
+          {
+            "jugador": {
+              "id": "P0232",
+              "nombre": "Álvaro García",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.26,
+              "ataque": 82,
+              "defensa": 75,
+              "pase": 71,
+              "porteria": 66,
+              "condition": 72
+            },
+            "minuto": 48
+          },
+          {
+            "jugador": {
+              "id": "P0240",
+              "nombre": "De Frutos",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.39,
+              "ataque": 78,
+              "defensa": 76,
+              "pase": 72,
+              "porteria": 57,
+              "condition": 72
+            },
+            "minuto": 18
+          },
+          {
+            "jugador": {
+              "id": "P0166",
+              "nombre": "Borja Mayoral",
+              "posicion": "DELANTERO",
+              "equipoId": "T08",
+              "precio": 4.53,
+              "ataque": 77,
+              "defensa": 70,
+              "pase": 74,
+              "porteria": 56,
+              "condition": 68
+            },
+            "minuto": 4
+          },
+          {
+            "jugador": {
+              "id": "P0169",
+              "nombre": "Portu",
+              "posicion": "DELANTERO",
+              "equipoId": "T08",
+              "precio": 5.27,
+              "ataque": 77,
+              "defensa": 65,
+              "pase": 71,
+              "porteria": 52,
+              "condition": 67
+            },
+            "minuto": 60
+          },
+          {
+            "jugador": {
+              "id": "P0168",
+              "nombre": "Óscar Rodríguez",
+              "posicion": "MEDIO",
+              "equipoId": "T08",
+              "precio": 6.29,
+              "ataque": 73,
+              "defensa": 80,
+              "pase": 83,
+              "porteria": 65,
+              "condition": 74
+            },
+            "minuto": 10
+          },
+          {
+            "jugador": {
+              "id": "P0172",
+              "nombre": "Arambarri",
+              "posicion": "MEDIO",
+              "equipoId": "T08",
+              "precio": 5.47,
+              "ataque": 72,
+              "defensa": 68,
+              "pase": 79,
+              "porteria": 61,
+              "condition": 69
+            },
+            "minuto": 61
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0218",
+              "nombre": "Iborra",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 2.49,
+              "ataque": 67,
+              "defensa": 71,
+              "pase": 76,
+              "porteria": 59,
+              "condition": 66
+            },
+            "minuto": 47
+          },
+          {
+            "jugador": {
+              "id": "P0207",
+              "nombre": "Pepelu",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 3.36,
+              "ataque": 73,
+              "defensa": 71,
+              "pase": 80,
+              "porteria": 67,
+              "condition": 74
+            },
+            "minuto": 11
+          },
+          {
+            "jugador": {
+              "id": "P0207",
+              "nombre": "Pepelu",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 3.36,
+              "ataque": 73,
+              "defensa": 71,
+              "pase": 80,
+              "porteria": 67,
+              "condition": 74
+            },
+            "minuto": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 22,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0015",
+              "nombre": "Iñigo Ruiz de Galarreta",
+              "posicion": "MEDIO",
+              "equipoId": "T01",
+              "precio": 13.17,
+              "ataque": 86,
+              "defensa": 86,
+              "pase": 91,
+              "porteria": 73,
+              "condition": 83
+            },
+            "minuto": 36
+          },
+          {
+            "jugador": {
+              "id": "P0006",
+              "nombre": "Aitor Paredes",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 11.6,
+              "ataque": 70,
+              "defensa": 92,
+              "pase": 77,
+              "porteria": 73,
+              "condition": 80
+            },
+            "minuto": 24
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0364",
+              "nombre": "Take Kubo",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 10.59,
+              "ataque": 85,
+              "defensa": 75,
+              "pase": 81,
+              "porteria": 64,
+              "condition": 76
+            },
+            "minuto": 40
+          },
+          {
+            "jugador": {
+              "id": "P0374",
+              "nombre": "Olasagasti",
+              "posicion": "MEDIO",
+              "equipoId": "T17",
+              "precio": 10.64,
+              "ataque": 72,
+              "defensa": 74,
+              "pase": 84,
+              "porteria": 62,
+              "condition": 74
+            },
+            "minuto": 90
+          },
+          {
+            "jugador": {
+              "id": "P0371",
+              "nombre": "Jon Pacheco",
+              "posicion": "DEFENSA",
+              "equipoId": "T17",
+              "precio": 14.0,
+              "ataque": 83,
+              "defensa": 95,
+              "pase": 86,
+              "porteria": 74,
+              "condition": 86
+            },
+            "minuto": 30
+          },
+          {
+            "jugador": {
+              "id": "P0416",
+              "nombre": "Roman Yaremchuk",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 10.35,
+              "ataque": 83,
+              "defensa": 67,
+              "pase": 75,
+              "porteria": 61,
+              "condition": 75
+            },
+            "minuto": 23
+          },
+          {
+            "jugador": {
+              "id": "P0408",
+              "nombre": "Hugo Duro",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 13.78,
+              "ataque": 95,
+              "defensa": 88,
+              "pase": 83,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 31
+          },
+          {
+            "jugador": {
+              "id": "P0410",
+              "nombre": "Diego López",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 11.29,
+              "ataque": 87,
+              "defensa": 66,
+              "pase": 78,
+              "porteria": 68,
+              "condition": 76
+            },
+            "minuto": 24
+          },
+          {
+            "jugador": {
+              "id": "P0413",
+              "nombre": "Peter Federico",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 12.87,
+              "ataque": 95,
+              "defensa": 81,
+              "pase": 91,
+              "porteria": 74,
+              "condition": 83
+            },
+            "minuto": 29
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0344",
+              "nombre": "Sebas Moyano",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 1.49,
+              "ataque": 72,
+              "defensa": 57,
+              "pase": 74,
+              "porteria": 53,
+              "condition": 66
+            },
+            "minuto": 71
+          },
+          {
+            "jugador": {
+              "id": "P0343",
+              "nombre": "Alemão",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 3.41,
+              "ataque": 76,
+              "defensa": 69,
+              "pase": 77,
+              "porteria": 60,
+              "condition": 71
+            },
+            "minuto": 17
+          },
+          {
+            "jugador": {
+              "id": "P0351",
+              "nombre": "Obeng",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 1.4,
+              "ataque": 69,
+              "defensa": 55,
+              "pase": 61,
+              "porteria": 53,
+              "condition": 63
+            },
+            "minuto": 41
+          },
+          {
+            "jugador": {
+              "id": "P0347",
+              "nombre": "Paulino de la Fuente",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 1.16,
+              "ataque": 67,
+              "defensa": 64,
+              "pase": 68,
+              "porteria": 48,
+              "condition": 62
+            },
+            "minuto": 46
+          },
+          {
+            "jugador": {
+              "id": "P0436",
+              "nombre": "Santi Comesaña",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 14.1,
+              "ataque": 79,
+              "defensa": 90,
+              "pase": 93,
+              "porteria": 78,
+              "condition": 85
+            },
+            "minuto": 60
+          },
+          {
+            "jugador": {
+              "id": "P0436",
+              "nombre": "Santi Comesaña",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 14.1,
+              "ataque": 79,
+              "defensa": 90,
+              "pase": 93,
+              "porteria": 78,
+              "condition": 85
+            },
+            "minuto": 90
+          },
+          {
+            "jugador": {
+              "id": "P0432",
+              "nombre": "Gerard Moreno",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 11.16,
+              "ataque": 91,
+              "defensa": 77,
+              "pase": 87,
+              "porteria": 66,
+              "condition": 79
+            },
+            "minuto": 45
+          },
+          {
+            "jugador": {
+              "id": "P0429",
+              "nombre": "Álex Baena",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 12.99,
+              "ataque": 84,
+              "defensa": 81,
+              "pase": 90,
+              "porteria": 70,
+              "condition": 81
+            },
+            "minuto": 38
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 5,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0314",
+              "nombre": "Antonio Rüdiger",
+              "posicion": "DEFENSA",
+              "equipoId": "T15",
+              "precio": 25.21,
+              "ataque": 93,
+              "defensa": 99,
+              "pase": 89,
+              "porteria": 84,
+              "condition": 89
+            },
+            "minuto": 48
+          },
+          {
+            "jugador": {
+              "id": "P0325",
+              "nombre": "Endrick",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 22.92,
+              "ataque": 94,
+              "defensa": 81,
+              "pase": 87,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 10
+          },
+          {
+            "jugador": {
+              "id": "P0326",
+              "nombre": "Brahim Díaz",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 25.92,
+              "ataque": 97,
+              "defensa": 82,
+              "pase": 90,
+              "porteria": 77,
+              "condition": 92
+            },
+            "minuto": 13
+          },
+          {
+            "jugador": {
+              "id": "P0318",
+              "nombre": "Federico Valverde",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 22.67,
+              "ataque": 83,
+              "defensa": 84,
+              "pase": 91,
+              "porteria": 74,
+              "condition": 85
+            },
+            "minuto": 9
+          },
+          {
+            "jugador": {
+              "id": "P0323",
+              "nombre": "Vinícius Júnior",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 24.35,
+              "ataque": 99,
+              "defensa": 92,
+              "pase": 94,
+              "porteria": 80,
+              "condition": 89
+            },
+            "minuto": 6
+          },
+          {
+            "jugador": {
+              "id": "P0038",
+              "nombre": "Samuel Lino",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 24.69,
+              "ataque": 94,
+              "defensa": 93,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 89
+            },
+            "minuto": 35
+          },
+          {
+            "jugador": {
+              "id": "P0038",
+              "nombre": "Samuel Lino",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 24.69,
+              "ataque": 94,
+              "defensa": 93,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 89
+            },
+            "minuto": 24
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0049",
+              "nombre": "Juan Cruz",
+              "posicion": "DEFENSA",
+              "equipoId": "T03",
+              "precio": 4.51,
+              "ataque": 67,
+              "defensa": 75,
+              "pase": 63,
+              "porteria": 55,
+              "condition": 67
+            },
+            "minuto": 62
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0286",
+              "nombre": "Gudmundsson",
+              "posicion": "DELANTERO",
+              "equipoId": "T13",
+              "precio": 4.6,
+              "ataque": 81,
+              "defensa": 61,
+              "pase": 77,
+              "porteria": 58,
+              "condition": 69
+            },
+            "minuto": 38
+          },
+          {
+            "jugador": {
+              "id": "P0278",
+              "nombre": "Abdón Prats",
+              "posicion": "DELANTERO",
+              "equipoId": "T13",
+              "precio": 7.65,
+              "ataque": 89,
+              "defensa": 81,
+              "pase": 74,
+              "porteria": 71,
+              "condition": 77
+            },
+            "minuto": 38
+          },
+          {
+            "jugador": {
+              "id": "P0284",
+              "nombre": "Morlanes",
+              "posicion": "MEDIO",
+              "equipoId": "T13",
+              "precio": 7.25,
+              "ataque": 75,
+              "defensa": 71,
+              "pase": 87,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 50
+          },
+          {
+            "jugador": {
+              "id": "P0282",
+              "nombre": "Baba",
+              "posicion": "MEDIO",
+              "equipoId": "T13",
+              "precio": 7.4,
+              "ataque": 81,
+              "defensa": 81,
+              "pase": 89,
+              "porteria": 71,
+              "condition": 79
+            },
+            "minuto": 42
+          },
+          {
+            "jugador": {
+              "id": "P0077",
+              "nombre": "Iago Aspas",
+              "posicion": "DELANTERO",
+              "equipoId": "T04",
+              "precio": 3.84,
+              "ataque": 78,
+              "defensa": 66,
+              "pase": 66,
+              "porteria": 57,
+              "condition": 66
+            },
+            "minuto": 9
+          },
+          {
+            "jugador": {
+              "id": "P0076",
+              "nombre": "Hugo Sotelo",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 5.99,
+              "ataque": 74,
+              "defensa": 75,
+              "pase": 84,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 66
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 0,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0096",
+              "nombre": "Jon Guridi",
+              "posicion": "MEDIO",
+              "equipoId": "T05",
+              "precio": 5.11,
+              "ataque": 67,
+              "defensa": 75,
+              "pase": 77,
+              "porteria": 59,
+              "condition": 70
+            },
+            "minuto": 31
+          },
+          {
+            "jugador": {
+              "id": "P0103",
+              "nombre": "Xeber Alkain",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 6.62,
+              "ataque": 79,
+              "defensa": 72,
+              "pase": 72,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 86
+          },
+          {
+            "jugador": {
+              "id": "P0109",
+              "nombre": "Sylla",
+              "posicion": "DELANTERO",
+              "equipoId": "T05",
+              "precio": 7.63,
+              "ataque": 90,
+              "defensa": 70,
+              "pase": 75,
+              "porteria": 73,
+              "condition": 79
+            },
+            "minuto": 56
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0232",
+              "nombre": "Álvaro García",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 5.26,
+              "ataque": 82,
+              "defensa": 75,
+              "pase": 71,
+              "porteria": 66,
+              "condition": 72
+            },
+            "minuto": 6
+          },
+          {
+            "jugador": {
+              "id": "P0231",
+              "nombre": "Isi Palazón",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 4.52,
+              "ataque": 78,
+              "defensa": 64,
+              "pase": 68,
+              "porteria": 57,
+              "condition": 68
+            },
+            "minuto": 34
+          },
+          {
+            "jugador": {
+              "id": "P0235",
+              "nombre": "Bebé",
+              "posicion": "DELANTERO",
+              "equipoId": "T11",
+              "precio": 4.96,
+              "ataque": 73,
+              "defensa": 67,
+              "pase": 75,
+              "porteria": 53,
+              "condition": 68
+            },
+            "minuto": 24
+          },
+          {
+            "jugador": {
+              "id": "P0128",
+              "nombre": "Álex Collado",
+              "posicion": "MEDIO",
+              "equipoId": "T06",
+              "precio": 2.53,
+              "ataque": 70,
+              "defensa": 70,
+              "pase": 79,
+              "porteria": 63,
+              "condition": 72
+            },
+            "minuto": 78
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 5,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0204",
+              "nombre": "Marc Pubill",
+              "posicion": "DEFENSA",
+              "equipoId": "T10",
+              "precio": 1.18,
+              "ataque": 65,
+              "defensa": 70,
+              "pase": 58,
+              "porteria": 50,
+              "condition": 61
+            },
+            "minuto": 81
+          },
+          {
+            "jugador": {
+              "id": "P0208",
+              "nombre": "José Campaña",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 2.84,
+              "ataque": 63,
+              "defensa": 69,
+              "pase": 79,
+              "porteria": 60,
+              "condition": 68
+            },
+            "minuto": 18
+          },
+          {
+            "jugador": {
+              "id": "P0215",
+              "nombre": "Melero",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 3.21,
+              "ataque": 79,
+              "defensa": 74,
+              "pase": 81,
+              "porteria": 64,
+              "condition": 73
+            },
+            "minuto": 11
+          },
+          {
+            "jugador": {
+              "id": "P0212",
+              "nombre": "Bouldini",
+              "posicion": "DELANTERO",
+              "equipoId": "T10",
+              "precio": 2.72,
+              "ataque": 80,
+              "defensa": 70,
+              "pase": 74,
+              "porteria": 57,
+              "condition": 69
+            },
+            "minuto": 61
+          },
+          {
+            "jugador": {
+              "id": "P0218",
+              "nombre": "Iborra",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 2.49,
+              "ataque": 67,
+              "defensa": 71,
+              "pase": 76,
+              "porteria": 59,
+              "condition": 66
+            },
+            "minuto": 73
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 0,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 0
+        },
+        "golesLocal": 5,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0189",
+              "nombre": "Sávio",
+              "posicion": "DELANTERO",
+              "equipoId": "T09",
+              "precio": 12.97,
+              "ataque": 88,
+              "defensa": 77,
+              "pase": 79,
+              "porteria": 72,
+              "condition": 81
+            },
+            "minuto": 31
+          },
+          {
+            "jugador": {
+              "id": "P0191",
+              "nombre": "Portu",
+              "posicion": "DELANTERO",
+              "equipoId": "T09",
+              "precio": 11.29,
+              "ataque": 90,
+              "defensa": 74,
+              "pase": 76,
+              "porteria": 69,
+              "condition": 78
+            },
+            "minuto": 52
+          },
+          {
+            "jugador": {
+              "id": "P0191",
+              "nombre": "Portu",
+              "posicion": "DELANTERO",
+              "equipoId": "T09",
+              "precio": 11.29,
+              "ataque": 90,
+              "defensa": 74,
+              "pase": 76,
+              "porteria": 69,
+              "condition": 78
+            },
+            "minuto": 9
+          },
+          {
+            "jugador": {
+              "id": "P0197",
+              "nombre": "Jhon Solís",
+              "posicion": "MEDIO",
+              "equipoId": "T09",
+              "precio": 9.92,
+              "ataque": 73,
+              "defensa": 73,
+              "pase": 85,
+              "porteria": 66,
+              "condition": 73
+            },
+            "minuto": 77
+          },
+          {
+            "jugador": {
+              "id": "P0195",
+              "nombre": "Toni Villa",
+              "posicion": "DELANTERO",
+              "equipoId": "T09",
+              "precio": 13.51,
+              "ataque": 95,
+              "defensa": 86,
+              "pase": 80,
+              "porteria": 77,
+              "condition": 84
+            },
+            "minuto": 14
+          },
+          {
+            "jugador": {
+              "id": "P0167",
+              "nombre": "Juanmi Latasa",
+              "posicion": "DELANTERO",
+              "equipoId": "T08",
+              "precio": 7.86,
+              "ataque": 87,
+              "defensa": 84,
+              "pase": 78,
+              "porteria": 71,
+              "condition": 80
+            },
+            "minuto": 72
+          },
+          {
+            "jugador": {
+              "id": "P0170",
+              "nombre": "Ilaix Moriba",
+              "posicion": "MEDIO",
+              "equipoId": "T08",
+              "precio": 6.65,
+              "ataque": 77,
+              "defensa": 73,
+              "pase": 84,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 23
+          },
+          {
+            "jugador": {
+              "id": "P0163",
+              "nombre": "Carles Aleñá",
+              "posicion": "MEDIO",
+              "equipoId": "T08",
+              "precio": 6.44,
+              "ataque": 78,
+              "defensa": 79,
+              "pase": 81,
+              "porteria": 62,
+              "condition": 74
+            },
+            "minuto": 62
+          },
+          {
+            "jugador": {
+              "id": "P0169",
+              "nombre": "Portu",
+              "posicion": "DELANTERO",
+              "equipoId": "T08",
+              "precio": 5.27,
+              "ataque": 77,
+              "defensa": 65,
+              "pase": 71,
+              "porteria": 52,
+              "condition": 67
+            },
+            "minuto": 71
+          },
+          {
+            "jugador": {
+              "id": "P0166",
+              "nombre": "Borja Mayoral",
+              "posicion": "DELANTERO",
+              "equipoId": "T08",
+              "precio": 4.53,
+              "ataque": 77,
+              "defensa": 70,
+              "pase": 74,
+              "porteria": 56,
+              "condition": 68
+            },
+            "minuto": 33
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 23,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0015",
+              "nombre": "Iñigo Ruiz de Galarreta",
+              "posicion": "MEDIO",
+              "equipoId": "T01",
+              "precio": 13.17,
+              "ataque": 86,
+              "defensa": 86,
+              "pase": 91,
+              "porteria": 73,
+              "condition": 83
+            },
+            "minuto": 61
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0388",
+              "nombre": "Suso",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 13.43,
+              "ataque": 96,
+              "defensa": 88,
+              "pase": 88,
+              "porteria": 72,
+              "condition": 84
+            },
+            "minuto": 56
+          },
+          {
+            "jugador": {
+              "id": "P0387",
+              "nombre": "Rafa Mir",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 14.17,
+              "ataque": 93,
+              "defensa": 77,
+              "pase": 89,
+              "porteria": 70,
+              "condition": 84
+            },
+            "minuto": 56
+          },
+          {
+            "jugador": {
+              "id": "P0388",
+              "nombre": "Suso",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 13.43,
+              "ataque": 96,
+              "defensa": 88,
+              "pase": 88,
+              "porteria": 72,
+              "condition": 84
+            },
+            "minuto": 43
+          },
+          {
+            "jugador": {
+              "id": "P0394",
+              "nombre": "Kike Salas",
+              "posicion": "DEFENSA",
+              "equipoId": "T18",
+              "precio": 12.74,
+              "ataque": 73,
+              "defensa": 90,
+              "pase": 86,
+              "porteria": 75,
+              "condition": 83
+            },
+            "minuto": 78
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0327",
+              "nombre": "Arda Güler",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 25.49,
+              "ataque": 84,
+              "defensa": 84,
+              "pase": 99,
+              "porteria": 79,
+              "condition": 89
+            },
+            "minuto": 67
+          },
+          {
+            "jugador": {
+              "id": "P0317",
+              "nombre": "Aurélien Tchouaméni",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 22.35,
+              "ataque": 91,
+              "defensa": 79,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 85
+            },
+            "minuto": 75
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0291",
+              "nombre": "Chadi Riad",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 13.26,
+              "ataque": 81,
+              "defensa": 98,
+              "pase": 84,
+              "porteria": 75,
+              "condition": 86
+            },
+            "minuto": 33
+          },
+          {
+            "jugador": {
+              "id": "P0424",
+              "nombre": "Alberto Moreno",
+              "posicion": "DEFENSA",
+              "equipoId": "T20",
+              "precio": 12.35,
+              "ataque": 82,
+              "defensa": 84,
+              "pase": 76,
+              "porteria": 74,
+              "condition": 79
+            },
+            "minuto": 24
+          },
+          {
+            "jugador": {
+              "id": "P0433",
+              "nombre": "Alexander Sørloth",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 14.06,
+              "ataque": 93,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 68
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 5,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 5,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 37
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 46
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 67
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 79
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0050",
+              "nombre": "Rubén Peña",
+              "posicion": "DEFENSA",
+              "equipoId": "T03",
+              "precio": 4.96,
+              "ataque": 70,
+              "defensa": 78,
+              "pase": 74,
+              "porteria": 63,
+              "condition": 69
+            },
+            "minuto": 9
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0067",
+              "nombre": "Iván Villar",
+              "posicion": "PORTERO",
+              "equipoId": "T04",
+              "precio": 4.64,
+              "ataque": 60,
+              "defensa": 66,
+              "pase": 63,
+              "porteria": 74,
+              "condition": 68
+            },
+            "minuto": 67
+          },
+          {
+            "jugador": {
+              "id": "P0071",
+              "nombre": "Carlos Domínguez",
+              "posicion": "DEFENSA",
+              "equipoId": "T04",
+              "precio": 7.22,
+              "ataque": 80,
+              "defensa": 82,
+              "pase": 73,
+              "porteria": 70,
+              "condition": 76
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0075",
+              "nombre": "Luca de la Torre",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 7.17,
+              "ataque": 73,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 67,
+              "condition": 78
+            },
+            "minuto": 3
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 2,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 2,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0182",
+              "nombre": "Arnau Martínez",
+              "posicion": "DEFENSA",
+              "equipoId": "T09",
+              "precio": 13.7,
+              "ataque": 76,
+              "defensa": 92,
+              "pase": 85,
+              "porteria": 77,
+              "condition": 83
+            },
+            "minuto": 86
+          },
+          {
+            "jugador": {
+              "id": "P0187",
+              "nombre": "Aleix García",
+              "posicion": "MEDIO",
+              "equipoId": "T09",
+              "precio": 13.48,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 94,
+              "porteria": 78,
+              "condition": 86
+            },
+            "minuto": 90
+          },
+          {
+            "jugador": {
+              "id": "P0186",
+              "nombre": "Iván Martín",
+              "posicion": "MEDIO",
+              "equipoId": "T09",
+              "precio": 14.25,
+              "ataque": 81,
+              "defensa": 82,
+              "pase": 94,
+              "porteria": 76,
+              "condition": 86
+            },
+            "minuto": 77
+          },
+          {
+            "jugador": {
+              "id": "P0121",
+              "nombre": "Lucas Boyé",
+              "posicion": "DELANTERO",
+              "equipoId": "T06",
+              "precio": 3.82,
+              "ataque": 78,
+              "defensa": 67,
+              "pase": 75,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 5
+          },
+          {
+            "jugador": {
+              "id": "P0126",
+              "nombre": "Raúl Guti",
+              "posicion": "MEDIO",
+              "equipoId": "T06",
+              "precio": 2.08,
+              "ataque": 76,
+              "defensa": 70,
+              "pase": 79,
+              "porteria": 60,
+              "condition": 70
+            },
+            "minuto": 52
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 55
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 69
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 89
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 24,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0022",
+              "nombre": "Raúl García",
+              "posicion": "DELANTERO",
+              "equipoId": "T01",
+              "precio": 13.9,
+              "ataque": 94,
+              "defensa": 84,
+              "pase": 84,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 23
+          },
+          {
+            "jugador": {
+              "id": "P0008",
+              "nombre": "Iñigo Lekue",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 12.58,
+              "ataque": 75,
+              "defensa": 93,
+              "pase": 85,
+              "porteria": 78,
+              "condition": 83
+            },
+            "minuto": 49
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 2,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 2,
+          "puntos": 1
+        },
+        "golesLocal": 2,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0310",
+              "nombre": "Andriy Lunin",
+              "posicion": "PORTERO",
+              "equipoId": "T15",
+              "precio": 23.12,
+              "ataque": 79,
+              "defensa": 82,
+              "pase": 88,
+              "porteria": 93,
+              "condition": 87
+            },
+            "minuto": 48
+          },
+          {
+            "jugador": {
+              "id": "P0314",
+              "nombre": "Antonio Rüdiger",
+              "posicion": "DEFENSA",
+              "equipoId": "T15",
+              "precio": 25.21,
+              "ataque": 93,
+              "defensa": 99,
+              "pase": 89,
+              "porteria": 84,
+              "condition": 89
+            },
+            "minuto": 10
+          },
+          {
+            "jugador": {
+              "id": "P0365",
+              "nombre": "Mikel Oyarzabal",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 14.35,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 90,
+              "porteria": 71,
+              "condition": 85
+            },
+            "minuto": 87
+          },
+          {
+            "jugador": {
+              "id": "P0371",
+              "nombre": "Jon Pacheco",
+              "posicion": "DEFENSA",
+              "equipoId": "T17",
+              "precio": 14.0,
+              "ataque": 83,
+              "defensa": 95,
+              "pase": 86,
+              "porteria": 74,
+              "condition": 86
+            },
+            "minuto": 47
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0400",
+              "nombre": "José Gayà",
+              "posicion": "DEFENSA",
+              "equipoId": "T19",
+              "precio": 11.99,
+              "ataque": 78,
+              "defensa": 85,
+              "pase": 75,
+              "porteria": 71,
+              "condition": 79
+            },
+            "minuto": 78
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 5,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 5,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0431",
+              "nombre": "Yeremy Pino",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 13.63,
+              "ataque": 93,
+              "defensa": 80,
+              "pase": 83,
+              "porteria": 80,
+              "condition": 86
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0433",
+              "nombre": "Alexander Sørloth",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 14.06,
+              "ataque": 93,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0432",
+              "nombre": "Gerard Moreno",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 11.16,
+              "ataque": 91,
+              "defensa": 77,
+              "pase": 87,
+              "porteria": 66,
+              "condition": 79
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0433",
+              "nombre": "Alexander Sørloth",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 14.06,
+              "ataque": 93,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 6
+          },
+          {
+            "jugador": {
+              "id": "P0437",
+              "nombre": "Denis Suárez",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 12.36,
+              "ataque": 84,
+              "defensa": 85,
+              "pase": 94,
+              "porteria": 75,
+              "condition": 83
+            },
+            "minuto": 60
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 48
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 62
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 74
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 85
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0055",
+              "nombre": "Moncayola",
+              "posicion": "MEDIO",
+              "equipoId": "T03",
+              "precio": 5.92,
+              "ataque": 80,
+              "defensa": 77,
+              "pase": 86,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 27
+          },
+          {
+            "jugador": {
+              "id": "P0055",
+              "nombre": "Moncayola",
+              "posicion": "MEDIO",
+              "equipoId": "T03",
+              "precio": 5.92,
+              "ataque": 80,
+              "defensa": 77,
+              "pase": 86,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 69
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 8,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 8,
+          "puntos": 0
+        },
+        "golesLocal": 8,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 12
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 33
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 46
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 60
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 69
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 81
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 89
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 25,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0328",
+              "nombre": "Joselu",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 26.2,
+              "ataque": 99,
+              "defensa": 83,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 91
+            },
+            "minuto": 77
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0306",
+              "nombre": "Félix Garreta",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 12.67,
+              "ataque": 86,
+              "defensa": 94,
+              "pase": 85,
+              "porteria": 71,
+              "condition": 83
+            },
+            "minuto": 43
+          },
+          {
+            "jugador": {
+              "id": "P0297",
+              "nombre": "Marc Roca",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 14.16,
+              "ataque": 85,
+              "defensa": 87,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 86
+            },
+            "minuto": 49
+          },
+          {
+            "jugador": {
+              "id": "P0297",
+              "nombre": "Marc Roca",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 14.16,
+              "ataque": 85,
+              "defensa": 87,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 86
+            },
+            "minuto": 77
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0373",
+              "nombre": "Carlos Fernández",
+              "posicion": "DELANTERO",
+              "equipoId": "T17",
+              "precio": 13.24,
+              "ataque": 98,
+              "defensa": 85,
+              "pase": 94,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 59
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0247",
+              "nombre": "Brian Oliván",
+              "posicion": "DEFENSA",
+              "equipoId": "T12",
+              "precio": 6.9,
+              "ataque": 70,
+              "defensa": 91,
+              "pase": 81,
+              "porteria": 72,
+              "condition": 79
+            },
+            "minuto": 44
+          },
+          {
+            "jugador": {
+              "id": "P0396",
+              "nombre": "Gudelj",
+              "posicion": "DEFENSA",
+              "equipoId": "T18",
+              "precio": 12.79,
+              "ataque": 77,
+              "defensa": 96,
+              "pase": 89,
+              "porteria": 78,
+              "condition": 84
+            },
+            "minuto": 28
+          },
+          {
+            "jugador": {
+              "id": "P0384",
+              "nombre": "Joan Jordán",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 10.58,
+              "ataque": 78,
+              "defensa": 74,
+              "pase": 83,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 45
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0413",
+              "nombre": "Peter Federico",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 12.87,
+              "ataque": 95,
+              "defensa": 81,
+              "pase": 91,
+              "porteria": 74,
+              "condition": 83
+            },
+            "minuto": 20
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0427",
+              "nombre": "Dani Parejo",
+              "posicion": "MEDIO",
+              "equipoId": "T20",
+              "precio": 12.04,
+              "ataque": 86,
+              "defensa": 79,
+              "pase": 92,
+              "porteria": 72,
+              "condition": 81
+            },
+            "minuto": 75
+          },
+          {
+            "jugador": {
+              "id": "P0424",
+              "nombre": "Alberto Moreno",
+              "posicion": "DEFENSA",
+              "equipoId": "T20",
+              "precio": 12.35,
+              "ataque": 82,
+              "defensa": 84,
+              "pase": 76,
+              "porteria": 74,
+              "condition": 79
+            },
+            "minuto": 68
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 14
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 31
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 51
+          },
+          {
+            "jugador": {
+              "id": "P0194",
+              "nombre": "Stuani",
+              "posicion": "DELANTERO",
+              "equipoId": "T09",
+              "precio": 10.87,
+              "ataque": 88,
+              "defensa": 78,
+              "pase": 85,
+              "porteria": 69,
+              "condition": 77
+            },
+            "minuto": 85
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0059",
+              "nombre": "Raúl García de Haro",
+              "posicion": "DELANTERO",
+              "equipoId": "T03",
+              "precio": 5.16,
+              "ataque": 81,
+              "defensa": 70,
+              "pase": 77,
+              "porteria": 59,
+              "condition": 71
+            },
+            "minuto": 35
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 14
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 59
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 71
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0128",
+              "nombre": "Álex Collado",
+              "posicion": "MEDIO",
+              "equipoId": "T06",
+              "precio": 2.53,
+              "ataque": 70,
+              "defensa": 70,
+              "pase": 79,
+              "porteria": 63,
+              "condition": 72
+            },
+            "minuto": 16
+          },
+          {
+            "jugador": {
+              "id": "P0096",
+              "nombre": "Jon Guridi",
+              "posicion": "MEDIO",
+              "equipoId": "T05",
+              "precio": 5.11,
+              "ataque": 67,
+              "defensa": 75,
+              "pase": 77,
+              "porteria": 59,
+              "condition": 70
+            },
+            "minuto": 77
+          },
+          {
+            "jugador": {
+              "id": "P0097",
+              "nombre": "Antonio Blanco",
+              "posicion": "MEDIO",
+              "equipoId": "T05",
+              "precio": 6.36,
+              "ataque": 78,
+              "defensa": 66,
+              "pase": 77,
+              "porteria": 65,
+              "condition": 72
+            },
+            "minuto": 35
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 26,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0306",
+              "nombre": "Félix Garreta",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 12.67,
+              "ataque": 86,
+              "defensa": 94,
+              "pase": 85,
+              "porteria": 71,
+              "condition": 83
+            },
+            "minuto": 78
+          },
+          {
+            "jugador": {
+              "id": "P0290",
+              "nombre": "Marc Bartra",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 11.78,
+              "ataque": 74,
+              "defensa": 85,
+              "pase": 80,
+              "porteria": 69,
+              "condition": 79
+            },
+            "minuto": 66
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0328",
+              "nombre": "Joselu",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 26.2,
+              "ataque": 99,
+              "defensa": 83,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 91
+            },
+            "minuto": 31
+          },
+          {
+            "jugador": {
+              "id": "P0315",
+              "nombre": "Ferland Mendy",
+              "posicion": "DEFENSA",
+              "equipoId": "T15",
+              "precio": 24.42,
+              "ataque": 87,
+              "defensa": 99,
+              "pase": 91,
+              "porteria": 78,
+              "condition": 87
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0327",
+              "nombre": "Arda Güler",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 25.49,
+              "ataque": 84,
+              "defensa": 84,
+              "pase": 99,
+              "porteria": 79,
+              "condition": 89
+            },
+            "minuto": 21
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0253",
+              "nombre": "Martin Braithwaite",
+              "posicion": "DELANTERO",
+              "equipoId": "T12",
+              "precio": 5.79,
+              "ataque": 86,
+              "defensa": 74,
+              "pase": 73,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 36
+          },
+          {
+            "jugador": {
+              "id": "P0246",
+              "nombre": "Leandro Cabrera",
+              "posicion": "DEFENSA",
+              "equipoId": "T12",
+              "precio": 7.8,
+              "ataque": 76,
+              "defensa": 90,
+              "pase": 83,
+              "porteria": 70,
+              "condition": 78
+            },
+            "minuto": 29
+          },
+          {
+            "jugador": {
+              "id": "P0253",
+              "nombre": "Martin Braithwaite",
+              "posicion": "DELANTERO",
+              "equipoId": "T12",
+              "precio": 5.79,
+              "ataque": 86,
+              "defensa": 74,
+              "pase": 73,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 3
+          },
+          {
+            "jugador": {
+              "id": "P0259",
+              "nombre": "Pol Lozano",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 6.2,
+              "ataque": 75,
+              "defensa": 77,
+              "pase": 78,
+              "porteria": 62,
+              "condition": 72
+            },
+            "minuto": 32
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0221",
+              "nombre": "Stole Dimitrievski",
+              "posicion": "PORTERO",
+              "equipoId": "T11",
+              "precio": 6.28,
+              "ataque": 62,
+              "defensa": 73,
+              "pase": 75,
+              "porteria": 80,
+              "condition": 75
+            },
+            "minuto": 6
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 6,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 6,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 6,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0394",
+              "nombre": "Kike Salas",
+              "posicion": "DEFENSA",
+              "equipoId": "T18",
+              "precio": 12.74,
+              "ataque": 73,
+              "defensa": 90,
+              "pase": 86,
+              "porteria": 75,
+              "condition": 83
+            },
+            "minuto": 89
+          },
+          {
+            "jugador": {
+              "id": "P0391",
+              "nombre": "Boubakary Soumaré",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 10.61,
+              "ataque": 78,
+              "defensa": 80,
+              "pase": 82,
+              "porteria": 63,
+              "condition": 75
+            },
+            "minuto": 4
+          },
+          {
+            "jugador": {
+              "id": "P0382",
+              "nombre": "Ivan Rakitić",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 11.21,
+              "ataque": 75,
+              "defensa": 77,
+              "pase": 82,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 77
+          },
+          {
+            "jugador": {
+              "id": "P0382",
+              "nombre": "Ivan Rakitić",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 11.21,
+              "ataque": 75,
+              "defensa": 77,
+              "pase": 82,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 5
+          },
+          {
+            "jugador": {
+              "id": "P0382",
+              "nombre": "Ivan Rakitić",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 11.21,
+              "ataque": 75,
+              "defensa": 77,
+              "pase": 82,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 37
+          },
+          {
+            "jugador": {
+              "id": "P0387",
+              "nombre": "Rafa Mir",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 14.17,
+              "ataque": 93,
+              "defensa": 77,
+              "pase": 89,
+              "porteria": 70,
+              "condition": 84
+            },
+            "minuto": 35
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0183",
+              "nombre": "Daley Blind",
+              "posicion": "DEFENSA",
+              "equipoId": "T09",
+              "precio": 12.42,
+              "ataque": 79,
+              "defensa": 91,
+              "pase": 88,
+              "porteria": 76,
+              "condition": 82
+            },
+            "minuto": 75
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0420",
+              "nombre": "Filip Jörgensen",
+              "posicion": "PORTERO",
+              "equipoId": "T20",
+              "precio": 11.48,
+              "ataque": 63,
+              "defensa": 72,
+              "pase": 76,
+              "porteria": 86,
+              "condition": 78
+            },
+            "minuto": 12
+          },
+          {
+            "jugador": {
+              "id": "P0432",
+              "nombre": "Gerard Moreno",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 11.16,
+              "ataque": 91,
+              "defensa": 77,
+              "pase": 87,
+              "porteria": 66,
+              "condition": 79
+            },
+            "minuto": 68
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 3,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 3,
+          "puntos": 1
+        },
+        "golesLocal": 3,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 10
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 55
+          },
+          {
+            "jugador": {
+              "id": "P0146",
+              "nombre": "Ferran Torres",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 24.73,
+              "ataque": 98,
+              "defensa": 86,
+              "pase": 95,
+              "porteria": 78,
+              "condition": 89
+            },
+            "minuto": 61
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0153",
+              "nombre": "Vitor Roque",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 20.85,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 87,
+              "porteria": 75,
+              "condition": 82
+            },
+            "minuto": 78
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0063",
+              "nombre": "Darko Brasanac",
+              "posicion": "MEDIO",
+              "equipoId": "T03",
+              "precio": 6.51,
+              "ataque": 72,
+              "defensa": 80,
+              "pase": 85,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 9
+          },
+          {
+            "jugador": {
+              "id": "P0051",
+              "nombre": "Nacho Vidal",
+              "posicion": "DEFENSA",
+              "equipoId": "T03",
+              "precio": 7.13,
+              "ataque": 73,
+              "defensa": 86,
+              "pase": 80,
+              "porteria": 72,
+              "condition": 78
+            },
+            "minuto": 39
+          },
+          {
+            "jugador": {
+              "id": "P0063",
+              "nombre": "Darko Brasanac",
+              "posicion": "MEDIO",
+              "equipoId": "T03",
+              "precio": 6.51,
+              "ataque": 72,
+              "defensa": 80,
+              "pase": 85,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 59
+          },
+          {
+            "jugador": {
+              "id": "P0051",
+              "nombre": "Nacho Vidal",
+              "posicion": "DEFENSA",
+              "equipoId": "T03",
+              "precio": 7.13,
+              "ataque": 73,
+              "defensa": 86,
+              "pase": 80,
+              "porteria": 72,
+              "condition": 78
+            },
+            "minuto": 12
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      }
+    ]
+  },
+  {
+    "numJornada": 27,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0020",
+              "nombre": "Imanol García de Albéniz",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 14.14,
+              "ataque": 87,
+              "defensa": 94,
+              "pase": 88,
+              "porteria": 76,
+              "condition": 86
+            },
+            "minuto": 87
+          },
+          {
+            "jugador": {
+              "id": "P0015",
+              "nombre": "Iñigo Ruiz de Galarreta",
+              "posicion": "MEDIO",
+              "equipoId": "T01",
+              "precio": 13.17,
+              "ataque": 86,
+              "defensa": 86,
+              "pase": 91,
+              "porteria": 73,
+              "condition": 83
+            },
+            "minuto": 74
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0294",
+              "nombre": "Guido Rodríguez",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 11.69,
+              "ataque": 78,
+              "defensa": 79,
+              "pase": 86,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 65
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0327",
+              "nombre": "Arda Güler",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 25.49,
+              "ataque": 84,
+              "defensa": 84,
+              "pase": 99,
+              "porteria": 79,
+              "condition": 89
+            },
+            "minuto": 80
+          },
+          {
+            "jugador": {
+              "id": "P0313",
+              "nombre": "David Alaba",
+              "posicion": "DEFENSA",
+              "equipoId": "T15",
+              "precio": 24.69,
+              "ataque": 94,
+              "defensa": 99,
+              "pase": 89,
+              "porteria": 81,
+              "condition": 90
+            },
+            "minuto": 53
+          },
+          {
+            "jugador": {
+              "id": "P0323",
+              "nombre": "Vinícius Júnior",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 24.35,
+              "ataque": 99,
+              "defensa": 92,
+              "pase": 94,
+              "porteria": 80,
+              "condition": 89
+            },
+            "minuto": 81
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0201",
+              "nombre": "Rúben Vezo",
+              "posicion": "DEFENSA",
+              "equipoId": "T10",
+              "precio": 3.87,
+              "ataque": 76,
+              "defensa": 83,
+              "pase": 74,
+              "porteria": 65,
+              "condition": 72
+            },
+            "minuto": 46
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0171",
+              "nombre": "Mitrović",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 5.88,
+              "ataque": 71,
+              "defensa": 82,
+              "pase": 80,
+              "porteria": 70,
+              "condition": 74
+            },
+            "minuto": 64
+          },
+          {
+            "jugador": {
+              "id": "P0380",
+              "nombre": "Sergio Ramos",
+              "posicion": "DEFENSA",
+              "equipoId": "T18",
+              "precio": 13.56,
+              "ataque": 87,
+              "defensa": 90,
+              "pase": 88,
+              "porteria": 80,
+              "condition": 84
+            },
+            "minuto": 78
+          },
+          {
+            "jugador": {
+              "id": "P0382",
+              "nombre": "Ivan Rakitić",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 11.21,
+              "ataque": 75,
+              "defensa": 77,
+              "pase": 82,
+              "porteria": 66,
+              "condition": 76
+            },
+            "minuto": 5
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0148",
+              "nombre": "Lamine Yamal",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 27.02,
+              "ataque": 99,
+              "defensa": 92,
+              "pase": 95,
+              "porteria": 82,
+              "condition": 92
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0143",
+              "nombre": "Gavi",
+              "posicion": "MEDIO",
+              "equipoId": "T07",
+              "precio": 21.73,
+              "ataque": 84,
+              "defensa": 86,
+              "pase": 91,
+              "porteria": 72,
+              "condition": 84
+            },
+            "minuto": 79
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0432",
+              "nombre": "Gerard Moreno",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 11.16,
+              "ataque": 91,
+              "defensa": 77,
+              "pase": 87,
+              "porteria": 66,
+              "condition": 79
+            },
+            "minuto": 62
+          },
+          {
+            "jugador": {
+              "id": "P0420",
+              "nombre": "Filip Jörgensen",
+              "posicion": "PORTERO",
+              "equipoId": "T20",
+              "precio": 11.48,
+              "ataque": 63,
+              "defensa": 72,
+              "pase": 76,
+              "porteria": 86,
+              "condition": 78
+            },
+            "minuto": 67
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 8,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 8,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 8,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 8
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 18
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 26
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 35
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 47
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 58
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 69
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 77
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "golesLocal": 2,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0075",
+              "nombre": "Luca de la Torre",
+              "posicion": "MEDIO",
+              "equipoId": "T04",
+              "precio": 7.17,
+              "ataque": 73,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 67,
+              "condition": 78
+            },
+            "minuto": 68
+          },
+          {
+            "jugador": {
+              "id": "P0079",
+              "nombre": "Anastasios Douvikas",
+              "posicion": "DELANTERO",
+              "equipoId": "T04",
+              "precio": 6.25,
+              "ataque": 85,
+              "defensa": 75,
+              "pase": 84,
+              "porteria": 68,
+              "condition": 77
+            },
+            "minuto": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 28,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0020",
+              "nombre": "Imanol García de Albéniz",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 14.14,
+              "ataque": 87,
+              "defensa": 94,
+              "pase": 88,
+              "porteria": 76,
+              "condition": 86
+            },
+            "minuto": 60
+          },
+          {
+            "jugador": {
+              "id": "P0020",
+              "nombre": "Imanol García de Albéniz",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 14.14,
+              "ataque": 87,
+              "defensa": 94,
+              "pase": 88,
+              "porteria": 76,
+              "condition": 86
+            },
+            "minuto": 82
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0207",
+              "nombre": "Pepelu",
+              "posicion": "MEDIO",
+              "equipoId": "T10",
+              "precio": 3.36,
+              "ataque": 73,
+              "defensa": 71,
+              "pase": 80,
+              "porteria": 67,
+              "condition": 74
+            },
+            "minuto": 7
+          },
+          {
+            "jugador": {
+              "id": "P0287",
+              "nombre": "Claudio Bravo",
+              "posicion": "PORTERO",
+              "equipoId": "T14",
+              "precio": 14.74,
+              "ataque": 73,
+              "defensa": 83,
+              "pase": 80,
+              "porteria": 93,
+              "condition": 86
+            },
+            "minuto": 36
+          },
+          {
+            "jugador": {
+              "id": "P0294",
+              "nombre": "Guido Rodríguez",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 11.69,
+              "ataque": 78,
+              "defensa": 79,
+              "pase": 86,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 29
+          },
+          {
+            "jugador": {
+              "id": "P0290",
+              "nombre": "Marc Bartra",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 11.78,
+              "ataque": 74,
+              "defensa": 85,
+              "pase": 80,
+              "porteria": 69,
+              "condition": 79
+            },
+            "minuto": 11
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 1,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 1,
+          "puntos": 1
+        },
+        "golesLocal": 1,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0178",
+              "nombre": "Juan Carlos",
+              "posicion": "PORTERO",
+              "equipoId": "T09",
+              "precio": 14.48,
+              "ataque": 73,
+              "defensa": 88,
+              "pase": 78,
+              "porteria": 94,
+              "condition": 85
+            },
+            "minuto": 68
+          },
+          {
+            "jugador": {
+              "id": "P0328",
+              "nombre": "Joselu",
+              "posicion": "DELANTERO",
+              "equipoId": "T15",
+              "precio": 26.2,
+              "ataque": 99,
+              "defensa": 83,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 91
+            },
+            "minuto": 45
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 2,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 2,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0171",
+              "nombre": "Mitrović",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 5.88,
+              "ataque": 71,
+              "defensa": 82,
+              "pase": 80,
+              "porteria": 70,
+              "condition": 74
+            },
+            "minuto": 73
+          },
+          {
+            "jugador": {
+              "id": "P0171",
+              "nombre": "Mitrović",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 5.88,
+              "ataque": 71,
+              "defensa": 82,
+              "pase": 80,
+              "porteria": 70,
+              "condition": 74
+            },
+            "minuto": 87
+          },
+          {
+            "jugador": {
+              "id": "P0171",
+              "nombre": "Mitrović",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 5.88,
+              "ataque": 71,
+              "defensa": 82,
+              "pase": 80,
+              "porteria": 70,
+              "condition": 74
+            },
+            "minuto": 17
+          },
+          {
+            "jugador": {
+              "id": "P0171",
+              "nombre": "Mitrović",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 5.88,
+              "ataque": 71,
+              "defensa": 82,
+              "pase": 80,
+              "porteria": 70,
+              "condition": 74
+            },
+            "minuto": 71
+          },
+          {
+            "jugador": {
+              "id": "P0340",
+              "nombre": "Borja Bastón",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 3.52,
+              "ataque": 76,
+              "defensa": 70,
+              "pase": 68,
+              "porteria": 64,
+              "condition": 70
+            },
+            "minuto": 76
+          },
+          {
+            "jugador": {
+              "id": "P0340",
+              "nombre": "Borja Bastón",
+              "posicion": "DELANTERO",
+              "equipoId": "T16",
+              "precio": 3.52,
+              "ataque": 76,
+              "defensa": 70,
+              "pase": 68,
+              "porteria": 64,
+              "condition": 70
+            },
+            "minuto": 74
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0148",
+              "nombre": "Lamine Yamal",
+              "posicion": "DELANTERO",
+              "equipoId": "T07",
+              "precio": 27.02,
+              "ataque": 99,
+              "defensa": 92,
+              "pase": 95,
+              "porteria": 82,
+              "condition": 92
+            },
+            "minuto": 11
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0387",
+              "nombre": "Rafa Mir",
+              "posicion": "DELANTERO",
+              "equipoId": "T18",
+              "precio": 14.17,
+              "ataque": 93,
+              "defensa": 77,
+              "pase": 89,
+              "porteria": 70,
+              "condition": 84
+            },
+            "minuto": 39
+          },
+          {
+            "jugador": {
+              "id": "P0384",
+              "nombre": "Joan Jordán",
+              "posicion": "MEDIO",
+              "equipoId": "T18",
+              "precio": 10.58,
+              "ataque": 78,
+              "defensa": 74,
+              "pase": 83,
+              "porteria": 69,
+              "condition": 76
+            },
+            "minuto": 84
+          },
+          {
+            "jugador": {
+              "id": "P0392",
+              "nombre": "Adrià Pedrosa",
+              "posicion": "DEFENSA",
+              "equipoId": "T18",
+              "precio": 11.64,
+              "ataque": 83,
+              "defensa": 88,
+              "pase": 82,
+              "porteria": 74,
+              "condition": 80
+            },
+            "minuto": 75
+          },
+          {
+            "jugador": {
+              "id": "P0376",
+              "nombre": "Ørjan Nyland",
+              "posicion": "PORTERO",
+              "equipoId": "T18",
+              "precio": 13.55,
+              "ataque": 74,
+              "defensa": 89,
+              "pase": 86,
+              "porteria": 95,
+              "condition": 83
+            },
+            "minuto": 82
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 5,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 5,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0399",
+              "nombre": "Thierry Correia",
+              "posicion": "DEFENSA",
+              "equipoId": "T19",
+              "precio": 12.78,
+              "ataque": 84,
+              "defensa": 88,
+              "pase": 84,
+              "porteria": 73,
+              "condition": 82
+            },
+            "minuto": 2
+          },
+          {
+            "jugador": {
+              "id": "P0408",
+              "nombre": "Hugo Duro",
+              "posicion": "DELANTERO",
+              "equipoId": "T19",
+              "precio": 13.78,
+              "ataque": 95,
+              "defensa": 88,
+              "pase": 83,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 53
+          },
+          {
+            "jugador": {
+              "id": "P0414",
+              "nombre": "Selim Amallah",
+              "posicion": "MEDIO",
+              "equipoId": "T19",
+              "precio": 14.04,
+              "ataque": 79,
+              "defensa": 86,
+              "pase": 89,
+              "porteria": 76,
+              "condition": 84
+            },
+            "minuto": 74
+          },
+          {
+            "jugador": {
+              "id": "P0400",
+              "nombre": "José Gayà",
+              "posicion": "DEFENSA",
+              "equipoId": "T19",
+              "precio": 11.99,
+              "ataque": 78,
+              "defensa": 85,
+              "pase": 75,
+              "porteria": 71,
+              "condition": 79
+            },
+            "minuto": 2
+          },
+          {
+            "jugador": {
+              "id": "P0002",
+              "nombre": "Julen Agirrezabala",
+              "posicion": "PORTERO",
+              "equipoId": "T19",
+              "precio": 13.8,
+              "ataque": 78,
+              "defensa": 91,
+              "pase": 84,
+              "porteria": 93,
+              "condition": 85
+            },
+            "minuto": 46
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0433",
+              "nombre": "Alexander Sørloth",
+              "posicion": "DELANTERO",
+              "equipoId": "T20",
+              "precio": 14.06,
+              "ataque": 93,
+              "defensa": 82,
+              "pase": 84,
+              "porteria": 72,
+              "condition": 86
+            },
+            "minuto": 22
+          },
+          {
+            "jugador": {
+              "id": "P0425",
+              "nombre": "Aïssa Mandi",
+              "posicion": "DEFENSA",
+              "equipoId": "T20",
+              "precio": 10.49,
+              "ataque": 79,
+              "defensa": 84,
+              "pase": 76,
+              "porteria": 64,
+              "condition": 76
+            },
+            "minuto": 37
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 5,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 5,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 5,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 24
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 42
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 55
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 74
+          },
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 82
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numJornada": 29,
+    "partidos": [
+      {
+        "equipoLocal": {
+          "id": "T01",
+          "nombre": "Athletic Club",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T11",
+          "nombre": "Rayo Vallecano",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0008",
+              "nombre": "Iñigo Lekue",
+              "posicion": "DEFENSA",
+              "equipoId": "T01",
+              "precio": 12.58,
+              "ataque": 75,
+              "defensa": 93,
+              "pase": 85,
+              "porteria": 78,
+              "condition": 83
+            },
+            "minuto": 25
+          },
+          {
+            "jugador": {
+              "id": "P0017",
+              "nombre": "Beñat Prados",
+              "posicion": "MEDIO",
+              "equipoId": "T01",
+              "precio": 14.38,
+              "ataque": 91,
+              "defensa": 84,
+              "pase": 95,
+              "porteria": 77,
+              "condition": 85
+            },
+            "minuto": 2
+          },
+          {
+            "jugador": {
+              "id": "P0021",
+              "nombre": "Alex Berenguer",
+              "posicion": "DELANTERO",
+              "equipoId": "T01",
+              "precio": 14.27,
+              "ataque": 96,
+              "defensa": 84,
+              "pase": 89,
+              "porteria": 77,
+              "condition": 86
+            },
+            "minuto": 11
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T10",
+          "nombre": "Levante UD",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T12",
+          "nombre": "RCD Espanyol de Barcelona",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 3,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0248",
+              "nombre": "Óscar Gil",
+              "posicion": "DEFENSA",
+              "equipoId": "T12",
+              "precio": 5.03,
+              "ataque": 72,
+              "defensa": 78,
+              "pase": 74,
+              "porteria": 58,
+              "condition": 70
+            },
+            "minuto": 24
+          },
+          {
+            "jugador": {
+              "id": "P0263",
+              "nombre": "Denis Suárez",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 6.48,
+              "ataque": 71,
+              "defensa": 80,
+              "pase": 83,
+              "porteria": 67,
+              "condition": 77
+            },
+            "minuto": 70
+          },
+          {
+            "jugador": {
+              "id": "P0263",
+              "nombre": "Denis Suárez",
+              "posicion": "MEDIO",
+              "equipoId": "T12",
+              "precio": 6.48,
+              "ataque": 71,
+              "defensa": 80,
+              "pase": 83,
+              "porteria": 67,
+              "condition": 77
+            },
+            "minuto": 16
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T09",
+          "nombre": "Girona FC",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T13",
+          "nombre": "RCD Mallorca",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "golesLocal": 4,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0192",
+              "nombre": "Yan Couto",
+              "posicion": "DEFENSA",
+              "equipoId": "T09",
+              "precio": 12.26,
+              "ataque": 85,
+              "defensa": 90,
+              "pase": 88,
+              "porteria": 78,
+              "condition": 82
+            },
+            "minuto": 23
+          },
+          {
+            "jugador": {
+              "id": "P0192",
+              "nombre": "Yan Couto",
+              "posicion": "DEFENSA",
+              "equipoId": "T09",
+              "precio": 12.26,
+              "ataque": 85,
+              "defensa": 90,
+              "pase": 88,
+              "porteria": 78,
+              "condition": 82
+            },
+            "minuto": 42
+          },
+          {
+            "jugador": {
+              "id": "P0183",
+              "nombre": "Daley Blind",
+              "posicion": "DEFENSA",
+              "equipoId": "T09",
+              "precio": 12.42,
+              "ataque": 79,
+              "defensa": 91,
+              "pase": 88,
+              "porteria": 76,
+              "condition": 82
+            },
+            "minuto": 29
+          },
+          {
+            "jugador": {
+              "id": "P0187",
+              "nombre": "Aleix García",
+              "posicion": "MEDIO",
+              "equipoId": "T09",
+              "precio": 13.48,
+              "ataque": 92,
+              "defensa": 82,
+              "pase": 94,
+              "porteria": 78,
+              "condition": 86
+            },
+            "minuto": 28
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T08",
+          "nombre": "Getafe CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 1,
+          "golesContra": 4,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T14",
+          "nombre": "Real Betis",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 4,
+          "golesContra": 1,
+          "puntos": 3
+        },
+        "golesLocal": 1,
+        "golesVisitante": 4,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0159",
+              "nombre": "Gastón Álvarez",
+              "posicion": "DEFENSA",
+              "equipoId": "T08",
+              "precio": 7.97,
+              "ataque": 72,
+              "defensa": 92,
+              "pase": 83,
+              "porteria": 70,
+              "condition": 80
+            },
+            "minuto": 50
+          },
+          {
+            "jugador": {
+              "id": "P0308",
+              "nombre": "Assane Diao",
+              "posicion": "DELANTERO",
+              "equipoId": "T14",
+              "precio": 12.93,
+              "ataque": 86,
+              "defensa": 76,
+              "pase": 83,
+              "porteria": 74,
+              "condition": 80
+            },
+            "minuto": 2
+          },
+          {
+            "jugador": {
+              "id": "P0303",
+              "nombre": "Juan Cruz",
+              "posicion": "DELANTERO",
+              "equipoId": "T14",
+              "precio": 12.14,
+              "ataque": 89,
+              "defensa": 85,
+              "pase": 80,
+              "porteria": 76,
+              "condition": 82
+            },
+            "minuto": 28
+          },
+          {
+            "jugador": {
+              "id": "P0292",
+              "nombre": "Aitor Ruibal",
+              "posicion": "DEFENSA",
+              "equipoId": "T14",
+              "precio": 10.28,
+              "ataque": 70,
+              "defensa": 83,
+              "pase": 78,
+              "porteria": 60,
+              "condition": 72
+            },
+            "minuto": 74
+          },
+          {
+            "jugador": {
+              "id": "P0297",
+              "nombre": "Marc Roca",
+              "posicion": "MEDIO",
+              "equipoId": "T14",
+              "precio": 14.16,
+              "ataque": 85,
+              "defensa": 87,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 86
+            },
+            "minuto": 30
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T07",
+          "nombre": "FC Barcelona",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T15",
+          "nombre": "Real Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 1,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0317",
+              "nombre": "Aurélien Tchouaméni",
+              "posicion": "MEDIO",
+              "equipoId": "T15",
+              "precio": 22.35,
+              "ataque": 91,
+              "defensa": 79,
+              "pase": 97,
+              "porteria": 74,
+              "condition": 85
+            },
+            "minuto": 11
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T06",
+          "nombre": "Elche CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T16",
+          "nombre": "Real Oviedo",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0121",
+              "nombre": "Lucas Boyé",
+              "posicion": "DELANTERO",
+              "equipoId": "T06",
+              "precio": 3.82,
+              "ataque": 78,
+              "defensa": 67,
+              "pase": 75,
+              "porteria": 63,
+              "condition": 73
+            },
+            "minuto": 19
+          },
+          {
+            "jugador": {
+              "id": "P0126",
+              "nombre": "Raúl Guti",
+              "posicion": "MEDIO",
+              "equipoId": "T06",
+              "precio": 2.08,
+              "ataque": 76,
+              "defensa": 70,
+              "pase": 79,
+              "porteria": 60,
+              "condition": 70
+            },
+            "minuto": 46
+          },
+          {
+            "jugador": {
+              "id": "P0114",
+              "nombre": "Carlos Clerc",
+              "posicion": "DEFENSA",
+              "equipoId": "T06",
+              "precio": 3.5,
+              "ataque": 69,
+              "defensa": 86,
+              "pase": 73,
+              "porteria": 63,
+              "condition": 74
+            },
+            "minuto": 26
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T05",
+          "nombre": "Deportivo Alavés",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "equipoVisitante": {
+          "id": "T17",
+          "nombre": "Real Sociedad",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 1,
+          "derrotas": 0,
+          "golesFavor": 0,
+          "golesContra": 0,
+          "puntos": 1
+        },
+        "golesLocal": 0,
+        "golesVisitante": 0,
+        "goles": []
+      },
+      {
+        "equipoLocal": {
+          "id": "T04",
+          "nombre": "Celta",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 1,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T18",
+          "nombre": "Sevilla FC",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 1,
+          "puntos": 0
+        },
+        "golesLocal": 1,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0072",
+              "nombre": "Javi Galán",
+              "posicion": "DEFENSA",
+              "equipoId": "T04",
+              "precio": 7.66,
+              "ataque": 75,
+              "defensa": 86,
+              "pase": 76,
+              "porteria": 66,
+              "condition": 78
+            },
+            "minuto": 35
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T03",
+          "nombre": "CA Osasuna",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 2,
+          "puntos": 0
+        },
+        "equipoVisitante": {
+          "id": "T19",
+          "nombre": "Valencia CF",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 2,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "golesLocal": 0,
+        "golesVisitante": 2,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0414",
+              "nombre": "Selim Amallah",
+              "posicion": "MEDIO",
+              "equipoId": "T19",
+              "precio": 14.04,
+              "ataque": 79,
+              "defensa": 86,
+              "pase": 89,
+              "porteria": 76,
+              "condition": 84
+            },
+            "minuto": 9
+          },
+          {
+            "jugador": {
+              "id": "P0403",
+              "nombre": "Cristhian Mosquera",
+              "posicion": "DEFENSA",
+              "equipoId": "T19",
+              "precio": 13.97,
+              "ataque": 77,
+              "defensa": 95,
+              "pase": 86,
+              "porteria": 75,
+              "condition": 86
+            },
+            "minuto": 23
+          }
+        ]
+      },
+      {
+        "equipoLocal": {
+          "id": "T02",
+          "nombre": "Atlético de Madrid",
+          "partidosJugados": 1,
+          "victorias": 1,
+          "empates": 0,
+          "derrotas": 0,
+          "golesFavor": 3,
+          "golesContra": 0,
+          "puntos": 3
+        },
+        "equipoVisitante": {
+          "id": "T20",
+          "nombre": "Villarreal CF",
+          "partidosJugados": 1,
+          "victorias": 0,
+          "empates": 0,
+          "derrotas": 1,
+          "golesFavor": 0,
+          "golesContra": 3,
+          "puntos": 0
+        },
+        "golesLocal": 3,
+        "golesVisitante": 0,
+        "goles": [
+          {
+            "jugador": {
+              "id": "P0035",
+              "nombre": "Antoine Griezmann",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 26.09,
+              "ataque": 99,
+              "defensa": 84,
+              "pase": 88,
+              "porteria": 83,
+              "condition": 90
+            },
+            "minuto": 44
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 58
+          },
+          {
+            "jugador": {
+              "id": "P0037",
+              "nombre": "Memphis Depay",
+              "posicion": "DELANTERO",
+              "equipoId": "T02",
+              "precio": 23.74,
+              "ataque": 94,
+              "defensa": 87,
+              "pase": 93,
+              "porteria": 79,
+              "condition": 86
+            },
+            "minuto": 79
+          }
+        ]
+      }
+    ]
   }
 ]
