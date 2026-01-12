@@ -133,7 +133,10 @@ public class MarketService {
         // 7. Transferir jugador
         String jugadorId = jm.getJugadorId();
 
+        if (vendedor.getPlantilla() == null) vendedor.setPlantilla(new java.util.ArrayList<>());
         vendedor.getPlantilla().remove(jugadorId);
+
+        if (comprador.getPlantilla() == null) comprador.setPlantilla(new java.util.ArrayList<>());
         comprador.getPlantilla().add(jugadorId);
 
         // 8. Actualizar saldos

@@ -138,7 +138,11 @@ public class MenuPrincipal {
                 case 2 -> alineacionController.mostrarAlineacionUsuario(usuario);
                 case 3 -> alineacionController.editarAlineacion(usuario);
                 case 4 -> alineacionController.mostrarPlantilla(usuario);
-                case 5 -> menuMercado(usuario);
+                case 5 -> {
+                    menuMercado(usuario);
+                    // Recargar usuario al volver del mercado por si hubo cambios
+                    usuario = leagueRepository.buscarUsuarioPorId(usuario.getId()).orElse(usuario);
+                }
                 case 6 -> menuLiga(usuario);
                 case 7 -> buscarJugadores();
                 case 0 -> System.out.println("Sesión cerrada.");
@@ -213,8 +217,16 @@ public class MenuPrincipal {
 
             switch (opcion) {
                 case 1 -> mostrarMercado();
-                case 2 -> ponerJugadorEnVenta(usuario);
-                case 3 -> comprarJugadorMercado(usuario);
+                case 2 -> {
+                    ponerJugadorEnVenta(usuario);
+                    // Recargar usuario para ver cambios en saldo/plantilla
+                    usuario = leagueRepository.buscarUsuarioPorId(usuario.getId()).orElse(usuario);
+                }
+                case 3 -> {
+                    comprarJugadorMercado(usuario);
+                    // Recargar usuario para ver cambios en saldo/plantilla
+                    usuario = leagueRepository.buscarUsuarioPorId(usuario.getId()).orElse(usuario);
+                }
                 case 0 -> System.out.println("Volviendo al menú anterior...");
                 default -> System.out.println("Opción no válida.");
             }
@@ -764,13 +776,21 @@ public class MenuPrincipal {
     }
 
     private String formatearDinero(double cantidad) {
+        // La moneda base en BD/JSON parece ser "Millones" (ej: 2.23 = 2.23 M)
+        // Ajustamos la visualización para reflejar esto y usamos EUR para evitar problemas de encoding (?)
         double abs = Math.abs(cantidad);
-        if (abs >= 1_000_000) {
-            return String.format("%.2f M €", cantidad / 1_000_000);
-        } else if (abs >= 1_000) {
-            return String.format("%.2f k €", cantidad / 1_000);
+
+        if (abs >= 1_000) {
+            // Si es >= 1000 M, son Billones
+            return String.format("%.2f B EUR", cantidad / 1_000);
+        } else if (abs >= 1) {
+            // Si es >= 1 M
+            return String.format("%.2f M EUR", cantidad);
+        } else if (abs == 0) {
+             return "0.00 EUR";
         } else {
-            return String.format("%.2f €", cantidad);
+            // Si es < 1 M (ej: 0.5 = 500k)
+            return String.format("%.2f k EUR", cantidad * 1_000);
         }
     }
 }

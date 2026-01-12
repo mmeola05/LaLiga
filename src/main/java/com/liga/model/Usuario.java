@@ -11,7 +11,7 @@ public class Usuario {
     private double saldo;
     private String equipo;
     private Alineacion alineacion;
-    private List<String> plantilla;
+    private List<String> plantilla = new java.util.ArrayList<>();
 
     public Usuario() {}
 
