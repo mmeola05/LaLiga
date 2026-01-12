@@ -68,7 +68,19 @@ public class ClasificacionService {
         }
 
         // 3. Goles a favor (Descendente)
-        return Integer.compare(e2.getGolesFavor(), e1.getGolesFavor());
+        int compareGF = Integer.compare(e2.getGolesFavor(), e1.getGolesFavor());
+        if (compareGF != 0) {
+            return compareGF;
+        }
+
+        // 4. Partidos Ganados (Descendente)
+        int compareWins = Integer.compare(e2.getVictorias(), e1.getVictorias());
+        if (compareWins != 0) {
+            return compareWins;
+        }
+
+        // 5. Orden Alfabético (Ascendente)
+        return e1.getNombre().compareToIgnoreCase(e2.getNombre());
       }
     });
   }

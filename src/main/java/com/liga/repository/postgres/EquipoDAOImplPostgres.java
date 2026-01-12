@@ -3,121 +3,88 @@ package com.liga.repository.postgres;
 import com.liga.model.Equipo;
 import com.liga.repository.dao.EquipoDAO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class EquipoDAOImplPostgres implements EquipoDAO {
 
+    private final Connection connection;
+
+    public EquipoDAOImplPostgres() {
+        this.connection = PostgresConnection.getInstance().getConnection();
+    }
+
     @Override
     public List<Equipo> findAll() {
-        String sql = "SELECT id, nombre FROM equipos";
         List<Equipo> equipos = new ArrayList<>();
+        String sql = "SELECT id, nombre FROM equipos";
 
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                Equipo equipo = new Equipo();
-                equipo.setId(rs.getString("id"));
-                equipo.setNombre(rs.getString("nombre"));
-                equipos.add(equipo);
+                equipos.add(mapRowToEquipo(rs));
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error al obtener todos los equipos", e);
+            e.printStackTrace();
         }
-
         return equipos;
     }
 
     @Override
-    public Optional<Equipo> findById(String id) {
+    public Optional<Equipo> findById(String idEquipo) {
         String sql = "SELECT id, nombre FROM equipos WHERE id = ?";
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, id);
-
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, idEquipo);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    Equipo equipo = new Equipo();
-                    equipo.setId(rs.getString("id"));
-                    equipo.setNombre(rs.getString("nombre"));
-                    return Optional.of(equipo);
+                    return Optional.of(mapRowToEquipo(rs));
                 }
             }
-
         } catch (SQLException e) {
-            throw new RuntimeException("Error al buscar equipo por id: " + id, e);
+            e.printStackTrace();
         }
-
         return Optional.empty();
     }
 
     @Override
     public void save(Equipo equipo) {
-        String sql = """
-            INSERT INTO equipos (id, nombre)
-            VALUES (?, ?)
-            ON CONFLICT (id)
-            DO UPDATE SET nombre = EXCLUDED.nombre
-            """;
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+        String sql = "INSERT INTO equipos (id, nombre) VALUES (?, ?) " +
+                     "ON CONFLICT (id) DO UPDATE SET nombre = EXCLUDED.nombre";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, equipo.getId());
             stmt.setString(2, equipo.getNombre());
             stmt.executeUpdate();
-
         } catch (SQLException e) {
-            throw new RuntimeException("Error al guardar equipo: " + equipo.getId(), e);
+            e.printStackTrace();
         }
     }
 
     @Override
     public void saveAll(List<Equipo> equipos) {
-        String sql = """
-            INSERT INTO equipos (id, nombre)
-            VALUES (?, ?)
-            ON CONFLICT (id)
-            DO UPDATE SET nombre = EXCLUDED.nombre
-            """;
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            for (Equipo equipo : equipos) {
-                stmt.setString(1, equipo.getId());
-                stmt.setString(2, equipo.getNombre());
-                stmt.addBatch();
-            }
-
-            stmt.executeBatch();
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Error al guardar lista de equipos", e);
+        // Simple iteration for now. Batching would be better for performance but keeping it consistent.
+        for (Equipo e : equipos) {
+            save(e);
         }
     }
 
     @Override
     public void deleteById(String id) {
         String sql = "DELETE FROM equipos WHERE id = ?";
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, id);
             stmt.executeUpdate();
-
         } catch (SQLException e) {
-            throw new RuntimeException("Error al eliminar equipo con id: " + id, e);
+            e.printStackTrace();
         }
+    }
+
+    private Equipo mapRowToEquipo(ResultSet rs) throws SQLException {
+        String id = rs.getString("id");
+        String nombre = rs.getString("nombre");
+        return new Equipo(id, nombre);
     }
 }

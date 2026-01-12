@@ -1,4 +1,4 @@
-package com.liga.repository.file;
+package com.liga.repository.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

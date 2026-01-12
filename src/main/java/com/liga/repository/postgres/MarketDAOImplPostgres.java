@@ -10,112 +10,77 @@ import java.util.Optional;
 
 public class MarketDAOImplPostgres implements MarketDAO {
 
-    @Override
-    public Optional<JugadorMercado> findJugadorMercadoById(String idJugadorMercado) {
+    private final Connection connection;
 
-        String sql = """
-            SELECT id, jugador_id, precio_salida, vendedor_id
-            FROM mercado
-            WHERE id = ?
-        """;
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, idJugadorMercado);
-
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    return Optional.of(mapJugadorMercado(rs));
-                }
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Error al buscar jugador en mercado", e);
-        }
-
-        return Optional.empty();
+    public MarketDAOImplPostgres() {
+        this.connection = PostgresConnection.getInstance().getConnection();
     }
 
     @Override
     public List<JugadorMercado> findAllJugadoresMercados() {
-
-        List<JugadorMercado> resultado = new ArrayList<>();
-
-        String sql = """
-            SELECT id, jugador_id, precio_salida, vendedor_id
-            FROM mercado
-        """;
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                resultado.add(mapJugadorMercado(rs));
-            }
-
+        List<JugadorMercado> list = new ArrayList<>();
+        String sql = "SELECT * FROM mercado";
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) list.add(mapRow(rs));
         } catch (SQLException e) {
-            throw new RuntimeException("Error al obtener mercado", e);
+            e.printStackTrace();
         }
-
-        return resultado;
+        return list;
     }
 
     @Override
-    public void saveJugadorMercado(JugadorMercado jugadorMercado) {
+    public Optional<JugadorMercado> findJugadorMercadoById(String id) {
+        String sql = "SELECT * FROM mercado WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) return Optional.of(mapRow(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
 
+    @Override
+    public void saveJugadorMercado(JugadorMercado m) {
         String sql = """
-            INSERT INTO mercado (id, jugador_id, precio_salida, vendedor_id)
+            INSERT INTO mercado (id, jugador_id, precio_salida, vendedor)
             VALUES (?, ?, ?, ?)
             ON CONFLICT (id) DO UPDATE SET
-                jugador_id = EXCLUDED.jugador_id,
-                precio_salida = EXCLUDED.precio_salida,
-                vendedor_id = EXCLUDED.vendedor_id
+            jugador_id = EXCLUDED.jugador_id,
+            precio_salida = EXCLUDED.precio_salida,
+            vendedor = EXCLUDED.vendedor
         """;
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, jugadorMercado.getId());
-            ps.setString(2, jugadorMercado.getJugadorId());
-            ps.setDouble(3, jugadorMercado.getPrecioSalida());
-            ps.setString(4, jugadorMercado.getVendedor());
-
-            ps.executeUpdate();
-
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, m.getId());
+            stmt.setString(2, m.getJugadorId());
+            stmt.setDouble(3, m.getPrecioSalida());
+            stmt.setString(4, m.getVendedor());
+            stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error al guardar jugador en mercado", e);
+            e.printStackTrace();
         }
     }
 
     @Override
-    public void deleteJugadorMercadoById(String idJugadorMercado) {
-
+    public void deleteJugadorMercadoById(String id) {
         String sql = "DELETE FROM mercado WHERE id = ?";
-
-        try (Connection conn = PostgresConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, idJugadorMercado);
-            ps.executeUpdate();
-
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, id);
+            stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error al borrar jugador del mercado", e);
+            e.printStackTrace();
         }
     }
 
-    /* ===========================
-       Mapeo
-       =========================== */
-
-    private JugadorMercado mapJugadorMercado(ResultSet rs) throws SQLException {
-
+    private JugadorMercado mapRow(ResultSet rs) throws SQLException {
         String id = rs.getString("id");
-        String  jugadorId = rs.getString("jugador_id");
-        double precio_salida =  rs.getDouble("precio_salida");
-        String vendedor =  rs.getString("vendedor_id");
-
-        return new JugadorMercado(jugadorId, precio_salida, vendedor, id);
+        String jugadorId = rs.getString("jugador_id");
+        double precio = rs.getDouble("precio_salida");
+        String vendedor = rs.getString("vendedor");
+        // FIX: Constructor is (jugadorId, precio, vendedor, id)
+        return new JugadorMercado(jugadorId, precio, vendedor, id);
     }
 }

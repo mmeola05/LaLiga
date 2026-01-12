@@ -1,4 +1,4 @@
-package com.liga.repository.file;
+package com.liga.repository.json;
 
 import java.io.IOException;
 import java.io.Reader;

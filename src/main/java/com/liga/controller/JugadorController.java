@@ -3,7 +3,7 @@ package com.liga.controller;
 import com.liga.model.*;
 import com.liga.repository.LeagueRepository;
 import com.liga.repository.LeagueRepositoryImpl;
-import com.liga.repository.file.*;
+import com.liga.repository.json.*;
 
 import java.util.*;
 

@@ -2,8 +2,6 @@ package com.liga.controller;
 
 import com.liga.model.*;
 import com.liga.repository.LeagueRepository;
-import com.liga.repository.LeagueRepositoryImpl;
-import com.liga.repository.file.*;
 
 import java.util.*;
 
@@ -11,18 +9,10 @@ public class EquipoController {
 
     private final Scanner sc = new Scanner(System.in);
 
-    private final LeagueRepository repo =
-            new LeagueRepositoryImpl(
-                    new EquipoDAOImplJSON(),
-                    new JugadorDAOImplJSON(),
-                    new MarketDAOImplJSON(),
-                    new UsersDAOImplJSON(),
-                    new JornadaDAOImplJSON()
-            );
+    private final LeagueRepository repo;
 
-    // 👉 NECESARIO PARA OTROS CONTROLADORES
-    public LeagueRepository getRepo() {
-        return repo;
+    public EquipoController(LeagueRepository repo) {
+        this.repo = repo;
     }
 
     public void menuEquipos() {

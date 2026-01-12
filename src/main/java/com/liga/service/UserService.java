@@ -3,8 +3,7 @@ package com.liga.service;
 import com.liga.model.Alineacion;
 import com.liga.model.TipoUsuario;
 import com.liga.model.Usuario;
-import com.liga.repository.dao.UsersDAO;
-import com.liga.repository.file.UsersDAOImplJSON;
+import com.liga.repository.LeagueRepository;
 import com.liga.util.HashUtil;
 import com.liga.util.UserIDGenerator;
 
@@ -12,13 +11,17 @@ import java.util.List;
 
 public class UserService {
 
-    private final UsersDAO dao = new UsersDAOImplJSON();
+    private final LeagueRepository repo;
+
+    public UserService(LeagueRepository repo) {
+        this.repo = repo;
+    }
 
     public Usuario login(String email, String password) {
 
         String hashed = HashUtil.sha256(password);
 
-        return dao.findAll().stream()
+        return repo.listarUsuarios().stream()
                 .filter(u -> u.getEmail().equalsIgnoreCase(email))
                 .filter(u -> u.getPassword().equals(hashed))
                 .findFirst()
@@ -28,7 +31,7 @@ public class UserService {
     public Usuario registrar(String email, String password, String equipoId, Alineacion alineacion,
             List<String> plantilla) {
 
-        boolean existe = dao.findAll().stream()
+        boolean existe = repo.listarUsuarios().stream()
                 .anyMatch(u -> u.getEmail().equalsIgnoreCase(email));
 
         if (existe)
@@ -45,7 +48,7 @@ public class UserService {
 
         nuevo.setPlantilla(plantilla);
 
-        dao.save(nuevo);
+        repo.guardarUsuarios(List.of(nuevo));
         return nuevo;
     }
 

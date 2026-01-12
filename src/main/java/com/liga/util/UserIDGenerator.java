@@ -1,7 +1,7 @@
 package com.liga.util;
 
 import com.liga.repository.dao.UsersDAO;
-import com.liga.repository.file.UsersDAOImplJSON;
+import com.liga.repository.json.UsersDAOImplJSON;
 
 public class UserIDGenerator {
 
