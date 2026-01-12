@@ -18,18 +18,14 @@ public class MenuPrincipal {
 
     private final Scanner sc = new Scanner(System.in);
 
-    private final UserService userService;
-    private final AlineacionController alineacionController;
-    private final EquipoController equipoController;
-    private final LeagueRepository leagueRepository;
-    private final MarketService marketService;
+    private UserService userService;
+    private AlineacionController alineacionController;
+    private EquipoController equipoController;
+    private LeagueRepository leagueRepository;
+    private MarketService marketService;
 
-    public MenuPrincipal(Backend backend) {
-        this.leagueRepository = RepositoryFactory.create(backend);
-        this.marketService = new MarketService(this.leagueRepository);
-        this.userService = new UserService(this.leagueRepository);
-        this.alineacionController = new AlineacionController(this.leagueRepository);
-        this.equipoController = new EquipoController(this.leagueRepository);
+    public MenuPrincipal() {
+        // Constructor vacío, la inicialización se hace en iniciarApp
     }
 
     private final ClasificacionService clasificacionService = new ClasificacionService();
@@ -313,7 +309,7 @@ public class MenuPrincipal {
                 precio);
 
         if (ok) {
-            System.out.println("✔ Jugador puesto en venta correctamente.");
+            System.out.println("✔ Jugador puesto en venta por " + formatearDinero(precio));
         } else {
             System.out.println("✘ Error al poner en venta. Verifica que:");
             System.out.println("  - El precio sea mayor a 0.");
@@ -336,7 +332,7 @@ public class MenuPrincipal {
                 idMercado);
 
         if (ok) {
-            System.out.println("✔ Compra realizada con éxito.");
+            System.out.println("✔ Compra realizada. Tu nuevo saldo es: " + formatearDinero(usuario.getSaldo()));
         } else {
             System.out.println("✘ Error en la compra. Verifica que:");
             System.out.println("  - El ID del mercado (" + idMercado + ") sea correcto (empieza por M...).");
@@ -727,6 +723,33 @@ public class MenuPrincipal {
     }
 
     public void iniciarApp() {
+        System.out.println("=================================");
+        System.out.println("   LA LIGA MANAGER - STARTUP");
+        System.out.println("=================================");
+        System.out.println("Selecciona modo de persistencia:");
+        System.out.println("1. JSON (Archivos locales)");
+        System.out.println("2. PostgreSQL (Base de Datos)");
+        System.out.print("Opción: ");
+
+        Backend backend = Backend.JSON; // Default
+        try {
+            String input = sc.nextLine();
+            if (input.trim().equals("2")) {
+                backend = Backend.DB;
+            }
+        } catch (Exception e) {
+            System.out.println("Error leyendo opción. Usando JSON por defecto.");
+        }
+
+        System.out.println("Iniciando aplicación con backend: " + backend);
+        
+        // Inicializar dependencias
+        this.leagueRepository = RepositoryFactory.create(backend);
+        this.marketService = new MarketService(this.leagueRepository);
+        this.userService = new UserService(this.leagueRepository);
+        this.alineacionController = new AlineacionController(this.leagueRepository);
+        this.equipoController = new EquipoController(this.leagueRepository);
+
         menuUsuarios();
     }
 
@@ -741,9 +764,10 @@ public class MenuPrincipal {
     }
 
     private String formatearDinero(double cantidad) {
-        if (cantidad >= 1_000_000) {
+        double abs = Math.abs(cantidad);
+        if (abs >= 1_000_000) {
             return String.format("%.2f M €", cantidad / 1_000_000);
-        } else if (cantidad >= 1_000) {
+        } else if (abs >= 1_000) {
             return String.format("%.2f k €", cantidad / 1_000);
         } else {
             return String.format("%.2f €", cantidad);
