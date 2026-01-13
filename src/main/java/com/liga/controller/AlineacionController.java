@@ -15,10 +15,8 @@ public class AlineacionController {
         this.repo = repo;
     }
 
+    // Mostrar equipo
 
-    // ============================================================
-    //   MOSTRAR EQUIPO
-    // ============================================================
     public void mostrarEquipoUsuario(Usuario usuario) {
 
         if (usuario.getEquipo() == null) {
@@ -38,10 +36,8 @@ public class AlineacionController {
         System.out.println("-----------------");
     }
 
+    // Mostrar alineacion
 
-    // ============================================================
-    //   MOSTRAR ALINEACIÓN
-    // ============================================================
     public void mostrarAlineacionUsuario(Usuario usuario) {
         if (usuario.getAlineacion() == null) {
             System.out.println("No tienes alineación definida.");
@@ -66,10 +62,8 @@ public class AlineacionController {
         System.out.println();
     }
 
+    // Mostrar plantilla
 
-    // ============================================================
-    //   MOSTRAR PLANTILLA COMPLETA (titulares + suplentes)
-    // ============================================================
     public void mostrarPlantilla(Usuario usuario) {
 
         if (usuario.getPlantilla() == null || usuario.getPlantilla().isEmpty()) {
@@ -103,10 +97,8 @@ public class AlineacionController {
         System.out.println("---------------------------\n");
     }
 
+    // Editar alineacion
 
-    // ============================================================
-    //   EDITAR ALINEACIÓN
-    // ============================================================
     public void editarAlineacion(Usuario usuario) {
 
         if (usuario.getAlineacion() == null) {
@@ -141,25 +133,24 @@ public class AlineacionController {
         System.out.println("✔ Alineación actualizada.");
     }
 
+    // Cambiar jugador
 
-    // ============================================================
-    //   CAMBIAR UN JUGADOR DE UNA LÍNEA
-    // ============================================================
     private void cambiarJugadorEnLinea(Usuario usuario, String linea) {
 
         Alineacion al = usuario.getAlineacion();
 
-        // Lista actual de esa línea
-        List<String> idsLineaActual =
-                switch (linea) {
-                    case "POR" -> List.of(al.getPortero());
-                    case "DEF" -> new ArrayList<>(al.getDefensas());
-                    case "MED" -> new ArrayList<>(al.getMedios());
-                    case "DEL" -> new ArrayList<>(al.getDelanteros());
-                    default -> null;
-                };
+        // Lista actual
 
-        if (idsLineaActual == null) return;
+        List<String> idsLineaActual = switch (linea) {
+            case "POR" -> List.of(al.getPortero());
+            case "DEF" -> new ArrayList<>(al.getDefensas());
+            case "MED" -> new ArrayList<>(al.getMedios());
+            case "DEL" -> new ArrayList<>(al.getDelanteros());
+            default -> null;
+        };
+
+        if (idsLineaActual == null)
+            return;
 
         // Mostrar lista actual
         System.out.println("\nJugadores actuales en " + linea + ":");
@@ -180,21 +171,23 @@ public class AlineacionController {
 
         String jugadorActual = idsLineaActual.get(index);
 
-        // Cargar plantilla completa del usuario
-        List<Jugador> jugadores =
-                usuario.getPlantilla().stream()
-                        .map(id -> repo.buscarJugadorPorId(id).orElse(null))
-                        .filter(Objects::nonNull)
-                        .toList();
+        // Carga plantilla
 
-        // Jugadores ya en alineación
+        List<Jugador> jugadores = usuario.getPlantilla().stream()
+                .map(id -> repo.buscarJugadorPorId(id).orElse(null))
+                .filter(Objects::nonNull)
+                .toList();
+
+        // Jugadores en alineacion
+
         Set<String> ocupados = new HashSet<>();
         ocupados.add(al.getPortero());
         ocupados.addAll(al.getDefensas());
         ocupados.addAll(al.getMedios());
         ocupados.addAll(al.getDelanteros());
 
-        // Filtrar candidatos
+        // Filtra candidatos
+
         Posicion posNecesaria = convertirLineaAPosicion(linea);
 
         List<Jugador> candidatos = jugadores.stream()
@@ -208,9 +201,7 @@ public class AlineacionController {
         }
 
         System.out.println("\n=== CANDIDATOS ===");
-        candidatos.forEach(j ->
-                System.out.println(j.getId() + " - " + j.getNombre() + " (" + j.getPosicion() + ")")
-        );
+        candidatos.forEach(j -> System.out.println(j.getId() + " - " + j.getNombre() + " (" + j.getPosicion() + ")"));
 
         System.out.print("Escribe ID del nuevo jugador: ");
         String nuevoId = sc.nextLine();
@@ -222,7 +213,8 @@ public class AlineacionController {
             return;
         }
 
-        // Reemplazar
+        // Reemplaza
+
         switch (linea) {
             case "POR" -> al.setPortero(nuevoId);
             case "DEF" -> al.getDefensas().set(index, nuevoId);
@@ -232,7 +224,6 @@ public class AlineacionController {
 
         System.out.println("✔ Jugador reemplazado.");
     }
-
 
     private Posicion convertirLineaAPosicion(String linea) {
         return switch (linea) {

@@ -25,14 +25,13 @@ public class MenuPrincipal {
     private MarketService marketService;
 
     public MenuPrincipal() {
-        // Constructor vacío, la inicialización se hace en iniciarApp
+        // Vacio. Ver iniciarApp
     }
 
     private final ClasificacionService clasificacionService = new ClasificacionService();
 
-    // ============================================================
-    // MENÚ PRINCIPAL
-    // ============================================================
+    // MENU PRINCIPAL
+
     public void menuUsuarios() {
         int opcion;
 
@@ -55,9 +54,8 @@ public class MenuPrincipal {
         } while (opcion != 0);
     }
 
-    // ============================================================
     // LOGIN
-    // ============================================================
+
     private void iniciarSesion() {
         System.out.print("Email: ");
         String email = sc.nextLine();
@@ -75,9 +73,8 @@ public class MenuPrincipal {
         }
     }
 
-    // ============================================================
     // REGISTRO
-    // ============================================================
+
     private void registrarUsuario() {
         System.out.print("Email: ");
         String email = sc.nextLine();
@@ -114,9 +111,8 @@ public class MenuPrincipal {
             System.out.println("✘ Ese email ya está registrado.");
     }
 
-    // ============================================================
-    // MENÚ USUARIO LOGUEADO
-    // ============================================================
+    // MENU USUARIO LOGUEADO
+
     private void menuUsuarioLogueado(Usuario usuario) {
         int opcion;
 
@@ -140,7 +136,8 @@ public class MenuPrincipal {
                 case 4 -> alineacionController.mostrarPlantilla(usuario);
                 case 5 -> {
                     menuMercado(usuario);
-                    // Recargar usuario al volver del mercado por si hubo cambios
+                    // Recargar usuario
+
                     usuario = leagueRepository.buscarUsuarioPorId(usuario.getId()).orElse(usuario);
                 }
                 case 6 -> menuLiga(usuario);
@@ -152,15 +149,15 @@ public class MenuPrincipal {
         } while (opcion != 0);
     }
 
-    // ============================================================
     // BUSCADOR JUGADORES (E7)
-    // ============================================================
+
     private void buscarJugadores() {
         System.out.println("\n=== BUSCAR JUGADORES ===");
         System.out.println("¿Filtrar por (N)ombre o (P)osición?");
         String line = sc.nextLine().trim();
-        if (line.isEmpty()) return;
-        
+        if (line.isEmpty())
+            return;
+
         String criterio = line.toUpperCase().substring(0, 1);
 
         List<Jugador> resultados = new ArrayList<>();
@@ -169,8 +166,9 @@ public class MenuPrincipal {
         if (criterio.equals("N")) {
             System.out.print("Introduce nombre: ");
             String nombre = sc.nextLine().trim().toLowerCase();
-            if (nombre.isEmpty()) return;
-            
+            if (nombre.isEmpty())
+                return;
+
             resultados = todos.stream()
                     .filter(j -> j.getNombre().toLowerCase().contains(nombre))
                     .toList();
@@ -196,7 +194,7 @@ public class MenuPrincipal {
             // Obtener nombre equipo
             Optional<Equipo> eq = leagueRepository.buscarEquipoPorId(j.getEquipoId());
             String nombreEquipo = eq.map(Equipo::getNombre).orElse("Sin Equipo");
-            
+
             System.out.printf("- %s (%s) - %s%n", j.getNombre(), j.getPosicion(), nombreEquipo);
         }
     }
@@ -234,12 +232,8 @@ public class MenuPrincipal {
         } while (opcion != 0);
     }
 
-    // ============================================================
     // MENU LIGA
-    // ============================================================
-    // ============================================================
-    // MENU LIGA
-    // ============================================================
+
     private void menuLiga(Usuario usuario) {
         int opcion;
         do {
@@ -264,9 +258,8 @@ public class MenuPrincipal {
         } while (opcion != 0);
     }
 
-    // ============================================================
     // MERCADO
-    // ============================================================
+
     private void mostrarMercado() {
 
         List<JugadorMercado> mercado = marketService.listarMercado();
@@ -368,12 +361,11 @@ public class MenuPrincipal {
         // o llamamos a actualizar con todas las jornadas.
 
         List<Jornada> jornadas = leagueRepository.listarJornadas();
-        // Resetear estadisticas antes de recalcular (opcional, pero recomendado si no
-        // se guardan persistentes correctamente)
-        // Como estamos guardando el objeto Equipo completo, las estadísticas deberían
-        // estar ahí.
+        // Reset estadisticas
+
         // Pero para asegurar consistencia con las jornadas guardadas:
         for (Equipo e : equipos) {
+
             e.setPuntos(0);
             e.setPartidosJugados(0);
             e.setVictorias(0);
@@ -386,13 +378,7 @@ public class MenuPrincipal {
         // Recalcular todo en base a jornadas jugadas
         for (Jornada j : jornadas) {
             clasificacionService.actualizarClasificacion(j.getPartidos());
-            // IMPORTANTISIMO: actualizarClasificacion trabaja sobre las referencias de los
-            // equipos en los partidos.
-            // Necesitamos que esos partidos apunten a los objetos 'Equipo' de nuestra lista
-            // 'equipos'.
-            // Como los partidos se cargan del JSON, traen sus propias copias de Equipo.
-            // Esto es un problema común. Vamos a hacer un apaño rápido: mapear los
-            // resultados a nuestra lista 'equipos'.
+            // Actualiza clasificacion
 
             for (Partido p : j.getPartidos()) {
                 Equipo local = buscarEnLista(equipos, p.getEquipoLocal().getId());
@@ -413,9 +399,8 @@ public class MenuPrincipal {
         clasificacionService.imprimirClasificacion(equipos, userTeamId);
     }
 
-    // ============================================================
     // MOSTRAR GOLEADORES
-    // ============================================================
+
     private void mostrarGoleadores(Usuario usuario) {
         // Mapa para contar goles: Jugador -> Integer
         Map<String, Integer> tablaGoleadores = new HashMap<>();
@@ -544,9 +529,8 @@ public class MenuPrincipal {
                 else
                     System.out.print(visualLocal);
 
-                // Rellenamos con espacios hasta completar el ancho
-                // Si el nombre es muy largo, cortamos o dejamos que empuje (aqui dejamos que
-                // empuje min 1 espacio)
+                // Rellenamos
+
                 int paddingLocal = Math.max(1, colWidth - visualLocal.length());
                 System.out.print(" ".repeat(paddingLocal));
 
@@ -566,9 +550,8 @@ public class MenuPrincipal {
         }
     }
 
-    // ============================================================
     // SIMULAR JORNADA
-    // ============================================================
+
     private void simularJornada(Usuario usuario) {
         List<Equipo> equipos = leagueRepository.listarEquipos();
         int totalEquipos = equipos.size();
@@ -597,7 +580,7 @@ public class MenuPrincipal {
 
         SimuladorJornada simulador = new SimuladorJornada();
 
-        // 2. Generar emparejamientos DETERMINISTAS (Algoritmo Circular / Berger)
+        // 2. Generar partidos
         List<Partido> partidos = generarPartidosBerger(nextJornadaNumber, equipos);
 
         // 3. Simular resultados
@@ -676,25 +659,21 @@ public class MenuPrincipal {
         System.out.println("✔ Jornada simulada y guardada.\n");
     }
 
-    /**
-     * Genera los partidos correspondientes a una jornada específica usando el
-     * sistema de Liga (Todos contra todos).
-     * Garantiza ida y vuelta y evita repeticiones aleatorias.
-     */
+    // Genera partidos (Berger)
+
     private List<Partido> generarPartidosBerger(int numJornada, List<Equipo> equipos) {
         int n = equipos.size();
         int rondasIda = n - 1;
 
-        // Ordenamos la lista por ID para que el algoritmo sea siempre consistente,
-        // sin importar el orden en que vengan del repositorio.
+        // Ordenamos por ID
+
         List<Equipo> sorted = new ArrayList<>(equipos);
         sorted.sort(Comparator.comparing(Equipo::getId));
 
         boolean esVuelta = numJornada > rondasIda;
         int rondaIndex = (numJornada - 1) % rondasIda;
 
-        // Algoritmo circular:
-        // Separamos al primer equipo (fijo) y rotamos al resto 'rondaIndex' veces.
+        // Algoritmo circular
         Equipo fijo = sorted.remove(0);
         Collections.rotate(sorted, rondaIndex);
         sorted.add(0, fijo); // Lo volvemos a poner al principio
@@ -736,7 +715,7 @@ public class MenuPrincipal {
 
     public void iniciarApp() {
         System.out.println("=================================");
-        System.out.println("   LA LIGA MANAGER - STARTUP");
+        System.out.println("   LA LIGA MANAGER");
         System.out.println("=================================");
         System.out.println("Selecciona modo de persistencia:");
         System.out.println("1. JSON (Archivos locales)");
@@ -754,7 +733,7 @@ public class MenuPrincipal {
         }
 
         System.out.println("Iniciando aplicación con backend: " + backend);
-        
+
         // Inicializar dependencias
         this.leagueRepository = RepositoryFactory.create(backend);
         this.marketService = new MarketService(this.leagueRepository);
@@ -768,7 +747,8 @@ public class MenuPrincipal {
     private int leerInt() {
         try {
             String line = sc.nextLine();
-            if (line.trim().isEmpty()) return -1;
+            if (line.trim().isEmpty())
+                return -1;
             return Integer.parseInt(line.trim());
         } catch (NumberFormatException e) {
             return -1; // Opción inválida genérica
@@ -776,8 +756,8 @@ public class MenuPrincipal {
     }
 
     private String formatearDinero(double cantidad) {
-        // La moneda base en BD/JSON parece ser "Millones" (ej: 2.23 = 2.23 M)
-        // Ajustamos la visualización para reflejar esto y usamos EUR para evitar problemas de encoding (?)
+        // Moneda base Millones
+
         double abs = Math.abs(cantidad);
 
         if (abs >= 1_000) {
@@ -787,7 +767,7 @@ public class MenuPrincipal {
             // Si es >= 1 M
             return String.format("%.2f M EUR", cantidad);
         } else if (abs == 0) {
-             return "0.00 EUR";
+            return "0.00 EUR";
         } else {
             // Si es < 1 M (ej: 0.5 = 500k)
             return String.format("%.2f k EUR", cantidad * 1_000);

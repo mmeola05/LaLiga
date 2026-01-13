@@ -16,39 +16,38 @@ public class MarketService {
         this.repo = repo;
     }
 
-    // ==================================================
-    // E9 - Listar jugadores en el mercado
-    // ==================================================
+    // E9 Listar mercado
+
     public List<JugadorMercado> listarMercado() {
         return repo.listarMercado();
     }
 
-    // ==================================================
-    // E10 - Poner jugador en venta (PENDIENTE)
-    // ==================================================
-    // ==================================================
-// E10 - Poner jugador en venta
-// ==================================================
+    // E10 Poner en venta
+
     public boolean ponerEnVenta(String usuarioId, String jugadorId, double precio) {
 
-        // 1. Validar precio
+        // 1. Valida precio
+
         if (precio <= 0) {
             return false;
         }
 
-        // 2. Obtener usuario
+        // 2. Obtiene usuario
+
         Optional<Usuario> optUsuario = repo.buscarUsuarioPorId(usuarioId);
         if (optUsuario.isEmpty()) {
             return false;
         }
         Usuario usuario = optUsuario.get();
 
-        // 3. Verificar que el jugador pertenece al usuario
+        // 3. Verifica propiedad
+
         if (usuario.getPlantilla() == null || !usuario.getPlantilla().contains(jugadorId)) {
             return false;
         }
 
-        // 4. Verificar que el jugador NO esté ya en el mercado
+        // 4. Verifica mercado
+
         boolean yaEnMercado = repo.listarMercado().stream()
                 .anyMatch(jm -> jm.getJugadorId().equals(jugadorId));
 
@@ -56,21 +55,22 @@ public class MarketService {
             return false;
         }
 
-        // 5. Verificar que el jugador existe
+        // 5. Verifica existencia
+
         Optional<Jugador> optJugador = repo.buscarJugadorPorId(jugadorId);
         if (optJugador.isEmpty()) {
             return false;
         }
 
-        // 6. Crear JugadorMercado
+        // 6. Crea JugadorMercado
+
         String mercadoId = "M" + System.currentTimeMillis();
 
         JugadorMercado jugadorMercado = new JugadorMercado(
                 jugadorId,
                 precio,
                 usuarioId,
-                mercadoId
-        );
+                mercadoId);
 
         // Quitar jugador de la plantilla
         usuario.getPlantilla().remove(jugadorId);
@@ -84,71 +84,79 @@ public class MarketService {
         return true;
     }
 
-    // ==================================================
-// E11 - Comprar jugador del mercado
-// ==================================================
+    // E11 Comprar jugador
+
     public boolean comprarJugador(String compradorId, String jugadorMercadoId) {
 
-        // 1. Obtener comprador
+        // 1. Obtiene comprador
+
         Optional<Usuario> optComprador = repo.buscarUsuarioPorId(compradorId);
         if (optComprador.isEmpty()) {
             return false;
         }
         Usuario comprador = optComprador.get();
 
-        // 2. Obtener jugador en mercado
-        Optional<JugadorMercado> optJM
-                = repo.buscarJugadorMercadoPorId(jugadorMercadoId);
+        // 2. Obtiene jugador
+
+        Optional<JugadorMercado> optJM = repo.buscarJugadorMercadoPorId(jugadorMercadoId);
 
         if (optJM.isEmpty()) {
             return false;
         }
         JugadorMercado jm = optJM.get();
 
-        // 3. No comprar a uno mismo
+        // 3. Verifica mismo usuario
+
         if (jm.getVendedor().equals(compradorId)) {
             return false;
         }
 
-        // 4. Obtener vendedor
-        Optional<Usuario> optVendedor
-                = repo.buscarUsuarioPorId(jm.getVendedor());
+        // 4. Obtiene vendedor
+
+        Optional<Usuario> optVendedor = repo.buscarUsuarioPorId(jm.getVendedor());
 
         if (optVendedor.isEmpty()) {
             return false;
         }
         Usuario vendedor = optVendedor.get();
 
-        // 5. Validar saldo
+        // 5. Valida saldo
+
         if (comprador.getSaldo() < jm.getPrecioSalida()) {
             return false;
         }
 
-        // 6. Validar máximo 25 jugadores
+        // 6. Valida limite plantilla
+
         if (comprador.getPlantilla() != null
                 && comprador.getPlantilla().size() >= 25) {
             return false;
         }
 
-        // 7. Transferir jugador
+        // 7. Transfiere jugador
+
         String jugadorId = jm.getJugadorId();
 
-        if (vendedor.getPlantilla() == null) vendedor.setPlantilla(new java.util.ArrayList<>());
+        if (vendedor.getPlantilla() == null)
+            vendedor.setPlantilla(new java.util.ArrayList<>());
         vendedor.getPlantilla().remove(jugadorId);
 
-        if (comprador.getPlantilla() == null) comprador.setPlantilla(new java.util.ArrayList<>());
+        if (comprador.getPlantilla() == null)
+            comprador.setPlantilla(new java.util.ArrayList<>());
         comprador.getPlantilla().add(jugadorId);
 
-        // 8. Actualizar saldos
+        // 8. Actualiza saldos
+
         comprador.setSaldo(comprador.getSaldo() - jm.getPrecioSalida());
         vendedor.setSaldo(vendedor.getSaldo() + jm.getPrecioSalida());
 
-        // 9. Guardar usuarios
-        repo.guardarUsuarios(
-                List.of(comprador, vendedor)
-        );
+        // 9. Guarda usuarios
 
-        // 10. Eliminar del mercado
+        repo.guardarUsuarios(
+                List.of(comprador, vendedor));
+
+        // 10. Elimina del mercado
+
         repo.eliminarJugadorMercado(jugadorMercadoId);
 
         return true;

@@ -11,7 +11,8 @@ public class AlineacionGenerator {
 
         Random rnd = new Random();
 
-        // Separar por posición
+        // Por posicion
+
         List<Jugador> porteros = new ArrayList<>();
         List<Jugador> defensas = new ArrayList<>();
         List<Jugador> medios = new ArrayList<>();
@@ -27,6 +28,7 @@ public class AlineacionGenerator {
         }
 
         // Elegir aleatorios
+
         Jugador portero = porteros.get(rnd.nextInt(porteros.size()));
 
         List<Jugador> def = elegir(defensas, 4, rnd);

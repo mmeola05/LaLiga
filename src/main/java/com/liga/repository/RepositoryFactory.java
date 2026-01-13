@@ -16,8 +16,8 @@ public class RepositoryFactory {
     private static LeagueRepository leagueRepository;
 
     public static LeagueRepository create(Backend backend) {
-        // Singleton sencillo: si ya existe, lo devuelve.
-        // NOTA: Si quisiéramos soportar cambio en caliente, habría que resetearlo.
+        // Singleton
+
         if (leagueRepository == null) {
             switch (backend) {
                 case JSON -> {
@@ -42,7 +42,8 @@ public class RepositoryFactory {
         return leagueRepository;
     }
 
-    // Deprecated alias for compatibility until refactor is complete
+    // Alias obsoleto para compatibilidad
+
     public static LeagueRepository getLeagueRepository() {
         return create(Backend.JSON);
     }

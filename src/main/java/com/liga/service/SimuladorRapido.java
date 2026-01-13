@@ -12,24 +12,25 @@ public class SimuladorRapido {
   private final Random random = new Random();
 
   public void simularPartido(Partido partido, Jugador[] jugadoresLocal, Jugador[] jugadoresVisitante) {
-    // Calculamos poderío de cada equipo
+    // Calcula poderio
+
     double valLocal = calcularValoracionEquipo(jugadoresLocal);
     double valVisit = calcularValoracionEquipo(jugadoresVisitante);
 
     double total = valLocal + valVisit;
     double factorLocal = (total == 0) ? 0.5 : (valLocal / total);
 
-    // Oportunidades: Entre 3 y 8 por equipo, ajustado por dominio
-    // Dominio > 0.55 => +2 ocasiones.
+    // Oportunidades
+
     int ocasionesLocal = 3 + random.nextInt(4) + (factorLocal > 0.55 ? 2 : 0);
     int ocasionesVisit = 3 + random.nextInt(4) + (factorLocal < 0.45 ? 2 : 0);
 
     int golesLocal = 0;
     int golesVisit = 0;
 
-    // Simular Ocasiones Local
+    // Ocasiones local
     for (int i = 0; i < ocasionesLocal; i++) {
-      // Probabilidad de gol: Calidad Local vs Calidad Visitante
+      // Probabilidad gol
       // Base 15% + (diferencia de valoración / 200)
       double chance = 0.15 + ((valLocal - valVisit) / 200.0);
       if (chance < 0.05)
@@ -41,7 +42,8 @@ public class SimuladorRapido {
         golesLocal++;
     }
 
-    // Simular Ocasiones Visitante
+    // Ocasiones visitante
+
     for (int i = 0; i < ocasionesVisit; i++) {
       // Base 12% (visitante) + ajuste
       double chance = 0.12 + ((valVisit - valLocal) / 200.0);
@@ -57,11 +59,13 @@ public class SimuladorRapido {
     partido.setGolesLocal(golesLocal);
     partido.setGolesVisitante(golesVisit);
 
-    // PERSISTENCIA DE GOLEADORES
+    // Persistencia
+
     asignarGoles(partido, jugadoresLocal, golesLocal);
     asignarGoles(partido, jugadoresVisitante, golesVisit);
 
-    // Actualizar estadísticas de equipos
+    // Actualiza estadisticas
+
     partido.getEquipoLocal().actualizarEstadisticas(golesLocal, golesVisit);
     partido.getEquipoVisitante().actualizarEstadisticas(golesVisit, golesLocal);
   }
@@ -97,8 +101,7 @@ public class SimuladorRapido {
   }
 
   private double calcularValoracionJugador(Jugador j) {
-    // Fórmula: ((posicion * 0.6) + (estadoForma * 0.4)) / 100 + random(-2, 2)
-    // pos stat depends on position
+    // Formula
     int statPrincipal = 50;
 
     if (j.getPosicion() != null) {
@@ -111,49 +114,20 @@ public class SimuladorRapido {
           break;
         case MEDIO:
           statPrincipal = j.getPase();
-          break; // O pase, o promedio
+          break;
         case DELANTERO:
           statPrincipal = j.getAtaque();
           break;
       }
     }
 
-    double base = (statPrincipal * 0.6) + (j.getCondition() * 0.4);
-    // La fórmula original era "/ 100", lo que daría valores < 1.
-    // Asumo que el user quiere decir que eso da un "rating" base bajo, o tal vez
-    // quiere decir escalar.
-    // Si stat es 90, condition 90 -> 90. / 100 -> 0.9. + random(-2, 2) -> result
-    // puede ser negativo?
-    // "La suma de los 11 jugadores da la valoración total del equipo."
-    // Si cada jugador da ~1.0, el equipo da ~11.
-    // Voy a seguir la fórmula literal, pero asumo que random es pequeño.
-
-    double val = (base / 1.0) + (random.nextDouble() * 4 - 2);
-    // User said: "/ 100". Esto haría los valores muy pequeños (0.9).
-    // "random(-2, 2)" dominaría totalmente (rango 4 vs rango 1).
-    // PROBABLEMENTE el usuario quería decir que el random se aplica AL FINAL sobre
-    // una escala similar.
-    // O QUIZAS "/ 1" y no "/ 100".
-    // Voy a asumir que "/ 100" es para normalizar a un "coeficiente de calidad" (ej
-    // 0.8), y el random(-2,2) es un error de magnitud en el prompt O se refiere a
-    // random sobre el total.
-    // RELEYENDO: "((posicion * 0.6) + (estadoForma * 0.4)) / 100 + random(-2, 2)."
-    // Si stat=90 -> 54 + 36 = 90. /100 = 0.9.
-    // random(-2, 2) -> -1.5. Resultado = -0.6. NO TIENE SENTIDO tener valoración
-    // negativa.
-    // INTERPRETACION: El random es sobre la stat (0-100) ANTES de dividir, O el
-    // random es decimal pequeño (-0.2, 0.2).
-    // VOY A AJUSTAR: El random será (-2, 2) aplicado a la MEDIA (0-100), y luego
-    // TODO dividido o usado.
-    // O mejor: Interpretamos el random como "puntos de varaicion de stat".
-    // val = ((stat * 0.6 + form * 0.4) + random(-2, 2)) (Escala 0-100).
-
     double valor0to100 = (statPrincipal * 0.6) + (j.getCondition() * 0.4) + (random.nextDouble() * 4 - 2);
     return Math.max(0, valor0to100);
   }
 
   private int generarGolesPoisson(double lambda) {
-    // Algoritmo simple para generar número aleatorio con dist Poisson
+    // Algoritmo Poisson
+
     double L = Math.exp(-lambda);
     double p = 1.0;
     int k = 0;

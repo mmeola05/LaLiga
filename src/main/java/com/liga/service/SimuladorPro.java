@@ -13,16 +13,16 @@ public class SimuladorPro {
   public void simularPartido(Partido partido, Jugador[] jugadoresLocal, Jugador[] jugadoresVisitante) {
     Equipo local = partido.getEquipoLocal();
     Equipo visitante = partido.getEquipoVisitante();
-    boolean posesionLocal = true; // Empieza local por defecto o random
+    boolean posesionLocal = true; // Inicio posesion
     int posicionBalon = 5; // Medio campo
-    int rachaVictorias = 0; // Para factor fatiga
-    Jugador tirador = null; // Para guardar quién iba a tirar en pos 10
+    int rachaVictorias = 0; // Factor fatiga
+    Jugador tirador = null; // Tirador pos 10
 
-    // Solo narrar inicio
+    // Narrar inicio
     // narrar("=== INICIO DEL PARTIDO ===");
     // narrar(local.getNombre() + " vs " + visitante.getNombre());
 
-    double momentum = 0.0; // Bonus acumulativo por posesión mantenida
+    double momentum = 0.0; // Bonus momentum
 
     for (int minuto = 1; minuto <= 90; minuto++) {
 
@@ -30,7 +30,8 @@ public class SimuladorPro {
         narrar("--- DESCANSO ---");
       }
 
-      // EVENTO ALEATORIO: Falta o Balón Fuera (Pérdida de tiempo)
+      // Evento aleatorio
+
       if (random.nextDouble() < 0.03) { // 3% probabilidad
         if (random.nextBoolean()) {
           // narrar("Min " + minuto + ": Balón fuera. Saque de banda.");
@@ -41,7 +42,8 @@ public class SimuladorPro {
       }
 
       try {
-        Thread.sleep(200); // Retardo para efecto 'streaming'
+        Thread.sleep(200); // Retardo streaming
+
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
       }
@@ -50,8 +52,8 @@ public class SimuladorPro {
       Jugador defensor;
       Equipo equipoAtacante = posesionLocal ? local : visitante;
 
-      // Determinar jugadores
-      // Determinar jugadores - SELECCION VARIADA
+      // Seleccion variada
+
       if (posesionLocal) {
         atacante = seleccionarJugador(jugadoresLocal, posicionBalon, true);
         defensor = seleccionarJugador(jugadoresVisitante, 10 - posicionBalon, false);
@@ -67,32 +69,26 @@ public class SimuladorPro {
       // narrar("Min " + minuto + ": " + atacante.getNombre() + " tiene el balón en la
       // zona " + posicionBalon);
 
-      // Resolver Duelo
-      // Stat atacante vs Stat defensor
-      // Si posBalon == 10 (Delantero vs Portero) -> Ataque vs Porteria
+      // Resuelve duelo
 
+      // Calculo de stats
       double statAtacante = obtenerStatRelevante(atacante, true, posicionBalon);
       double statDefensor = obtenerStatRelevante(defensor, false, 10 - posicionBalon);
 
-      // Fórmula: stat + random(-5, 5) -> AHORA (-30, 30) para más variedad
-      // FATIGA: Si rachaVictorias >= 3, penalización
+      // Formula fatiga y bonus
       double fatiga = (rachaVictorias >= 3) ? -15.0 : 0.0;
+      double bonusAtaque = (posicionBalon == 10) ? 20.0 : 2.0;
 
-      // BONIFICACIÓN TIRO: Si está en zona 10, el atacante tiene ventaja para premiar
-      // la llegada.
-      double bonusAtaque = (posicionBalon == 10) ? 20.0 : 2.0; // +2 base por iniciativa
+      // Factor suerte
 
-      // Random más amplio (-30 a 30) para permitir sorpresas y que no gane siempre el
-      // mismo
       double factorSuerteA = (random.nextDouble() * 60 - 30);
       double factorSuerteD = (random.nextDouble() * 60 - 30);
 
       double valorA = statAtacante + bonusAtaque + momentum + fatiga + factorSuerteA;
       double valorD = statDefensor + factorSuerteD;
 
-      // Logica de PASE SEGURO / MANTENER POSESION si la diferencia es pequeña
-      // Si atacante pierde por poco (ej. < 10 puntos), no pierde balón, mantiene
-      // posesión.
+      // Pase seguro
+
       boolean mantienePosesion = false;
       if (valorD > valorA && (valorD - valorA) < 10.0 && posicionBalon >= 4 && posicionBalon <= 8) {
         mantienePosesion = true;
@@ -120,12 +116,14 @@ public class SimuladorPro {
         // defensor.getNombre() + " y avanza."); // REMOVED
 
         if (posicionBalon == 11) {
-          // GOL - EL QUE LLEGÓ A 11 ES EL QUE TIRÓ DESDE 10
+          // GOL
+
           if (tirador == null)
             tirador = atacante; // Fallback
           narrar("¡¡¡GOOOOOL de " + tirador.getNombre() + "!!! (" + equipoAtacante.getNombre() + ")");
 
-          // PERSISTENCIA DEL GOL
+          // Persistencia
+
           partido.addGol(new com.liga.model.Gol(tirador, minuto));
 
           tirador = null; // Reset tirador
@@ -144,20 +142,23 @@ public class SimuladorPro {
           momentum = 0.0; // Reset momentum
           rachaVictorias = 0;
         } else if (posicionBalon == 10) {
-          // Change narration to imply shooting imminent
+          // Prepara disparo
+
           tirador = atacante; // Guardamos el tirador
           narrar("Min " + minuto + ": ¡" + atacante.getNombre() + " se prepara para disparar!");
         } else if (posicionBalon >= 8) {
           narrar("Min " + minuto + ": " + atacante.getNombre() + " genera peligro en el área.");
         } else {
-          // Silencio en medio campo salvo muy rara vez o fatiga
+          // Silencio
+
           if (fatiga < 0) {
             // narrar("Min " + minuto + ": " + atacante.getNombre() + " parece cansado pero
             // sigue avanzando.");
           }
         }
       } else {
-        // GANA DEFENSOR (Robo)
+        // Gana defensor
+
         rachaVictorias = 0; // Reset racha atacante
 
         if (posicionBalon >= 9) {
@@ -188,19 +189,12 @@ public class SimuladorPro {
         }
 
         posesionLocal = !posesionLocal;
-        // LÓGICA DE REBOTE: No invertir a la misma posición espejo siempre.
-        // Si pierdo en 5 (Medio), el rival recupera en 5 (Medio). -> 10-5 = 5. Bucle.
-        // SOLUCIÓN: El que recupera "retrocede" un poco para "asegurar" el balón.
-        // Si recupero en mi campo (pos 0-4 rival -> pos 10-6 mio), estoy arriba.
-        // Si recupero en mi area (pos 9-10 rival -> pos 1-0 mio).
+        // Logica rebote
 
         int posRecuperacion = 10 - posicionBalon;
 
-        // CORRECCIÓN ANTI-BUCLE: Si la recuperación es en el medio (5), forzar
-        // movimiento.
-        // Lo mandamos a 4 (defensa) para que tenga que construir, o 6 (ataque) si es
-        // contra.
-        // Vamos a hacer que retroceda un paso para "asegurar" el balón.
+        // Anti-bucle
+
         if (posRecuperacion == 5) {
           posRecuperacion = 4;
         }
@@ -214,7 +208,8 @@ public class SimuladorPro {
     narrar("Resultado Final: " + local.getNombre() + " " + partido.getGolesLocal() + " - " + partido.getGolesVisitante()
         + " " + visitante.getNombre());
 
-    // Actualizar stats finales
+    // Actualiza stats
+
     local.actualizarEstadisticas(partido.getGolesLocal(), partido.getGolesVisitante());
     visitante.actualizarEstadisticas(partido.getGolesVisitante(), partido.getGolesLocal());
 
@@ -224,8 +219,7 @@ public class SimuladorPro {
     if (j == null)
       return 50.0;
 
-    // Si es atacante y está en zona 10 (tiro), usa Ataque.
-    // Si es defensor y está en zona 0 (portería), usa Porteria.
+    // Stats relevantes
     if (esAtacante) {
       if (posicionEnCampo >= 10)
         return j.getAtaque(); // Tiro
@@ -240,7 +234,8 @@ public class SimuladorPro {
     }
   }
 
-  // MÉTODO NUEVO: Selección inteligente y variada de jugadores
+  // Selecciona jugador
+
   private Jugador seleccionarJugador(Jugador[] alineacion, int zona, boolean esAtacante) {
     // Zona 0-3: Defensas (indices 1-4 aprox) + Portero (0)
     // Zona 4-7: Medios (indices 5-8 aprox)

@@ -32,8 +32,6 @@ public class SimuladorJornada {
 
   public Jornada simularJornada(int numeroJornada, List<Partido> partidosPendientes, String idUsuario) {
     Jornada jornada = new Jornada(numeroJornada);
-    // String idUsuario = obtenerIdUsuario(); // REMOVED: Usamos el parametro
-    // explicito
 
     for (Partido partido : partidosPendientes) {
       simularPartido(partido, idUsuario);
@@ -43,33 +41,30 @@ public class SimuladorJornada {
   }
 
   private void simularPartido(Partido partido, String idUsuario) {
-    // 1. Obtener jugadores para cada equipo (Titulares / 11 iniciales)
+    // 1. Obtener titulares
+
     Jugador[] localXI = obtenerOnceInicial(partido.getEquipoLocal(), idUsuario);
     Jugador[] visitXI = obtenerOnceInicial(partido.getEquipoVisitante(), idUsuario);
 
-    // 2. Ejecutar simulación híbrida
-    // El servicio decide si usa Pro o Rápido
+    // 2. Simulacion hibrida
     Partido resultado = simuladorService.jugarPartido(partido, localXI, visitXI, idUsuario);
 
-    // (Opcional) Si el servicio devuelve una nueva instancia, actualizar la ref.
-    // Pero como pasamos 'partido' por referencia, ya debería estar actualizado.
   }
 
-  /**
-   * Selecciona los 11 jugadores titulares.
-   * - Si es equipo de Usuario: Usa su Alineacion.
-   * - Si es IA: Selecciona los mejores por posición (1-4-3-3 genérico).
-   */
+  // Selecciona 11 titulares
+
   private Jugador[] obtenerOnceInicial(Equipo equipo, String idUsuarioEquipo) {
     Jugador[] once = new Jugador[11];
     List<Jugador> plantilla = leagueRepository.buscarJugadorPorEquipo(equipo.getId());
 
     if (plantilla.isEmpty())
-      return once; // Retorna array con nulls
+      return once; // Retorna vacio si falla
 
-    // CHEQUEO SI ES EQUIPO USUARIO
+    // Verifica equipo usuario
+
     if (equipo.getId().equals(idUsuarioEquipo)) {
-      // Buscar usuario
+      // Busca usuario
+
       Optional<Usuario> userOpt = leagueRepository.listarUsuarios().stream()
           .filter(u -> u.getEquipo() != null && u.getEquipo().equals(equipo.getId()))
           .findFirst();
@@ -79,8 +74,8 @@ public class SimuladorJornada {
       }
     }
 
-    // SELECCIÓN IA (Automática)
-    // Estrategia simple: 1 Portero, 4 Defensas, 3 Medios, 3 Delanteros
+    // Seleccion IA
+
     int idx = 0;
 
     // 1. Portero
@@ -88,7 +83,8 @@ public class SimuladorJornada {
     if (portero != null)
       once[idx++] = portero;
 
-    // 2. Defensas (4)
+    // 2. Defensas
+
     for (int i = 0; i < 4; i++) {
       if (idx < 11) {
         Jugador def = buscarMejor(plantilla, Posicion.DEFENSA, alinearSet(once));
@@ -97,7 +93,8 @@ public class SimuladorJornada {
       }
     }
 
-    // 3. Medios (3)
+    // 3. Medios
+
     for (int i = 0; i < 3; i++) {
       if (idx < 11) {
         Jugador med = buscarMejor(plantilla, Posicion.MEDIO, alinearSet(once));
@@ -106,7 +103,8 @@ public class SimuladorJornada {
       }
     }
 
-    // 4. Delanteros (3)
+    // 4. Delanteros
+
     for (int i = 0; i < 3; i++) {
       if (idx < 11) {
         Jugador del = buscarMejor(plantilla, Posicion.DELANTERO, alinearSet(once));
@@ -115,7 +113,8 @@ public class SimuladorJornada {
       }
     }
 
-    // Relleno si faltan (por si no hay suficientes de una pos)
+    // Rellena si faltan
+
     for (Jugador j : plantilla) {
       if (idx >= 11)
         break;

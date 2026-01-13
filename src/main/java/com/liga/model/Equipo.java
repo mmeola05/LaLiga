@@ -7,7 +7,8 @@ public class Equipo {
     private String id;
     private String nombre;
 
-    // Estadísticas de clasificación
+    // Estadisticas de clasificacion
+
     private int partidosJugados;
     private int victorias;
     private int empates;
@@ -36,18 +37,14 @@ public class Equipo {
         this.nombre = nombre;
     }
 
-    public void setId(String id) {this.id = id;}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    // ============================================================
-    // MÉTODOS DE GESTIÓN DE ESTADÍSTICAS
-    // ============================================================
+    // Gestion de estadisticas
 
-    /**
-     * Actualiza las estadísticas del equipo tras jugar un partido.
-     *
-     * @param golesAnotados  Goles marcados por este equipo.
-     * @param golesRecibidos Goles recibidos por este equipo.
-     */
+    // Actualiza estadisticas tras partido
+
     public void actualizarEstadisticas(int golesAnotados, int golesRecibidos) {
         this.partidosJugados++;
         this.golesFavor += golesAnotados;
@@ -63,10 +60,6 @@ public class Equipo {
             this.derrotas++;
         }
     }
-
-    // ============================================================
-    // GETTERS Y SETTERS (Estadísticas)
-    // ============================================================
 
     public int getPartidosJugados() {
         return partidosJugados;

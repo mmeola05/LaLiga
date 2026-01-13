@@ -11,7 +11,8 @@ public class UserIDGenerator {
         int max = dao.findAll()
                 .stream()
                 .map(u -> u.getId())
-                .map(id -> id.substring(1)) // quitar 'U'
+                .map(id -> id.substring(1))
+
                 .mapToInt(Integer::parseInt)
                 .max()
                 .orElse(0);
